@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Happywedding feature.
+ */
+
+include_once 'happywedding.features.inc';
