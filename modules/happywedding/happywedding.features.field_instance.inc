@@ -40,6 +40,7 @@ function happywedding_field_default_field_instances() {
     'required' => FALSE,
     'settings' => array(
       'display_summary' => TRUE,
+      'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -84,6 +85,7 @@ function happywedding_field_default_field_instances() {
     'label' => 'Category',
     'required' => 1,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -99,7 +101,7 @@ function happywedding_field_default_field_instances() {
   $field_instances['node-article-field_image'] = array(
     'bundle' => 'article',
     'deleted' => 0,
-    'description' => 'Upload an image to go with this article.',
+    'description' => 'Upload an cover to go with this article.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -124,20 +126,22 @@ function happywedding_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_image',
-    'label' => 'Image',
-    'required' => FALSE,
+    'label' => 'Cover',
+    'required' => 0,
     'settings' => array(
-      'alt_field' => TRUE,
+      'alt_field' => 1,
       'default_image' => 0,
-      'file_directory' => 'field/image',
+      'entity_translation_sync' => FALSE,
+      'file_directory' => 'field/[current-user:uid]/cover',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
-      'title_field' => '',
+      'title_field' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'image',
       'settings' => array(
         'preview_image_style' => 'thumbnail',
@@ -175,6 +179,7 @@ function happywedding_field_default_field_instances() {
     'label' => 'Tags',
     'required' => FALSE,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -188,14 +193,58 @@ function happywedding_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-article-title_field'
+  $field_instances['node-article-title_field'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
   t('Category');
+  t('Cover');
   t('Enter a comma-separated list of words to describe your content.');
-  t('Image');
   t('Tags');
-  t('Upload an image to go with this article.');
+  t('Title');
+  t('Upload an cover to go with this article.');
 
   return $field_instances;
 }

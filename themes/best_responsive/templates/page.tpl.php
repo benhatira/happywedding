@@ -66,7 +66,6 @@
 ?>
 <div id="wrap" class="clearfix">
   <div id="header-wrap">
-<!--
     <?php if (theme_get_setting('socialicon_display', 'best_responsive')): ?>
     <?php 
     $twitter_url = check_plain(theme_get_setting('twitter_url', 'best_responsive')); 
@@ -74,6 +73,7 @@
     $google_plus_url = check_plain(theme_get_setting('google_plus_url', 'best_responsive')); 
     $pinterest_url = check_plain(theme_get_setting('pinterest_url', 'best_responsive'));
     ?>
+<!--
     <div id="pre-header" class="clearfix">
       <ul id="header-social" class="clearfix">
         <?php if ($facebook_url): ?><li>
@@ -93,9 +93,17 @@
         </li>
       </ul>
     </div>
-    <?php endif; ?>
 -->
+    <?php endif; ?>
     <header id="header" class="clearfix">
+      <div id="logo">
+        <?php if ($logo): ?><div id="site-logo"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        </a></div><?php endif; ?>
+        <h1 id="site-name">
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><span><?php print $site_name; ?></span></a>
+        </h1>
+      </div>
       <nav id="navigation" role="navigation">
         <div id="main-menu">
           <?php 
@@ -109,14 +117,6 @@
         </div>
       </nav>
     </header>
-  </div>
-  <div id="logo">
-    <?php if ($logo): ?><div id="site-logo"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-      <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-    </a></div><?php endif; ?>
-    <h1 id="site-name">
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><span><?php print $site_name; ?></span></a>
-    </h1>
   </div>
 
   <div id="main-content" class="clearfix">
@@ -207,7 +207,9 @@
   </footer>
   <?php endif; ?>
 
+<!--
   <div id="copyright">
     <?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?>, <a href="<?php print $front_page; ?>"><?php print $site_name; ?></a>. <?php print t('Theme by'); ?>  <a href="http://www.devsaran.com" target="_blank">Devsaran</a>
   </div>
+-->
 </div>

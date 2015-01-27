@@ -23,5 +23,18 @@ function happywedding_locale_default_languages() {
     'prefix' => '',
     'weight' => 0,
   );
+  // Exported language: th.
+  $languages['th'] = array(
+    'language' => 'th',
+    'name' => 'Thai',
+    'native' => 'ภาษาไทย',
+    'direction' => 0,
+    'enabled' => 1,
+    'plurals' => 0,
+    'formula' => '',
+    'domain' => '',
+    'prefix' => 'th',
+    'weight' => 0,
+  );
   return $languages;
 }
