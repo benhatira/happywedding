@@ -262,6 +262,15 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'administer page manager'.
+  $permissions['administer page manager'] = array(
+    'name' => 'administer page manager',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'page_manager',
+  );
+
   // Exported permission: 'administer pane access'.
   $permissions['administer pane access'] = array(
     'name' => 'administer pane access',
@@ -452,6 +461,13 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create photo content'.
+  $permissions['create photo content'] = array(
+    'name' => 'create photo content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create url aliases'.
   $permissions['create url aliases'] = array(
     'name' => 'create url aliases',
@@ -489,6 +505,13 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any photo content'.
+  $permissions['delete any photo content'] = array(
+    'name' => 'delete any photo content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete own article content'.
   $permissions['delete own article content'] = array(
     'name' => 'delete own article content',
@@ -505,6 +528,13 @@ function happywedding_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own photo content'.
+  $permissions['delete own photo content'] = array(
+    'name' => 'delete own photo content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -543,6 +573,13 @@ function happywedding_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any photo content'.
+  $permissions['edit any photo content'] = array(
+    'name' => 'edit any photo content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -596,6 +633,13 @@ function happywedding_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own photo content'.
+  $permissions['edit own photo content'] = array(
+    'name' => 'edit own photo content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -810,6 +854,15 @@ function happywedding_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'panels',
+  );
+
+  // Exported permission: 'use page manager'.
+  $permissions['use page manager'] = array(
+    'name' => 'use page manager',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'page_manager',
   );
 
   // Exported permission: 'use panels caching features'.

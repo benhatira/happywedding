@@ -96,6 +96,7 @@
 -->
     <?php endif; ?>
     <header id="header" class="clearfix">
+<!--
       <div id="logo">
         <?php if ($logo): ?><div id="site-logo"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
           <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
@@ -104,6 +105,7 @@
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><span><?php print $site_name; ?></span></a>
         </h1>
       </div>
+-->
       <nav id="navigation" role="navigation">
         <div id="main-menu">
           <?php 
@@ -111,6 +113,16 @@
               $main_menu_tree = i18n_menu_translated_tree(variable_get('menu_main_links_source', 'main-menu'));
             } else {
               $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+            }
+            print drupal_render($main_menu_tree);
+          ?>
+        </div>
+        <div id="secondary-menu">
+          <?php 
+            if (module_exists('i18n_menu')) {
+              $main_menu_tree = i18n_menu_translated_tree('menu-secondary-menu');
+            } else {
+              $main_menu_tree = menu_tree('menu-secondary-menu');
             }
             print drupal_render($main_menu_tree);
           ?>

@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function happywedding_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "page_manager" && $api == "pages_default") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -29,6 +32,14 @@ function happywedding_node_info() {
       'name' => t('Tip'),
       'base' => 'node_content',
       'description' => t('Use <em>articles</em> for time-sensitive content like news, press releases or blog posts.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'photo' => array(
+      'name' => t('Photo'),
+      'base' => 'node_content',
+      'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
