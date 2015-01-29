@@ -19,7 +19,7 @@ MIT License - http://www.opensource.org/licenses/mit-license.php
 Enjoy!
 
 */
-
+/*note comment
 (function($) {
   $.uniform = {
     options: {
@@ -669,4 +669,4 @@ Enjoy!
       }
     });
   };
-})(jQuery);
+})(jQuery); note comment*/ 

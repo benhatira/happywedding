@@ -10,6 +10,52 @@
 function happywedding_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: main-menu_:gallery
+  $menu_links['main-menu_:gallery'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'gallery',
+    'router_path' => 'gallery',
+    'link_title' => 'แกลลอรี่',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_:gallery',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: main-menu_:home
+  $menu_links['main-menu_:home'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'home',
+    'router_path' => 'home',
+    'link_title' => 'หน้าแรก',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_:home',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: main-menu_gallery:gallery
   $menu_links['main-menu_gallery:gallery'] = array(
     'menu_name' => 'main-menu',
@@ -56,6 +102,259 @@ function happywedding_menu_default_menu_links() {
     'language' => 'en',
     'menu_links_customized' => 1,
   );
+  // Exported menu link: menu-secondary-menu_:accessory
+  $menu_links['menu-secondary-menu_:accessory'] = array(
+    'menu_name' => 'menu-secondary-menu',
+    'link_path' => 'accessory',
+    'router_path' => 'accessory',
+    'link_title' => 'เครื่องประดับ',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-secondary-menu_:accessory',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-secondary-menu_:beauty-health
+  $menu_links['menu-secondary-menu_:beauty-health'] = array(
+    'menu_name' => 'menu-secondary-menu',
+    'link_path' => 'beauty-health',
+    'router_path' => 'beauty-health',
+    'link_title' => 'สุขภาพ&ความงาม',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-secondary-menu_:beauty-health',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-secondary-menu_:dress
+  $menu_links['menu-secondary-menu_:dress'] = array(
+    'menu_name' => 'menu-secondary-menu',
+    'link_path' => 'dress',
+    'router_path' => 'dress',
+    'link_title' => 'ชุดแต่งงาน',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-secondary-menu_:dress',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-secondary-menu_:flower-deco
+  $menu_links['menu-secondary-menu_:flower-deco'] = array(
+    'menu_name' => 'menu-secondary-menu',
+    'link_path' => 'flower-deco',
+    'router_path' => 'flower-deco',
+    'link_title' => 'ดอกไม้&ตกแต่ง',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-secondary-menu_:flower-deco',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -42,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-secondary-menu_:food-dining
+  $menu_links['menu-secondary-menu_:food-dining'] = array(
+    'menu_name' => 'menu-secondary-menu',
+    'link_path' => 'food-dining',
+    'router_path' => 'food-dining',
+    'link_title' => 'อาหาร&ดินเนอร์',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-secondary-menu_:food-dining',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -43,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-secondary-menu_:gift
+  $menu_links['menu-secondary-menu_:gift'] = array(
+    'menu_name' => 'menu-secondary-menu',
+    'link_path' => 'gift',
+    'router_path' => 'gift',
+    'link_title' => 'ของขวัญ',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-secondary-menu_:gift',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -41,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-secondary-menu_:honeymoons-travel
+  $menu_links['menu-secondary-menu_:honeymoons-travel'] = array(
+    'menu_name' => 'menu-secondary-menu',
+    'link_path' => 'honeymoons-travel',
+    'router_path' => 'honeymoons-travel',
+    'link_title' => 'ฮันนีมูน&ท่องเที่ยว',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-secondary-menu_:honeymoons-travel',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -44,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-secondary-menu_:others
+  $menu_links['menu-secondary-menu_:others'] = array(
+    'menu_name' => 'menu-secondary-menu',
+    'link_path' => 'others',
+    'router_path' => 'others',
+    'link_title' => 'อื่นๆ',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-secondary-menu_:others',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -39,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-secondary-menu_:planning
+  $menu_links['menu-secondary-menu_:planning'] = array(
+    'menu_name' => 'menu-secondary-menu',
+    'link_path' => 'planning',
+    'router_path' => 'planning',
+    'link_title' => 'แพลนนิ่ง',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-secondary-menu_:planning',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-secondary-menu_:tips
+  $menu_links['menu-secondary-menu_:tips'] = array(
+    'menu_name' => 'menu-secondary-menu',
+    'link_path' => 'tips',
+    'router_path' => 'tips',
+    'link_title' => 'ทั้งหมด',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-secondary-menu_:tips',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: menu-secondary-menu_:venue
+  $menu_links['menu-secondary-menu_:venue'] = array(
+    'menu_name' => 'menu-secondary-menu',
+    'link_path' => 'venue',
+    'router_path' => 'venue',
+    'link_title' => 'สถานที่',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-secondary-menu_:venue',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: menu-secondary-menu_accessory:accessory
   $menu_links['menu-secondary-menu_accessory:accessory'] = array(
     'menu_name' => 'menu-secondary-menu',
@@ -74,7 +373,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 3,
+    'weight' => -36,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -97,7 +396,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 50,
+    'weight' => -28,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -120,7 +419,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 4,
+    'weight' => -35,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -143,7 +442,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 2,
+    'weight' => -37,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -166,7 +465,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 7,
+    'weight' => -32,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -189,7 +488,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 6,
+    'weight' => -33,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -212,7 +511,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 8,
+    'weight' => -31,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -235,7 +534,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 5,
+    'weight' => -34,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -258,7 +557,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 9,
+    'weight' => -29,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -281,7 +580,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -50,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -304,7 +603,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 8,
+    'weight' => -30,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -327,7 +626,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 1,
+    'weight' => -38,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -348,6 +647,19 @@ function happywedding_menu_default_menu_links() {
   t('PLANNING');
   t('REGISTRY');
   t('VENUE');
+  t('ของขวัญ');
+  t('ชุดแต่งงาน');
+  t('ดอกไม้&ตกแต่ง');
+  t('ทั้งหมด');
+  t('สถานที่');
+  t('สุขภาพ&ความงาม');
+  t('หน้าแรก');
+  t('อาหาร&ดินเนอร์');
+  t('อื่นๆ');
+  t('ฮันนีมูน&ท่องเที่ยว');
+  t('เครื่องประดับ');
+  t('แกลลอรี่');
+  t('แพลนนิ่ง');
 
 
   return $menu_links;
