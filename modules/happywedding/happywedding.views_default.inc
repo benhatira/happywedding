@@ -160,9 +160,9 @@ function happywedding_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="shadow"></div>';
-  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="[path]"><div class="shadow"></div></a>';
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -490,7 +490,7 @@ function happywedding_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Path'),
-    t('<div class="shadow"></div>'),
+    t('<a href="[path]"><div class="shadow"></div></a>'),
     t('Block'),
     t('Suppage Tips Default'),
     t('Planning'),

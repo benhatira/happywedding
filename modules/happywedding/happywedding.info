@@ -42,6 +42,7 @@ dependencies[] = system
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = title
+dependencies[] = token
 dependencies[] = toolbar
 dependencies[] = translation
 dependencies[] = user
