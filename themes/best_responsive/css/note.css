@@ -57,9 +57,10 @@ body a:hover {
   display: inline-block;
   position: relative;
 }
-.views-responsive-grid .views-column  img{
+.views-responsive-grid .views-column .views-field-field-image img{
   width: 230px;
   height: 230px;
+  display: block;
 
 }
 .views-responsive-grid .views-column .shadow{
@@ -82,6 +83,7 @@ body a:hover {
 .views-responsive-grid .views-column:hover .views-field-title a{
   color: #666;
 }
+
 .views-responsive-grid .views-column .views-field-title {
   display: block;
   position: absolute;
