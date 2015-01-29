@@ -1,3 +1,4 @@
+#wrap{width:1024px;}
 #navigation{
   position: relative;
   height: 80px;
@@ -29,11 +30,16 @@
 }
 #navigation #secondary-menu ul>li>a{
   color: #eaeaea;
-  padding: 5px 9px 5px 8px;
+  padding: 5px 12px 5px 8px;
   font-weight: bold;
   display: block;
   font-size: 11px;
 }
-#navigation #secondary-menu ul>li>a:hover{
+
+#navigation #secondary-menu ul>li>a:hover, #navigation #secondary-menu ul>li>a.active-trail{
   color: #fff;
+}
+
+.panel-2col-stacked .panel-col-first{
+  width:75%;
 }
