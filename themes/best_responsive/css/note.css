@@ -99,3 +99,8 @@ body a:hover {
   color : white;
   transition:color ease-out 0.3s;
 }
+
+.page-node #content-wrap .field-name-field-image img{
+  display:block;
+  margin:auto;
+}
