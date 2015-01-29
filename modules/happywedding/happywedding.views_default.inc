@@ -124,11 +124,13 @@ function happywedding_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
-  $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['row_plugin'] = 'panels_fields';
-  $handler->display->display_options['row_options']['layout'] = 'threecol_33_34_33_stacked';
-  $handler->display->display_options['row_options']['regions'] = array(
-    'title' => 'left',
+  $handler->display->display_options['style_plugin'] = 'responsive_grid';
+  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['style_options']['wrapper_classes'] = 'subpage-tips';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'title' => 'title',
+    'field_image' => 'field_image',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -148,6 +150,20 @@ function happywedding_views_default_views() {
     'image_style' => 'tips_thumbnail',
     'image_link' => 'content',
   );
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="shadow"></div>';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -473,6 +489,8 @@ function happywedding_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Path'),
+    t('<div class="shadow"></div>'),
     t('Block'),
     t('Suppage Tips Default'),
     t('Planning'),

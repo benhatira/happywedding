@@ -116,6 +116,15 @@ function happywedding_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'access statistics'.
+  $permissions['access statistics'] = array(
+    'name' => 'access statistics',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'statistics',
+  );
+
   // Exported permission: 'access toolbar'.
   $permissions['access toolbar'] = array(
     'name' => 'access toolbar',
@@ -350,6 +359,15 @@ function happywedding_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'administer statistics'.
+  $permissions['administer statistics'] = array(
+    'name' => 'administer statistics',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'statistics',
   );
 
   // Exported permission: 'administer taxonomy'.
@@ -939,6 +957,15 @@ function happywedding_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'panels',
+  );
+
+  // Exported permission: 'view post access counter'.
+  $permissions['view post access counter'] = array(
+    'name' => 'view post access counter',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'statistics',
   );
 
   // Exported permission: 'view revisions'.

@@ -53,13 +53,6 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-body a {
-  color: #e73420;
-}
-body a:hover {
-  text-decoration: none;
-  color: #e73420;
-}
 
 /*set max img width*/
 img {
@@ -1143,7 +1136,7 @@ ol.search-results { padding-left: 0; }
   color: #100100;
   padding: 4px 5px;
   border-radius: 4px;
-  text-shadow: 1px 1px #fff;
+  /*text-shadow: 1px 1px #fff;*/
   font-weight: normal;
 }
 
@@ -1376,7 +1369,7 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
   background: #cfcfcf;
   border-radius: 3px;
   margin-right: 4px;
-  text-shadow: 1px 1px #fff;
+  /*text-shadow: 1px 1px #fff;*/
 }
 
 /*-------------------------------------------*

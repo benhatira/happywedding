@@ -1,3 +1,10 @@
+body a {
+  color: #999;
+}
+body a:hover {
+  text-decoration: none;
+  color: #fff;
+}
 #wrap{width:1024px;}
 #navigation{
   position: relative;
@@ -42,4 +49,53 @@
 
 .panel-2col-stacked .panel-col-first{
   width:75%;
+}
+
+.views-responsive-grid .views-column  {
+  width: 32%;
+  margin : 3px 5px 8px 0;
+  display: inline-block;
+  position: relative;
+}
+.views-responsive-grid .views-column  img{
+  width: 230px;
+  height: 230px;
+
+}
+.views-responsive-grid .views-column .shadow{
+  position: absolute;
+  top:0;left:0;right:0;
+  bottom:0;
+  background: rgba(0,0,0,0.7);
+  visibility:hidden;
+  opacity:0;
+  transition:visibility 0s linear 0.3s,opacity 0.3s ease-in-out;
+}
+.views-responsive-grid .views-column:hover .shadow{
+  visibility:visible;
+  opacity:1;
+  transition-delay:0s;
+}
+.views-responsive-grid .views-column:hover .views-field-title{
+  background-color: rgba(220,220,220,1);
+}
+.views-responsive-grid .views-column:hover .views-field-title a{
+  color: #666;
+}
+.views-responsive-grid .views-column .views-field-title {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2px 10px;
+  height: 30px;
+  z-index: 1;
+  background-color: rgba(160,160,160,0.6);
+  font-weight: 700;
+  transition:background-color ease-in-out 0.3s;
+}
+.views-responsive-grid .views-column .views-field-title a{
+  color : white;
+  transition:color ease-out 0.3s;
 }

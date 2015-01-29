@@ -32,7 +32,7 @@ function happywedding_image_default_styles() {
   // Exported image style: tips_thumbnail.
   $styles['tips_thumbnail'] = array(
     'name' => 'tips_thumbnail',
-    'label' => 'Tip Thumbnail (210x210)',
+    'label' => 'Tip Thumbnail (230x230)',
     'effects' => array(
       1 => array(
         'label' => 'Scale and crop',
@@ -44,8 +44,8 @@ function happywedding_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 210,
-          'height' => 210,
+          'width' => 230,
+          'height' => 230,
         ),
         'weight' => 1,
       ),
