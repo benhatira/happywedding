@@ -1016,6 +1016,13 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_vendor_pattern';
+  $strongarm->value = 'vendors/[node:nid]/[node:title]';
+  $export['pathauto_node_vendor_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'statistics_count_content_views';
   $strongarm->value = 1;
   $export['statistics_count_content_views'] = $strongarm;
@@ -1033,6 +1040,51 @@ function happywedding_strongarm() {
   $strongarm->name = 'theme_default';
   $strongarm->value = 'best_responsive';
   $export['theme_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'webmaster_menu_add_home';
+  $strongarm->value = 1;
+  $export['webmaster_menu_add_home'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'webmaster_menu_add_logout';
+  $strongarm->value = 1;
+  $export['webmaster_menu_add_logout'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'webmaster_menu_extra_menu';
+  $strongarm->value = '_no_menu';
+  $export['webmaster_menu_extra_menu'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'webmaster_menu_home_menu';
+  $strongarm->value = '_no_menu';
+  $export['webmaster_menu_home_menu'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'webmaster_menu_menu';
+  $strongarm->value = 'navigation';
+  $export['webmaster_menu_menu'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'webmaster_menu_roles';
+  $strongarm->value = array(
+    0 => 4,
+    1 => 5,
+  );
+  $export['webmaster_menu_roles'] = $strongarm;
 
   return $export;
 }
