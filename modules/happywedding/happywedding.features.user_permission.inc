@@ -56,7 +56,6 @@ function happywedding_user_default_permissions() {
     'name' => 'access content overview',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -93,7 +92,6 @@ function happywedding_user_default_permissions() {
     'name' => 'access overlay',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'overlay',
   );
@@ -130,7 +128,6 @@ function happywedding_user_default_permissions() {
     'name' => 'access toolbar',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'toolbar',
   );
@@ -266,7 +263,6 @@ function happywedding_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -415,6 +411,15 @@ function happywedding_user_default_permissions() {
     'module' => 'views',
   );
 
+  // Exported permission: 'administer webmaster menu'.
+  $permissions['administer webmaster menu'] = array(
+    'name' => 'administer webmaster menu',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webmaster_menu',
+  );
+
   // Exported permission: 'block IP addresses'.
   $permissions['block IP addresses'] = array(
     'name' => 'block IP addresses',
@@ -495,6 +500,15 @@ function happywedding_user_default_permissions() {
     'module' => 'path',
   );
 
+  // Exported permission: 'create vendor content'.
+  $permissions['create vendor content'] = array(
+    'name' => 'create vendor content',
+    'roles' => array(
+      'operator' => 'operator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'customize shortcut links'.
   $permissions['customize shortcut links'] = array(
     'name' => 'customize shortcut links',
@@ -530,6 +544,15 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any vendor content'.
+  $permissions['delete any vendor content'] = array(
+    'name' => 'delete any vendor content',
+    'roles' => array(
+      'operator' => 'operator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete own article content'.
   $permissions['delete own article content'] = array(
     'name' => 'delete own article content',
@@ -556,12 +579,22 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete own vendor content'.
+  $permissions['delete own vendor content'] = array(
+    'name' => 'delete own vendor content',
+    'roles' => array(
+      'operator' => 'operator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete revisions'.
   $permissions['delete revisions'] = array(
     'name' => 'delete revisions',
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'operator' => 'operator',
     ),
     'module' => 'node',
   );
@@ -601,11 +634,21 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any vendor content'.
+  $permissions['edit any vendor content'] = array(
+    'name' => 'edit any vendor content',
+    'roles' => array(
+      'operator' => 'operator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit node original values'.
   $permissions['edit node original values'] = array(
     'name' => 'edit node original values',
     'roles' => array(
       'editor' => 'editor',
+      'operator' => 'operator',
     ),
     'module' => 'entity_translation',
   );
@@ -622,6 +665,7 @@ function happywedding_user_default_permissions() {
     'name' => 'edit original values',
     'roles' => array(
       'editor' => 'editor',
+      'operator' => 'operator',
     ),
     'module' => 'entity_translation',
   );
@@ -661,6 +705,15 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit own vendor content'.
+  $permissions['edit own vendor content'] = array(
+    'name' => 'edit own vendor content',
+    'roles' => array(
+      'operator' => 'operator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit terms in tags'.
   $permissions['edit terms in tags'] = array(
     'name' => 'edit terms in tags',
@@ -675,6 +728,7 @@ function happywedding_user_default_permissions() {
     'name' => 'edit translation shared fields',
     'roles' => array(
       'editor' => 'editor',
+      'operator' => 'operator',
     ),
     'module' => 'entity_translation',
   );
@@ -740,6 +794,7 @@ function happywedding_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'operator' => 'operator',
     ),
     'module' => 'node',
   );
@@ -770,6 +825,17 @@ function happywedding_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'comment',
+  );
+
+  // Exported permission: 'submit latitude/longitude'.
+  $permissions['submit latitude/longitude'] = array(
+    'name' => 'submit latitude/longitude',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'operator' => 'operator',
+    ),
+    'module' => 'location',
   );
 
   // Exported permission: 'switch shortcut sets'.
@@ -814,6 +880,7 @@ function happywedding_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'operator' => 'operator',
     ),
     'module' => 'entity_translation',
   );
@@ -824,6 +891,7 @@ function happywedding_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'operator' => 'operator',
     ),
     'module' => 'translation',
   );
@@ -843,6 +911,7 @@ function happywedding_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'operator' => 'operator',
     ),
     'module' => 'entity_translation',
   );
@@ -927,6 +996,7 @@ function happywedding_user_default_permissions() {
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
       'editor' => 'editor',
+      'operator' => 'operator',
     ),
     'module' => 'filter',
   );
@@ -940,12 +1010,41 @@ function happywedding_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'view location directory'.
+  $permissions['view location directory'] = array(
+    'name' => 'view location directory',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'location',
+  );
+
+  // Exported permission: 'view node location table'.
+  $permissions['view node location table'] = array(
+    'name' => 'view node location table',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'location',
+  );
+
+  // Exported permission: 'view node map'.
+  $permissions['view node map'] = array(
+    'name' => 'view node map',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'operator' => 'operator',
+    ),
+    'module' => 'gmap_location',
+  );
+
   // Exported permission: 'view own unpublished content'.
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'operator' => 'operator',
     ),
     'module' => 'node',
   );
@@ -974,6 +1073,7 @@ function happywedding_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'operator' => 'operator',
     ),
     'module' => 'node',
   );
@@ -984,8 +1084,36 @@ function happywedding_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'operator' => 'operator',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'view user location details'.
+  $permissions['view user location details'] = array(
+    'name' => 'view user location details',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'gmap_location',
+  );
+
+  // Exported permission: 'view user location table'.
+  $permissions['view user location table'] = array(
+    'name' => 'view user location table',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'location',
+  );
+
+  // Exported permission: 'view user map'.
+  $permissions['view user map'] = array(
+    'name' => 'view user map',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'gmap_location',
   );
 
   return $permissions;

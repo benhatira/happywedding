@@ -22,5 +22,11 @@ function happywedding_user_default_roles() {
     'weight' => 3,
   );
 
+  // Exported role: operator.
+  $roles['operator'] = array(
+    'name' => 'operator',
+    'weight' => 4,
+  );
+
   return $roles;
 }
