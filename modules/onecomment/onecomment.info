@@ -1,0 +1,12 @@
+name = Onecomment
+description = Restrict comments to one per user per node.
+core = 7.x
+
+dependencies[] = "comment"
+
+; Information added by Drupal.org packaging script on 2014-09-16
+version = "7.x-1.0-beta2+5-dev"
+core = "7.x"
+project = "onecomment"
+datestamp = "1410872354"
+

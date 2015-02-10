@@ -11,6 +11,9 @@ function happywedding_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
+  if ($module == "panels_mini" && $api == "panels_default") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -24,10 +27,99 @@ function happywedding_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_flag_default_flags().
+ */
+function happywedding_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "Bookmark".
+  $flags['bookmark'] = array(
+    'entity_type' => 'node',
+    'title' => 'Bookmark',
+    'global' => 0,
+    'types' => array(),
+    'flag_short' => 'Save',
+    'flag_long' => 'Save this to view it later',
+    'flag_message' => 'Saved',
+    'unflag_short' => 'Unsave',
+    'unflag_long' => '',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'show_in_links' => array(
+      'full' => 'full',
+      'teaser' => 0,
+      'rss' => 0,
+      'search_index' => 0,
+      'search_result' => 0,
+      'token' => 0,
+    ),
+    'show_as_field' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => 0,
+    'i18n' => 0,
+    'module' => 'happywedding',
+    'locked' => array(
+      0 => 'name',
+    ),
+    'api_version' => 3,
+  );
+  return $flags;
+
+}
+
+/**
  * Implements hook_image_default_styles().
  */
 function happywedding_image_default_styles() {
   $styles = array();
+
+  // Exported image style: gallery_photo.
+  $styles['gallery_photo'] = array(
+    'name' => 'gallery_photo',
+    'label' => 'Gallery Photo (170x170)',
+    'effects' => array(
+      2 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 170,
+          'height' => 170,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: sidebar__70x70_.
+  $styles['sidebar__70x70_'] = array(
+    'name' => 'sidebar__70x70_',
+    'label' => 'Sidebar (70x70)',
+    'effects' => array(
+      4 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 70,
+          'height' => 70,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
 
   // Exported image style: tips_thumbnail.
   $styles['tips_thumbnail'] = array(
@@ -52,6 +144,29 @@ function happywedding_image_default_styles() {
     ),
   );
 
+  // Exported image style: vendor_thumbnail.
+  $styles['vendor_thumbnail'] = array(
+    'name' => 'vendor_thumbnail',
+    'label' => 'Vendor thumbnail (220x130)',
+    'effects' => array(
+      3 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 220,
+          'height' => 130,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }
 
@@ -70,6 +185,14 @@ function happywedding_node_info() {
     ),
     'photo' => array(
       'name' => t('Photo'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'product' => array(
+      'name' => t('Product'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

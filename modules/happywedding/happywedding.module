@@ -5,3 +5,118 @@
  */
 
 include_once 'happywedding.features.inc';
+include_once 'happywedding.menu.inc';
+include_once 'happywedding.import.inc';
+include_once 'happywedding.node.inc';
+
+function happywedding_init() {
+  // Do not load modal_forms during the Drupal installation process, e.g. if part
+  // of installation profiles.
+  if (!drupal_installation_attempted()) {
+    _happywedding_doheader();
+
+  }
+}
+
+/**
+ * Loads the various js and css files.
+ */
+
+function _happywedding_doheader() {
+  static $already_added = FALSE;
+  if ($already_added) {
+    return; // Don't add the JavaScript and CSS multiple times.
+  }
+  $path = drupal_get_path('module', 'happywedding');
+  drupal_add_js($path . '/js/happywedding_categories.js', array('weight' => -20));
+//  if (!_happywedding_active()) {
+//    return; // Don't add the JavaScript and CSS on specified paths.
+//  }
+//
+//  // Include the CTools tools that we need.
+//  ctools_include('ajax');
+//  ctools_include('modal');
+//
+//  // Add CTools' javascript to the page.
+//  ctools_modal_add_js();
+//
+//  $throbber = theme('image', array('path' => ctools_image_path('loading_animation.gif', 'happywedding'), 'alt' => t('Loading...'), 'title' => t('Loading')));
+//  $js_settings = array(
+//    'modal-popup-small' => array(
+//      'modalSize' => array(
+//        'type' => variable_get('happywedding_popup_small_type', 'fixed'),
+//        'width' => floatval(variable_get('happywedding_popup_small_width', 300)),
+//        'height' => floatval(variable_get('happywedding_popup_small_height', 300)),
+//      ),
+//      'modalOptions' => array(
+//        'opacity' => floatval(variable_get('happywedding_opacity', 0.85)),
+//        'background' => variable_get('happywedding_background_color', '#000'),
+//      ),
+//      'animation' => 'fadeIn',
+//      'modalTheme' => 'ModalFormsPopup',
+//      'throbber' => $throbber,
+//      'closeText' => t('Close'),
+//    ),
+//    'modal-popup-medium' => array(
+//      'modalSize' => array(
+//        'type' => variable_get('happywedding_popup_medium_type', 'fixed'),
+//        'width' => floatval(variable_get('happywedding_popup_medium_width', 550)),
+//        'height' => floatval(variable_get('happywedding_popup_medium_height', 450)),
+//      ),
+//      'modalOptions' => array(
+//        'opacity' => floatval(variable_get('happywedding_opacity', 0.85)),
+//        'background' => variable_get('modal_forms_background_color', '#000'),
+//      ),
+//      'animation' => 'fadeIn',
+//      'modalTheme' => 'ModalFormsPopup',
+//      'throbber' => $throbber,
+//      'closeText' => t('Close'),
+//    ),
+//    'modal-popup-large' => array(
+//      'modalSize' => array(
+//        'type' => variable_get('modal_forms_popup_large_type', 'scale'),
+//        'width' => floatval(variable_get('modal_forms_popup_large_width', 0.8)),
+//        'height' => floatval(variable_get('modal_forms_popup_large_height', 0.8)),
+//      ),
+//      'modalOptions' => array(
+//        'opacity' => floatval(variable_get('modal_forms_opacity', 0.85)),
+//        'background' => variable_get('modal_forms_background_color', '#000'),
+//      ),
+//      'animation' => 'fadeIn',
+//      'modalTheme' => 'ModalFormsPopup',
+//      'throbber' => $throbber,
+//      'closeText' => t('Close'),
+//    ),
+//  );
+//
+//  drupal_add_js($js_settings, 'setting');
+//
+//  // Add modal_forms own js and CSS.
+//  ctools_add_css('modal_forms_popup', 'modal_forms');
+//  ctools_add_js('modal_forms_popup', 'modal_forms');
+//
+//  $path = drupal_get_path('module', 'modal_forms');
+//
+//  // Automatically rewrite selected links to open in a modal.
+//  if ($GLOBALS['user']->uid == 0) {
+//    if (variable_get('modal_forms_login', 0)) {
+//      drupal_add_js($path . '/js/modal_forms_login.js', array('weight' => -20));
+//    }
+//    if (variable_get('modal_forms_register', 0)) {
+//      drupal_add_js($path . '/js/modal_forms_register.js', array('weight' => -20));
+//    }
+//    if (variable_get('modal_forms_password', 0)) {
+//      drupal_add_js($path . '/js/modal_forms_password.js', array('weight' => -20));
+//    }
+//  }
+//
+//  if (variable_get('modal_forms_contact', 0)) {
+//    drupal_add_js($path . '/js/modal_forms_contact.js', array('weight' => -20));
+//  }
+//
+//  if (user_access('post comments') && variable_get('modal_forms_comment', 0)) {
+//    drupal_add_js($path . '/js/modal_forms_comment.js', array('weight' => -20));
+//  }
+
+  $already_added = TRUE;
+}
