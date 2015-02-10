@@ -247,7 +247,7 @@ function _happywedding_vendor_ref_form_alter(&$form) {
     
     //foreach($form['field_product_category']['und']['#options'] as $i => $value){ //9 => Planner
     $cur_terms = $form['field_'.$type.'_category']['und']['#options'];
-    $new_terms = [];
+    $new_terms = array();
       foreach($vendor->field_vendor_tags['und'] as $j => $term) { // 0 => { tid : 9}
         $tid = $term['tid'];
         if(array_key_exists( $tid, $cur_terms )) {

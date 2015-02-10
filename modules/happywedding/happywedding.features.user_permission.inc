@@ -716,13 +716,6 @@ function happywedding_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'delete terms in ceremony_styles'.
-  $permissions['delete terms in ceremony_styles'] = array(
-    'name' => 'delete terms in ceremony_styles',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'delete terms in forums'.
   $permissions['delete terms in forums'] = array(
     'name' => 'delete terms in forums',
@@ -884,13 +877,6 @@ function happywedding_user_default_permissions() {
   // Exported permission: 'edit terms in categories'.
   $permissions['edit terms in categories'] = array(
     'name' => 'edit terms in categories',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in ceremony_styles'.
-  $permissions['edit terms in ceremony_styles'] = array(
-    'name' => 'edit terms in ceremony_styles',
     'roles' => array(),
     'module' => 'taxonomy',
   );
