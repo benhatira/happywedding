@@ -221,6 +221,20 @@ a.write-review{
 .views-exposed-form{
   overflow:hidden;overflow-x:scroll;
 }
+.view-id-vendors_block .views-exposed-form{
+  display:none;
+}
+#search-vendors{
+  padding-bottom: 10px;
+}
+#search-vendors .form-submit{
+  display:none;
+
+}
+#search-vendors .subcategories{
+  float:left;
+  padding-right:10px;
+}
 .bef-select-as-links{
   width:700px;height:25px;
 }
@@ -230,3 +244,8 @@ a.write-review{
   width: 68px;
   text-align: center;
 }
+
+/*fixed galleria
+.galleria-stage { 
+  height:450px;
+} */

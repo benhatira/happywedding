@@ -11,6 +11,28 @@ function happywedding_uuid_features_default_terms() {
   $terms = array();
 
   $terms[] = array(
+    'name' => 'Others',
+    'description' => '',
+    'format' => 'filtered_html',
+    'weight' => 11,
+    'uuid' => '10b9d27c-d5eb-4564-b439-fc2bd2c18a34',
+    'vocabulary_machine_name' => 'categories',
+    'parent' => array(
+      0 => '3ca558b7-957d-4ca6-a399-6069a4b952ac',
+    ),
+  );
+  $terms[] = array(
+    'name' => 'Bridesmaid Dress',
+    'description' => '',
+    'format' => 'filtered_html',
+    'weight' => 1,
+    'uuid' => '147dafd8-732b-4738-923b-48b4b535e9ee',
+    'vocabulary_machine_name' => 'categories',
+    'parent' => array(
+      0 => '16bb6d66-60eb-4c2d-a1a0-cfae423fffac',
+    ),
+  );
+  $terms[] = array(
     'name' => 'Dress',
     'description' => '',
     'format' => 'filtered_html',
@@ -25,9 +47,20 @@ function happywedding_uuid_features_default_terms() {
     'name' => 'Beauty',
     'description' => '',
     'format' => 'filtered_html',
-    'weight' => 41,
+    'weight' => 49,
     'uuid' => '1717e9ae-69ed-44f5-8a03-9c8fa589efff',
     'vocabulary_machine_name' => 'categories',
+  );
+  $terms[] = array(
+    'name' => 'Wedding Dress',
+    'description' => '',
+    'format' => 'plain_text',
+    'weight' => 0,
+    'uuid' => '1b39e96b-daec-49ce-b233-9e482f2f43ec',
+    'vocabulary_machine_name' => 'categories',
+    'parent' => array(
+      0 => '16bb6d66-60eb-4c2d-a1a0-cfae423fffac',
+    ),
   );
   $terms[] = array(
     'name' => 'Mc',
@@ -74,6 +107,17 @@ function happywedding_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
+    'name' => 'Engagement Ring',
+    'description' => '',
+    'format' => 'filtered_html',
+    'weight' => 1,
+    'uuid' => '3146199a-a2e7-4a79-9244-4fb4b01ee6de',
+    'vocabulary_machine_name' => 'categories',
+    'parent' => array(
+      0 => 'c3618dd7-1a2c-4b71-858a-f8fa4142c1d2',
+    ),
+  );
+  $terms[] = array(
     'name' => 'Western',
     'description' => '',
     'format' => 'filtered_html',
@@ -88,7 +132,7 @@ function happywedding_uuid_features_default_terms() {
     'name' => 'Others',
     'description' => '',
     'format' => 'filtered_html',
-    'weight' => 44,
+    'weight' => 52,
     'uuid' => '3ca558b7-957d-4ca6-a399-6069a4b952ac',
     'vocabulary_machine_name' => 'categories',
   );
@@ -115,7 +159,7 @@ function happywedding_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'Live band',
+    'name' => 'Live Band',
     'description' => '',
     'format' => 'filtered_html',
     'weight' => 2,
@@ -148,10 +192,29 @@ function happywedding_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
+    'name' => 'venur',
+    'description' => NULL,
+    'format' => NULL,
+    'weight' => 0,
+    'uuid' => '4a505468-8f75-4674-a1ce-9d24559d2f61',
+    'vocabulary_machine_name' => 'tags',
+  );
+  $terms[] = array(
+    'name' => 'Groom Attire',
+    'description' => '',
+    'format' => 'filtered_html',
+    'weight' => 3,
+    'uuid' => '4c3139ab-2c85-4143-9b59-9e6baa709ebc',
+    'vocabulary_machine_name' => 'categories',
+    'parent' => array(
+      0 => '16bb6d66-60eb-4c2d-a1a0-cfae423fffac',
+    ),
+  );
+  $terms[] = array(
     'name' => 'Venue',
     'description' => '',
     'format' => 'filtered_html',
-    'weight' => 39,
+    'weight' => 47,
     'uuid' => '5124a101-7e93-4888-8238-9a32a64e2603',
     'vocabulary_machine_name' => 'categories',
   );
@@ -167,7 +230,7 @@ function happywedding_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'Convention center',
+    'name' => 'Convention Center',
     'description' => '',
     'format' => 'filtered_html',
     'weight' => 1,
@@ -200,6 +263,17 @@ function happywedding_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
+    'name' => 'Mother Of The Bride Dress',
+    'description' => '',
+    'format' => 'filtered_html',
+    'weight' => 2,
+    'uuid' => '68c403bb-de21-4e35-9ace-004157506772',
+    'vocabulary_machine_name' => 'categories',
+    'parent' => array(
+      0 => '16bb6d66-60eb-4c2d-a1a0-cfae423fffac',
+    ),
+  );
+  $terms[] = array(
     'name' => 'Others',
     'description' => '',
     'format' => 'filtered_html',
@@ -222,7 +296,7 @@ function happywedding_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'Car rental',
+    'name' => 'Car Rental',
     'description' => '',
     'format' => 'filtered_html',
     'weight' => 6,
@@ -304,9 +378,17 @@ function happywedding_uuid_features_default_terms() {
     'name' => 'Fashion',
     'description' => '',
     'format' => 'filtered_html',
-    'weight' => 40,
+    'weight' => 48,
     'uuid' => '985dece2-0d03-41c2-8c32-f5084184944c',
     'vocabulary_machine_name' => 'categories',
+  );
+  $terms[] = array(
+    'name' => 'asd',
+    'description' => NULL,
+    'format' => NULL,
+    'weight' => 0,
+    'uuid' => '98c623a4-1fe1-4303-b59e-f6d8a0e101d9',
+    'vocabulary_machine_name' => 'tags',
   );
   $terms[] = array(
     'name' => 'Makeup',
@@ -334,7 +416,7 @@ function happywedding_uuid_features_default_terms() {
     'name' => 'Planner',
     'description' => '',
     'format' => 'filtered_html',
-    'weight' => 38,
+    'weight' => 46,
     'uuid' => '9e90c3a8-6758-4812-bbb7-f9c87be1ecd7',
     'vocabulary_machine_name' => 'categories',
   );
@@ -353,7 +435,7 @@ function happywedding_uuid_features_default_terms() {
     'name' => 'Honeymoon',
     'description' => '',
     'format' => 'filtered_html',
-    'weight' => 43,
+    'weight' => 51,
     'uuid' => 'ab12cfeb-9c2f-4598-b2b7-16ffa619635f',
     'vocabulary_machine_name' => 'categories',
   );
@@ -361,7 +443,7 @@ function happywedding_uuid_features_default_terms() {
     'name' => 'Others',
     'description' => '',
     'format' => 'filtered_html',
-    'weight' => 3,
+    'weight' => 4,
     'uuid' => 'ac18edfe-9256-4dd0-95f2-160e56485c77',
     'vocabulary_machine_name' => 'categories',
     'parent' => array(
@@ -413,7 +495,7 @@ function happywedding_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'Ring&Jewelry',
+    'name' => 'Ring',
     'description' => '',
     'format' => 'filtered_html',
     'weight' => 1,
@@ -454,6 +536,17 @@ function happywedding_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'tags',
   );
   $terms[] = array(
+    'name' => 'Wedding Ring',
+    'description' => '',
+    'format' => 'filtered_html',
+    'weight' => 0,
+    'uuid' => 'caada175-d26e-4ddb-9ec8-52427e9d73ce',
+    'vocabulary_machine_name' => 'categories',
+    'parent' => array(
+      0 => 'c3618dd7-1a2c-4b71-858a-f8fa4142c1d2',
+    ),
+  );
+  $terms[] = array(
     'name' => 'Asia',
     'description' => '',
     'format' => 'filtered_html',
@@ -473,11 +566,30 @@ function happywedding_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'tags',
   );
   $terms[] = array(
+    'name' => 'USA',
+    'description' => '',
+    'format' => 'filtered_html',
+    'weight' => 3,
+    'uuid' => 'e04a9de3-eabc-45f6-8b8a-a026bce08e3d',
+    'vocabulary_machine_name' => 'categories',
+    'parent' => array(
+      0 => 'ab12cfeb-9c2f-4598-b2b7-16ffa619635f',
+    ),
+  );
+  $terms[] = array(
     'name' => 't',
     'description' => NULL,
     'format' => NULL,
     'weight' => 0,
     'uuid' => 'e2748187-edea-4c63-8386-f2755080fff7',
+    'vocabulary_machine_name' => 'tags',
+  );
+  $terms[] = array(
+    'name' => 'Good morning',
+    'description' => NULL,
+    'format' => NULL,
+    'weight' => 0,
+    'uuid' => 'e567aa00-9737-4376-93e9-c8e107c9e7eb',
     'vocabulary_machine_name' => 'tags',
   );
   $terms[] = array(
@@ -506,12 +618,12 @@ function happywedding_uuid_features_default_terms() {
     'name' => 'Catering',
     'description' => '',
     'format' => 'filtered_html',
-    'weight' => 42,
+    'weight' => 50,
     'uuid' => 'f27ad6d5-3ffb-41e9-a03d-db4698b3a621',
     'vocabulary_machine_name' => 'categories',
   );
   $terms[] = array(
-    'name' => 'Thai',
+    'name' => 'Thailand',
     'description' => '',
     'format' => 'filtered_html',
     'weight' => 0,

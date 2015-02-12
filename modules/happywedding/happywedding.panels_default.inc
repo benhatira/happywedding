@@ -107,7 +107,13 @@ echo _happywedding_render_vendors_navigation();
       'format' => 'php_code',
       'substitute' => TRUE,
     );
-    $pane->cache = array();
+    $pane->cache = array(
+      'method' => 'simple',
+      'settings' => array(
+        'lifetime' => '300',
+        'granularity' => 'context',
+      ),
+    );
     $pane->style = array(
       'settings' => NULL,
     );

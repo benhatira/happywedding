@@ -10,24 +10,56 @@ Drupal.behaviors.happywedding = {
         if($(item).is(':checked') ){
           $("#edit-field-vendor-category-und-" + (i+1)).prop("checked",true) 
         } else {
-          var id = $(item).attr('id');
-          $("input[id^="+id+"]").prop("checked",false);
           $("#edit-field-vendor-category-und-" + (i+1)).prop("checked",false)  
         } 
       });
     });
     //console.log("happywedding active");
+    $("input[id^=edit-field-vendor-tags]").on('change', function(item){
+      var $this = $(this);
+      //console.log($this, $(item))
+      if(!$this.is(':checked') ){
+        //console.log(' check the ' + $this.id);
+        $("input[id^=" + $this.attr("id") + "]").prop("checked", false);
+      }
+        
+    
+    });
+    
     
     $("input[id^=edit-field-vendor-tags][id*=children]").on('change', function(){
       //edit-field-vendor-tags-und-0-9-9-children-18-18
       var id = $(this).attr('id');
-      var parentId = id.replace(/-children.*/, '');
-      //console.log("parent = " + parentId); 
+      console.log(id);
+      var parentId = id.replace(/(.*)-children.+$/, "$1")
+      console.log("parent = " + parentId); 
       if($(this).is(':checked') ){
         $("input[id="+parentId+"]").prop("checked",true).trigger("change");
+        if(parentId.match(/children/)) {
+          var superParentId = parentId.replace(/(.*)-children.+$/, "$1")
+          $("input[id="+superParentId+"]").prop("checked",true).trigger("change");
+        }
       }
     });
+    
+    //search vendors   auto post
+    $('.view-id-vendors_block .views-exposed-form').remove();
+    $('#search-vendors select').change(function(){
+      $('#search-vendors').submit();
+    });
+    
+    
+    var category = $('#edit-category').val();
+    $('a.gallery-detail').each(function(i, item){
+      item.href = item.href + '&category=' + category;
+      
+    });
   }
-};
+}
+
+
+  
+
+  
 
 })(jQuery);

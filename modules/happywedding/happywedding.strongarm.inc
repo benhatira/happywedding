@@ -34,6 +34,13 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_news';
+  $strongarm->value = 0;
+  $export['comment_anonymous_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_photo';
   $strongarm->value = 0;
   $export['comment_anonymous_photo'] = $strongarm;
@@ -69,6 +76,13 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_news';
+  $strongarm->value = 1;
+  $export['comment_default_mode_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_photo';
   $strongarm->value = 1;
   $export['comment_default_mode_photo'] = $strongarm;
@@ -84,7 +98,7 @@ function happywedding_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_vendor';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['comment_default_mode_vendor'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -93,6 +107,13 @@ function happywedding_strongarm() {
   $strongarm->name = 'comment_default_per_page_article';
   $strongarm->value = '50';
   $export['comment_default_per_page_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_news';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_news'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -118,9 +139,30 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_sorting_vendor';
+  $strongarm->value = '2';
+  $export['comment_default_sorting_vendor'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_label_vendor';
+  $strongarm->value = 'Post new comment';
+  $export['comment_form_label_vendor'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_article';
   $strongarm->value = 1;
   $export['comment_form_location_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_news';
+  $strongarm->value = 1;
+  $export['comment_form_location_news'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -146,6 +188,13 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_news';
+  $strongarm->value = '1';
+  $export['comment_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_photo';
   $strongarm->value = '1';
   $export['comment_photo'] = $strongarm;
@@ -156,6 +205,13 @@ function happywedding_strongarm() {
   $strongarm->name = 'comment_preview_article';
   $strongarm->value = '1';
   $export['comment_preview_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_news';
+  $strongarm->value = '1';
+  $export['comment_preview_news'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -191,6 +247,13 @@ function happywedding_strongarm() {
   $strongarm->name = 'comment_subject_field_article';
   $strongarm->value = 1;
   $export['comment_subject_field_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_news';
+  $strongarm->value = 1;
+  $export['comment_subject_field_news'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -289,6 +352,13 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_comment_filter_news';
+  $strongarm->value = 0;
+  $export['entity_translation_comment_filter_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_comment_filter_photo';
   $strongarm->value = 0;
   $export['entity_translation_comment_filter_photo'] = $strongarm;
@@ -329,6 +399,13 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_hide_translation_links_news';
+  $strongarm->value = 1;
+  $export['entity_translation_hide_translation_links_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_hide_translation_links_photo';
   $strongarm->value = 0;
   $export['entity_translation_hide_translation_links_photo'] = $strongarm;
@@ -353,6 +430,13 @@ function happywedding_strongarm() {
   $strongarm->name = 'entity_translation_node_metadata_article';
   $strongarm->value = '0';
   $export['entity_translation_node_metadata_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_node_metadata_news';
+  $strongarm->value = '0';
+  $export['entity_translation_node_metadata_news'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -511,6 +595,32 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__news';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'locations' => array(
+          'weight' => '30',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'language' => array(
+          'weight' => '5',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__photo';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -588,13 +698,13 @@ function happywedding_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '2',
         ),
         'language' => array(
           'weight' => '1',
         ),
         'locations' => array(
-          'weight' => '2',
+          'weight' => '1',
         ),
       ),
       'display' => array(),
@@ -1014,6 +1124,13 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_news';
+  $strongarm->value = '4';
+  $export['language_content_type_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_photo';
   $strongarm->value = '0';
   $export['language_content_type_photo'] = $strongarm;
@@ -1188,6 +1305,15 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_news';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_photo';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -1216,6 +1342,13 @@ function happywedding_strongarm() {
   $strongarm->name = 'menu_parent_article';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_news';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_news'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1285,6 +1418,15 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_news';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_photo';
   $strongarm->value = array(
     0 => 'status',
@@ -1319,6 +1461,13 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_news';
+  $strongarm->value = '0';
+  $export['node_preview_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_photo';
   $strongarm->value = '0';
   $export['node_preview_photo'] = $strongarm;
@@ -1334,7 +1483,7 @@ function happywedding_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_vendor';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['node_preview_vendor'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1343,6 +1492,13 @@ function happywedding_strongarm() {
   $strongarm->name = 'node_submitted_article';
   $strongarm->value = 1;
   $export['node_submitted_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_news';
+  $strongarm->value = 1;
+  $export['node_submitted_news'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1563,6 +1719,14 @@ foo
       'validator' => 'themekey_validator_date_time',
       'page cache' => 1,
     ),
+    'node:field_admin_name_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_admin_name</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_admin_name_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_admin_name</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_category_value' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_category</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -1599,6 +1763,18 @@ foo
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_facebook</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
+    'node:field_files_description' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">description</em> of the field <em class="placeholder">field_files</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_files_display' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">display</em> of the field <em class="placeholder">field_files</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_files_fid' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">fid</em> of the field <em class="placeholder">field_files</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_image_alt' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">alt</em> of the field <em class="placeholder">field_image</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -1621,6 +1797,10 @@ foo
     ),
     'node:field_location_lid' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">lid</em> of the field <em class="placeholder">field_location</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_news_vendor_target_id' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">target_id</em> of the field <em class="placeholder">field_news_vendor</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
     'node:field_photo_alt' => array(
@@ -1671,6 +1851,14 @@ foo
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">target</em> of the field <em class="placeholder">field_rating</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
+    'node:field_start_date_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_start_date</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_tag_price_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_tag_price</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_tags_tid' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">tid</em> of the field <em class="placeholder">field_tags</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -1705,6 +1893,10 @@ foo
     ),
     'node:field_vendor_photo_width' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">width</em> of the field <em class="placeholder">field_vendor_photo</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_vendor_plan_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_vendor_plan</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
     'node:field_vendor_tags_tid' => array(
@@ -2524,131 +2716,230 @@ foo
       ),
     ),
     59 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_start_date_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_start_date',
+        'type' => 'datestamp',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    60 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_admin_name_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_admin_name',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    61 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_admin_name_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_admin_name',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    62 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_vendor_plan_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_vendor_plan',
+        'type' => 'list_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    63 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_tag_price_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_tag_price',
+        'type' => 'number_float',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    64 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_files_fid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_files',
+        'type' => 'file',
+        'column' => 'fid',
+        'translatable' => '0',
+      ),
+    ),
+    65 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_files_display',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_files',
+        'type' => 'file',
+        'column' => 'display',
+        'translatable' => '0',
+      ),
+    ),
+    66 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_files_description',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_files',
+        'type' => 'file',
+        'column' => 'description',
+        'translatable' => '0',
+      ),
+    ),
+    67 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_news_vendor_target_id',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_news_vendor',
+        'type' => 'entityreference',
+        'column' => 'target_id',
+        'translatable' => '0',
+      ),
+    ),
+    68 => array(
       'src' => 'system:dummy',
       'dst' => 'overlay:mode',
       'callback' => 'themekey_overlay_dummy2mode',
     ),
-    60 => array(
+    69 => array(
       'src' => 'node:nid',
       'dst' => 'path:node_alias',
       'callback' => 'themekey_path_nid2alias',
     ),
-    61 => array(
+    70 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_param',
       'callback' => 'themekey_dummy2query_param',
     ),
-    62 => array(
+    71 => array(
       'src' => 'system:dummy',
       'dst' => 'system:cookie',
       'callback' => 'themekey_dummy2cookie',
     ),
-    63 => array(
+    72 => array(
       'src' => 'system:dummy',
       'dst' => 'system:http_header',
       'callback' => 'themekey_dummy2http_header',
     ),
-    64 => array(
+    73 => array(
       'src' => 'system:dummy',
       'dst' => 'system:post',
       'callback' => 'themekey_dummy2post',
     ),
-    65 => array(
+    74 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_string',
       'callback' => 'themekey_dummy2query_string',
     ),
-    66 => array(
+    75 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date_time',
       'callback' => 'themekey_dummy2date_time',
     ),
-    67 => array(
+    76 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date',
       'callback' => 'themekey_dummy2date',
     ),
-    68 => array(
+    77 => array(
       'src' => 'system:dummy',
       'dst' => 'system:month',
       'callback' => 'themekey_dummy2month',
     ),
-    69 => array(
+    78 => array(
       'src' => 'system:dummy',
       'dst' => 'system:time',
       'callback' => 'themekey_dummy2time',
     ),
-    70 => array(
+    79 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_week',
       'callback' => 'themekey_dummy2day_of_week',
     ),
-    71 => array(
+    80 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_month',
       'callback' => 'themekey_dummy2day_of_month',
     ),
-    72 => array(
+    81 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_browser',
       'callback' => 'themekey_dummy2user_browser',
     ),
-    73 => array(
+    82 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_os',
       'callback' => 'themekey_dummy2user_os',
     ),
-    74 => array(
+    83 => array(
       'src' => 'system:user_browser',
       'dst' => 'system:user_browser_simplified',
       'callback' => 'themekey_user_browser2user_browser_simplified',
     ),
-    75 => array(
+    84 => array(
       'src' => 'system:user_os',
       'dst' => 'system:user_os_simplified',
       'callback' => 'themekey_user_os2user_os_simplified',
     ),
-    76 => array(
+    85 => array(
       'src' => 'system:dummy',
       'dst' => 'system:session',
       'callback' => 'themekey_dummy2session',
     ),
-    77 => array(
+    86 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:vid',
       'callback' => 'themekey_taxonomy_tid2vid',
     ),
-    78 => array(
+    87 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:tid_and_childs',
       'callback' => 'themekey_taxonomy_tid2tid_and_parents',
     ),
-    79 => array(
+    88 => array(
       'src' => 'node:nid',
       'dst' => 'taxonomy:tid',
       'callback' => 'themekey_taxonomy_nid2tid',
     ),
-    80 => array(
+    89 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:name',
       'callback' => 'themekey_taxonomy_tid2name',
     ),
-    81 => array(
+    90 => array(
       'src' => 'profile:uid',
       'dst' => 'themekey_ui:author_triggers_theme',
       'callback' => 'themekey_user_profile2theme',
     ),
-    82 => array(
+    91 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:vid',
       'callback' => 'themekey_views_getq2vid',
     ),
-    83 => array(
+    92 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:machine_name',
       'callback' => 'themekey_views_getq2machine_name',
     ),
-    84 => array(
+    93 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:human_name',
       'callback' => 'themekey_views_getq2human_name',
@@ -2788,6 +3079,8 @@ foo
     'node:created' => 'node:created',
     'node:created_date' => 'node:created_date',
     'node:created_date_time' => 'node:created_date_time',
+    'node:field_admin_name_format' => 'node:field_admin_name_format',
+    'node:field_admin_name_value' => 'node:field_admin_name_value',
     'node:field_category_value' => 'node:field_category_value',
     'node:field_contact_email_format' => 'node:field_contact_email_format',
     'node:field_contact_email_value' => 'node:field_contact_email_value',
@@ -2797,12 +3090,16 @@ foo
     'node:field_contact_tel_value' => 'node:field_contact_tel_value',
     'node:field_facebook_format' => 'node:field_facebook_format',
     'node:field_facebook_value' => 'node:field_facebook_value',
+    'node:field_files_description' => 'node:field_files_description',
+    'node:field_files_display' => 'node:field_files_display',
+    'node:field_files_fid' => 'node:field_files_fid',
     'node:field_image_alt' => 'node:field_image_alt',
     'node:field_image_fid' => 'node:field_image_fid',
     'node:field_image_height' => 'node:field_image_height',
     'node:field_image_title' => 'node:field_image_title',
     'node:field_image_width' => 'node:field_image_width',
     'node:field_location_lid' => 'node:field_location_lid',
+    'node:field_news_vendor_target_id' => 'node:field_news_vendor_target_id',
     'node:field_photo_alt' => 'node:field_photo_alt',
     'node:field_photo_category_tid' => 'node:field_photo_category_tid',
     'node:field_photo_fid' => 'node:field_photo_fid',
@@ -2815,6 +3112,8 @@ foo
     'node:field_product_vendor_target_id' => 'node:field_product_vendor_target_id',
     'node:field_rating_rating' => 'node:field_rating_rating',
     'node:field_rating_target' => 'node:field_rating_target',
+    'node:field_start_date_value' => 'node:field_start_date_value',
+    'node:field_tag_price_value' => 'node:field_tag_price_value',
     'node:field_tags_tid' => 'node:field_tags_tid',
     'node:field_url_format' => 'node:field_url_format',
     'node:field_url_value' => 'node:field_url_value',
@@ -2824,6 +3123,7 @@ foo
     'node:field_vendor_photo_height' => 'node:field_vendor_photo_height',
     'node:field_vendor_photo_title' => 'node:field_vendor_photo_title',
     'node:field_vendor_photo_width' => 'node:field_vendor_photo_width',
+    'node:field_vendor_plan_value' => 'node:field_vendor_plan_value',
     'node:field_vendor_tags_tid' => 'node:field_vendor_tags_tid',
     'node:language' => 'node:language',
     'node:nid' => 'node:nid',
@@ -2885,6 +3185,13 @@ foo
   $strongarm->name = 'theme_default';
   $strongarm->value = 'best_responsive';
   $export['theme_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_pictures';
+  $strongarm->value = '1';
+  $export['user_pictures'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

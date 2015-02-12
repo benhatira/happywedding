@@ -28,5 +28,11 @@ function happywedding_user_default_roles() {
     'weight' => 4,
   );
 
+  // Exported role: vendor.
+  $roles['vendor'] = array(
+    'name' => 'vendor',
+    'weight' => 5,
+  );
+
   return $roles;
 }
