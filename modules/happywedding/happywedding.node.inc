@@ -12,29 +12,19 @@ function happywedding_node_view($node, $view_mode, $langcode) {
     //dpm($node);
   }
 }
-//function happywedding_module_implements_alter(&$implementations, $hook) {
-//  if ($hook == 'node_view') {
-//    unset($implementations['comment']);
-//  }
-//}
  
-function happywedding_node_validate($node, $form, &$form_state) {
-  
-  if($node->type=="vendor") {
-    //dpm($node);dpm($form_state['clicked_button']);
-    //for($node->field_vendor_tags[LANGUAGE_NONE])
-    foreach ($node->field_vendor_tags[LANGUAGE_NONE] as $key => $val) {
-      //$term = taxonomy_term_load($val['tid']);
-      //dpm($term);$term->name;
-      #$node->field_vendor_category[LANGUAGE_NONE][]['value'] = 
-    }
-  }
-//  if (isset($node->end) && isset($node->start)) {
-//    if ($node->start > $node->end) {
-//      form_set_error('time', t('An event may not end before it starts.'));
+//function happywedding_node_validate($node, $form, &$form_state) {
+//  
+//  if($node->type=="vendor") {
+//    //dpm($node);dpm($form_state['clicked_button']);
+//    //for($node->field_vendor_tags[LANGUAGE_NONE])
+//    foreach ($node->field_vendor_tags[LANGUAGE_NONE] as $key => $val) {
+//      //$term = taxonomy_term_load($val['tid']);
+//      //dpm($term);$term->name;
+//      #$node->field_vendor_category[LANGUAGE_NONE][]['value'] = 
 //    }
 //  }
-} 
+//}
 
 function _happywedding_render_searchbox() {
   $field = field_info_field('field_vendor_category');
@@ -183,82 +173,6 @@ function _happywedding_render_vendors_navigation(){
   return $output;
 
 }
-/*
-function happywedding_form_comment_form_alter(&$form, &$form_state, $form_id) {
-  //if (variable_get('modal_forms_comment', 0)) {
-    $comment = $form_state['comment'];
-
-    // If not replying to a comment, use our dedicated page callback for new
-    // comments on nodes.
-    if (empty($comment->cid) && empty($comment->pid)) {
-      // Change the action to call our function.
-      $form['#action'] = url('happywedding/nojs/comment/reply/' . $comment->nid);
-    }
-  //}
-}*/
-
-/**
- * A modal comment callback.
- */
-/*
-function happywedding_comment_reply($js = NULL, $node, $pid = NULL) {
-  $output = array();
-  $comment = array(
-    'pid' => $pid,
-    'nid' => $node->nid,
-  );
-
-  if (!$js) {
-    return drupal_get_form('comment_node_' . $node->type . '_form', (object) $comment);
-  }
-
-  ctools_include('modal');
-  ctools_include('ajax');
-
-  $form_state = array(
-    'build_info' => array(
-      'args' => array(
-        (object) $comment,
-      ),
-    ),
-    // 'title' => t('Comment'),
-    'ajax' => TRUE,
-    're_render' => FALSE,
-    'no_redirect' => TRUE,
-  );
-
-  // Should we show the reply box?
-  if ($node->comment != COMMENT_NODE_OPEN) {
-    drupal_set_message(t('This discussion is closed: you can\'t post new comments.'), 'error');
-    drupal_goto('node/' . $node->nid);
-  }
-  else {
-    $output = drupal_build_form('comment_node_' . $node->type . '_form', $form_state);
-    // Remove output bellow the comment.
-    unset($output['comment_output_below']);
-  }
-
-  if (!$form_state['executed'] || $form_state['rebuild']) {
-    $output = ctools_modal_form_render($form_state, $output);
-  }
-  else {
-    // We'll just overwrite the form output if it was successful.
-    $output = array();
-    // @todo: Uncomment once http://drupal.org/node/1587916 is fixed.
-    //if (is_array($form_state['redirect'])) {
-    //  list($path, $options) = $form_state['redirect'];
-    //  $output[] = ctools_ajax_command_redirect($path, 0, $options);
-    //}
-    if (isset($_GET['destination'])) {
-      $output[] = ctools_ajax_command_redirect($_GET['destination']);
-    }
-    else {
-      $output[] = ctools_ajax_command_reload();
-    }
-  }
-
-  print ajax_render($output);
-}*/
 
 function happywedding_form_product_node_form_alter(&$form, &$form_state, $form_id) {
   _happywedding_vendor_ref_form_alter($form);

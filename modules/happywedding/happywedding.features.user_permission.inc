@@ -84,6 +84,7 @@ function happywedding_user_default_permissions() {
     'name' => 'access devel information',
     'roles' => array(
       'administrator' => 'administrator',
+      'vendor' => 'vendor',
     ),
     'module' => 'devel',
   );
@@ -673,15 +674,6 @@ function happywedding_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'delete own comments'.
-  $permissions['delete own comments'] = array(
-    'name' => 'delete own comments',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'comment_goodness',
   );
 
   // Exported permission: 'delete own forum content'.

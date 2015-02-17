@@ -11,6 +11,14 @@ function happywedding_uuid_features_default_terms() {
   $terms = array();
 
   $terms[] = array(
+    'name' => 'sdf',
+    'description' => NULL,
+    'format' => NULL,
+    'weight' => 0,
+    'uuid' => '0bca9ffd-7828-45e0-9e99-f7eeaf440f1e',
+    'vocabulary_machine_name' => 'tags',
+  );
+  $terms[] = array(
     'name' => 'Others',
     'description' => '',
     'format' => 'filtered_html',

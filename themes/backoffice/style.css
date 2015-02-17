@@ -997,3 +997,22 @@ display:none;
 #edit-field-location-und-0 .description{
 display:none;
 }
+.form-item-field-location-und-0-re-geocode-location, .form-item-field-location-und-0-delete-location{display:none;}
+ul.term-reference-tree-level li .term-reference-tree-level {
+    /*display: inline-block;*/
+    float:left;
+}
+
+ul.term-reference-tree-level>li>.term-reference-tree-level>li {
+    /*display: inline-block;*/
+    float:left;min-width :230px;margin-bottom:10px;
+}
+
+ul.term-reference-tree-level li .term-reference-tree-level li .term-reference-tree-level li {
+    display: block;margin-bottom:0px;
+    float: none;
+}
+ul.term-reference-tree-level li .term-reference-tree-level li .term-reference-tree-level{
+    
+}
+#edit-field-vendor-tags-und >ul.term-reference-tree-level >li{ clear:both; }

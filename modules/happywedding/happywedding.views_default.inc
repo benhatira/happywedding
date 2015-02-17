@@ -22,7 +22,7 @@ function happywedding_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'For Vendor';
+  $handler->display->display_options['title'] = 'Info';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -32,6 +32,12 @@ function happywedding_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -158,7 +164,7 @@ function happywedding_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'bo/vendor/%/info';
-  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Info';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
@@ -168,7 +174,7 @@ function happywedding_views_default_views() {
   $handler->display->display_options['tab_options']['weight'] = '0';
   $translatables['bo_vendor_info'] = array(
     t('Master'),
-    t('For Vendor'),
+    t('Info'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -593,6 +599,49 @@ $category="?category=".$_GET[\'category\'];
   $handler->display->display_options['fields']['comment_body']['field'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['relationship'] = 'cid';
   $handler->display->display_options['path'] = 'gallery/detail';
+
+  /* Display: Vendor Gallery Block */
+  $handler = $view->new_display('block', 'Vendor Gallery Block', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Gallery';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'responsive_grid';
+  $handler->display->display_options['style_options']['columns'] = '5';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Vendor (field_photo_vendor) */
+  $handler->display->display_options['arguments']['field_photo_vendor_target_id']['id'] = 'field_photo_vendor_target_id';
+  $handler->display->display_options['arguments']['field_photo_vendor_target_id']['table'] = 'field_data_field_photo_vendor';
+  $handler->display->display_options['arguments']['field_photo_vendor_target_id']['field'] = 'field_photo_vendor_target_id';
+  $handler->display->display_options['arguments']['field_photo_vendor_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_photo_vendor_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_photo_vendor_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_photo_vendor_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_photo_vendor_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'photo' => 'photo',
+  );
+  $handler->display->display_options['block_description'] = 'Vendor Gallery block';
   $translatables['gallery'] = array(
     t('Master'),
     t('Gallery'),
@@ -634,6 +683,9 @@ $category="?category=".$_GET[\'category\'];
     t('Photo by'),
     t('Go to vendor'),
     t('Comment'),
+    t('Vendor Gallery Block'),
+    t('All'),
+    t('Vendor Gallery block'),
   );
   $export['gallery'] = $view;
 
@@ -1530,6 +1582,48 @@ $url = "/user/$arg/bookmarks";
   $handler = $view->new_display('page', 'Vendors', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Vendors';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Cover */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => 'tips_thumbnail',
+    'image_link' => '',
+  );
+  /* Field: Flags: Flag link */
+  $handler->display->display_options['fields']['ops']['id'] = 'ops';
+  $handler->display->display_options['fields']['ops']['table'] = 'flagging';
+  $handler->display->display_options['fields']['ops']['field'] = 'ops';
+  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['ops']['label'] = '';
+  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  /* Field: Content: Vendor photo */
+  $handler->display->display_options['fields']['field_vendor_photo']['id'] = 'field_vendor_photo';
+  $handler->display->display_options['fields']['field_vendor_photo']['table'] = 'field_data_field_vendor_photo';
+  $handler->display->display_options['fields']['field_vendor_photo']['field'] = 'field_vendor_photo';
+  $handler->display->display_options['fields']['field_vendor_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_vendor_photo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_vendor_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_vendor_photo']['settings'] = array(
+    'image_style' => 'vendor_thumbnail',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_vendor_photo']['delta_offset'] = '0';
+  /* Field: Location: Province */
+  $handler->display->display_options['fields']['province']['id'] = 'province';
+  $handler->display->display_options['fields']['province']['table'] = 'location';
+  $handler->display->display_options['fields']['province']['field'] = 'province';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1701,6 +1795,7 @@ $url = "/user/$arg/bookmarks";
     t('bookmark'),
     t('All'),
     t('Articles'),
+    t('Province'),
     t('Photos'),
     t('Forums'),
   );
@@ -1741,11 +1836,32 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Delete link */
+  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['label'] = '';
+  $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Vendor (field_news_vendor) */
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['id'] = 'field_news_vendor_target_id';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['table'] = 'field_data_field_news_vendor';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['field'] = 'field_news_vendor_target_id';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1787,9 +1903,101 @@ $url = "/user/$arg/bookmarks";
     t('last »'),
     t('<a href="/node/add/news?vendor=<?php echo arg(2); ?>">Add News</a>'),
     t('Title'),
+    t('All'),
     t('Page'),
   );
   $export['vendor_news'] = $view;
+
+  $view = new view();
+  $view->name = 'vendor_news_view';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Vendor News view';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Vendor News view';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Vendor (field_news_vendor) */
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['id'] = 'field_news_vendor_target_id';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['table'] = 'field_data_field_news_vendor';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['field'] = 'field_news_vendor_target_id';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_news_vendor_target_id']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news' => 'news',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['block_description'] = 'Vendor News view';
+  $translatables['vendor_news_view'] = array(
+    t('Master'),
+    t('Vendor News view'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('All'),
+    t('Block'),
+  );
+  $export['vendor_news_view'] = $view;
 
   $view = new view();
   $view->name = 'vendor_photos';
@@ -1803,7 +2011,7 @@ $url = "/user/$arg/bookmarks";
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Vendor photos';
+  $handler->display->display_options['title'] = 'Photos';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -1924,7 +2132,7 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['vendor_photos'] = array(
     t('Master'),
-    t('Vendor photos'),
+    t('Photos'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -1958,7 +2166,7 @@ $url = "/user/$arg/bookmarks";
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'products';
+  $handler->display->display_options['title'] = 'Products';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -2074,7 +2282,8 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['arguments']['field_product_vendor_target_id']['id'] = 'field_product_vendor_target_id';
   $handler->display->display_options['arguments']['field_product_vendor_target_id']['table'] = 'field_data_field_product_vendor';
   $handler->display->display_options['arguments']['field_product_vendor_target_id']['field'] = 'field_product_vendor_target_id';
-  $handler->display->display_options['arguments']['field_product_vendor_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_product_vendor_target_id']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['field_product_vendor_target_id']['exception']['value'] = '';
   $handler->display->display_options['arguments']['field_product_vendor_target_id']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['field_product_vendor_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_product_vendor_target_id']['summary']['format'] = 'default_summary';
@@ -2121,7 +2330,7 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['vendor_products'] = array(
     t('Master'),
-    t('products'),
+    t('Products'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -2145,6 +2354,121 @@ $url = "/user/$arg/bookmarks";
     t('<a href="/node/add/product?vendor=<?php echo arg(2); ?>">Add Product</a>'),
   );
   $export['vendor_products'] = $view;
+
+  $view = new view();
+  $view->name = 'vendor_products_view';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Vendor Products view';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Products';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  /* Field: Content: Price */
+  $handler->display->display_options['fields']['field_price']['id'] = 'field_price';
+  $handler->display->display_options['fields']['field_price']['table'] = 'field_data_field_price';
+  $handler->display->display_options['fields']['field_price']['field'] = 'field_price';
+  $handler->display->display_options['fields']['field_price']['settings'] = array(
+    'thousand_separator' => ',',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Tag Price */
+  $handler->display->display_options['fields']['field_tag_price']['id'] = 'field_tag_price';
+  $handler->display->display_options['fields']['field_tag_price']['table'] = 'field_data_field_tag_price';
+  $handler->display->display_options['fields']['field_tag_price']['field'] = 'field_tag_price';
+  $handler->display->display_options['fields']['field_tag_price']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tag_price']['settings'] = array(
+    'thousand_separator' => ' ',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Vendor (field_product_vendor) */
+  $handler->display->display_options['arguments']['field_product_vendor_target_id']['id'] = 'field_product_vendor_target_id';
+  $handler->display->display_options['arguments']['field_product_vendor_target_id']['table'] = 'field_data_field_product_vendor';
+  $handler->display->display_options['arguments']['field_product_vendor_target_id']['field'] = 'field_product_vendor_target_id';
+  $handler->display->display_options['arguments']['field_product_vendor_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_product_vendor_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_product_vendor_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_product_vendor_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_product_vendor_target_id']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'product' => 'product',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['block_description'] = 'Vendor Products view';
+  $translatables['vendor_products_view'] = array(
+    t('Master'),
+    t('Products'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Price'),
+    t('Tag Price'),
+    t('All'),
+    t('Block'),
+    t('Vendor Products view'),
+  );
+  $export['vendor_products_view'] = $view;
 
   $view = new view();
   $view->name = 'vendor_reviews';
@@ -2182,6 +2506,14 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['relationships']['uid']['table'] = 'comment';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  /* Relationship: Flags: is_new */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'comment';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'Is New';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'is_new';
+  $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
   /* Field: User: Picture */
   $handler->display->display_options['fields']['picture']['id'] = 'picture';
   $handler->display->display_options['fields']['picture']['table'] = 'users';
@@ -2224,6 +2556,13 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['fields']['replyto_comment']['field'] = 'replyto_comment';
   $handler->display->display_options['fields']['replyto_comment']['label'] = '';
   $handler->display->display_options['fields']['replyto_comment']['element_label_colon'] = FALSE;
+  /* Field: Flags: Flag link */
+  $handler->display->display_options['fields']['ops']['id'] = 'ops';
+  $handler->display->display_options['fields']['ops']['table'] = 'flagging';
+  $handler->display->display_options['fields']['ops']['field'] = 'ops';
+  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['ops']['label'] = '';
+  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
   /* Sort criterion: Comment: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
@@ -2282,6 +2621,52 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'comment_is_new');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Comment: Approved */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'comment';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_node']['id'] = 'status_node';
+  $handler->display->display_options['filters']['status_node']['table'] = 'node';
+  $handler->display->display_options['filters']['status_node']['field'] = 'status';
+  $handler->display->display_options['filters']['status_node']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['status_node']['value'] = 1;
+  $handler->display->display_options['filters']['status_node']['group'] = 1;
+  $handler->display->display_options['filters']['status_node']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'vendor' => 'vendor',
+  );
+  /* Filter criterion: Comment: ID */
+  $handler->display->display_options['filters']['cid']['id'] = 'cid';
+  $handler->display->display_options['filters']['cid']['table'] = 'comment';
+  $handler->display->display_options['filters']['cid']['field'] = 'cid';
+  $handler->display->display_options['filters']['cid']['relationship'] = 'pid';
+  $handler->display->display_options['filters']['cid']['operator'] = 'empty';
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  $handler->display->display_options['path'] = 'bo/vendor/%/reviews/new';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Reviews';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['vendor_reviews'] = array(
     t('Master'),
     t('Reviews'),
@@ -2301,10 +2686,97 @@ $url = "/user/$arg/bookmarks";
     t('Content'),
     t('Parent comment'),
     t('author'),
+    t('Is New'),
     t('All'),
     t('Page'),
   );
   $export['vendor_reviews'] = $view;
+
+  $view = new view();
+  $view->name = 'vendor_saved_user';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'users';
+  $view->human_name = 'Vendor saved user';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Flags: User's flaggings */
+  $handler->display->display_options['relationships']['flag_user_content_rel']['id'] = 'flag_user_content_rel';
+  $handler->display->display_options['relationships']['flag_user_content_rel']['table'] = 'users';
+  $handler->display->display_options['relationships']['flag_user_content_rel']['field'] = 'flag_user_content_rel';
+  $handler->display->display_options['relationships']['flag_user_content_rel']['flag'] = 'bookmark';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: User: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Flags: Content ID */
+  $handler->display->display_options['arguments']['entity_id']['id'] = 'entity_id';
+  $handler->display->display_options['arguments']['entity_id']['table'] = 'flagging';
+  $handler->display->display_options['arguments']['entity_id']['field'] = 'entity_id';
+  $handler->display->display_options['arguments']['entity_id']['relationship'] = 'flag_user_content_rel';
+  $handler->display->display_options['arguments']['entity_id']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['entity_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['entity_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['entity_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['entity_id']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_user_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['path'] = 'bo/vendor/%/saved_user';
+  $translatables['vendor_saved_user'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('user flagged content'),
+    t('All'),
+    t('Page'),
+  );
+  $export['vendor_saved_user'] = $view;
 
   $view = new view();
   $view->name = 'vendors';
@@ -2631,6 +3103,7 @@ $url = "/user/$arg/bookmarks";
     'image_style' => 'vendor_thumbnail',
     'image_link' => '',
   );
+  $handler->display->display_options['fields']['field_vendor_photo']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_vendor_photo']['delta_offset'] = '0';
   /* Field: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';

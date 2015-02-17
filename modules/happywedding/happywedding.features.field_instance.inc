@@ -208,7 +208,7 @@ function happywedding_field_default_field_instances() {
     'label' => 'Rating',
     'required' => 1,
     'settings' => array(
-      'allow_clear' => 0,
+      'allow_clear' => 1,
       'allow_ownvote' => 1,
       'allow_revote' => 0,
       'entity_translation_sync' => FALSE,
@@ -1499,7 +1499,7 @@ function happywedding_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_select',
+      'type' => 'date_popup',
       'weight' => 5,
     ),
   );

@@ -10,12 +10,33 @@ function happywedding_menu() {
     //'access arguments' => array('access content'),
   );
 
-  $items['bo/vendor/'] = array(
-    'page callback' => 'happywedding_bo_vendor_report',
+  $items['bo/vendor'] = array(
+    'page callback' => 'happywedding_bo_vendor_redirect',
     'page arguments' => array(2),
     'access arguments' => array('create vendor content'),
-    'type' => MENU_LOCAL_TASK,
-    'title' => "Report",
+    'type' => MENU_CALLBACK,
+    'title' => "For Vendor",
+    
+    //'type' => MENU_LOCAL_TASK,
+    //'title' => "Vendors Info",
+  );
+  
+  $items['bo/vendor/%'] = array(
+    'page callback' => 'happywedding_bo_vendor_dashboard',
+    'page arguments' => array(2),
+    'access arguments' => array('create vendor content'),
+    'type' => MENU_CALLBACK,
+    'title' => "Dashboard",
+    
+    //'type' => MENU_LOCAL_TASK,
+    //'title' => "Vendors Info",
+  );
+  $items['bo/vendor/%/dashboard'] = array(
+    'page callback' => 'happywedding_bo_vendor_dashboard',
+    'page arguments' => array(2),
+    'access arguments' => array('create vendor content'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'title' => "Dashboard",
     
     //'type' => MENU_LOCAL_TASK,
     //'title' => "Vendors Info",
@@ -27,6 +48,17 @@ function happywedding_menu() {
     'access arguments' => array('create vendor content'),
     'type' => MENU_LOCAL_TASK,
     'title' => "Report",
+    
+    //'type' => MENU_LOCAL_TASK,
+    //'title' => "Vendors Info",
+  );
+  
+  $items['bo/vendor/%/contactus'] = array(
+    'page callback' => 'happywedding_bo_vendor_contactus',
+    'page arguments' => array(2),
+    'access arguments' => array('create vendor content'),
+    'type' => MENU_LOCAL_TASK,
+    'title' => "Support",
     
     //'type' => MENU_LOCAL_TASK,
     //'title' => "Vendors Info",
@@ -99,8 +131,9 @@ function happywedding_node_vendors_access_callback($options = array()) {
 
 }
 function _happywedding_node_vendors_access_callback(){
-  $node = node_load(arg(1));
-  if ($node && $node->type != 'vendor') {
+  global $user;
+  $node = node_load(arg(1)); 
+  if (($node && $node->type != 'vendor') || in_array('vendor', $user->roles) ) {
     return FALSE;
   }
   else {

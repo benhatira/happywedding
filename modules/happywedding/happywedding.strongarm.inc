@@ -286,6 +286,13 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_webform';
+  $strongarm->value = '0';
+  $export['comment_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'configurable_timezones';
   $strongarm->value = 1;
   $export['configurable_timezones'] = $strongarm;
@@ -338,6 +345,10 @@ function happywedding_strongarm() {
     'wysiwyg_profile' => array(
       0 => 'wysiwyg',
       1 => 'format',
+    ),
+    'rules_config' => array(
+      0 => 'rules_config',
+      1 => 'id',
     ),
   );
   $export['entityreference:base-tables'] = $strongarm;
@@ -1403,7 +1414,7 @@ function happywedding_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_admin_theme';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_admin_theme'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1483,7 +1494,7 @@ function happywedding_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_vendor';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_vendor'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1532,7 +1543,7 @@ function happywedding_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'onecomment_show_comments_vendor';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['onecomment_show_comments_vendor'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -3232,7 +3243,7 @@ foo
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'webmaster_menu_menu';
-  $strongarm->value = 'navigation';
+  $strongarm->value = 'features';
   $export['webmaster_menu_menu'] = $strongarm;
 
   $strongarm = new stdClass();

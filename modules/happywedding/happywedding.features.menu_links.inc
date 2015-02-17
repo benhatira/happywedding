@@ -10,6 +10,50 @@
 function happywedding_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: features_tips:admin/tips
+  $menu_links['features_tips:admin/tips'] = array(
+    'menu_name' => 'features',
+    'link_path' => 'admin/tips',
+    'router_path' => 'admin/tips',
+    'link_title' => 'Tips',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'features_tips:admin/tips',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 2,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: features_vendors:admin/vendors
+  $menu_links['features_vendors:admin/vendors'] = array(
+    'menu_name' => 'features',
+    'link_path' => 'admin/vendors',
+    'router_path' => 'admin/vendors',
+    'link_title' => 'Vendors',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'features_vendors:admin/vendors',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'language' => 'und',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: main-menu_:forum
   $menu_links['main-menu_:forum'] = array(
     'menu_name' => 'main-menu',
@@ -100,6 +144,29 @@ function happywedding_menu_default_menu_links() {
     'weight' => -44,
     'customized' => 1,
     'language' => 'th',
+    'menu_links_customized' => 1,
+  );
+  // Exported menu link: main-menu_for-vendors:bo/vendor
+  $menu_links['main-menu_for-vendors:bo/vendor'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'bo/vendor',
+    'router_path' => 'bo/vendor',
+    'link_title' => 'FOR VENDORS',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_for-vendors:bo/vendor',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'language' => 'en',
     'menu_links_customized' => 1,
   );
   // Exported menu link: main-menu_gallery:gallery
@@ -457,6 +524,7 @@ function happywedding_menu_default_menu_links() {
   t('CATERING');
   t('Compose tips');
   t('FASHION');
+  t('FOR VENDORS');
   t('GALLERY');
   t('HOME');
   t('HONEYMOONS');
@@ -465,9 +533,11 @@ function happywedding_menu_default_menu_links() {
   t('PLANNING');
   t('Search');
   t('Tip');
+  t('Tips');
   t('User locations');
   t('VENUE');
   t('Vendor');
+  t('Vendors');
   t('ฟอรัม');
   t('หน้าแรก');
   t('เวนเดอร์');

@@ -65,6 +65,37 @@ function happywedding_flag_default_flags() {
     ),
     'api_version' => 3,
   );
+  // Exported flag: "is_new".
+  $flags['is_new'] = array(
+    'entity_type' => 'comment',
+    'title' => 'is_new',
+    'global' => 1,
+    'types' => array(
+      0 => 'comment_node_vendor',
+    ),
+    'flag_short' => ' read',
+    'flag_long' => '',
+    'flag_message' => '',
+    'unflag_short' => 'New',
+    'unflag_long' => '',
+    'unflag_message' => ' ',
+    'unflag_denied_text' => ' ',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'show_in_links' => array(
+      'full' => 0,
+      'token' => 0,
+    ),
+    'show_as_field' => 1,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => 0,
+    'module' => 'happywedding',
+    'locked' => array(
+      0 => 'name',
+    ),
+    'api_version' => 3,
+  );
   return $flags;
 
 }
@@ -213,6 +244,14 @@ function happywedding_node_info() {
       'description' => '',
       'has_title' => '1',
       'title_label' => t('Name'),
+      'help' => '',
+    ),
+    'webform' => array(
+      'name' => t('Webform'),
+      'base' => 'node_content',
+      'description' => t('Create a new form or questionnaire accessible to users. Submission results and statistics are recorded and accessible to privileged users.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
       'help' => '',
     ),
   );

@@ -18,7 +18,11 @@ Drupal.behaviors.happywedding = {
     $("input[id^=edit-field-vendor-tags]").on('change', function(item){
       var $this = $(this);
       //console.log($this, $(item))
-      if(!$this.is(':checked') ){
+      var $button = $this.parent().prev();
+      if($this.is(':checked') ){
+        if($button.hasClass('term-reference-tree-collapsed')) $button.click();
+      } else{
+        if(!$button.hasClass('term-reference-tree-collapsed')) $button.click();
         //console.log(' check the ' + $this.id);
         $("input[id^=" + $this.attr("id") + "]").prop("checked", false);
       }
@@ -30,9 +34,9 @@ Drupal.behaviors.happywedding = {
     $("input[id^=edit-field-vendor-tags][id*=children]").on('change', function(){
       //edit-field-vendor-tags-und-0-9-9-children-18-18
       var id = $(this).attr('id');
-      console.log(id);
+      //console.log(id);
       var parentId = id.replace(/(.*)-children.+$/, "$1")
-      console.log("parent = " + parentId); 
+      //console.log("parent = " + parentId); 
       if($(this).is(':checked') ){
         $("input[id="+parentId+"]").prop("checked",true).trigger("change");
         if(parentId.match(/children/)) {

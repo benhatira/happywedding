@@ -33,13 +33,3 @@ function happywedding_views_pre_view(&$view, &$display_id, &$args){
 //    dpm($args);
 //  }
 }
-
-function happywedding_bo_vendor_report($nid){
-  $nid = arg(2);
-  if($nid=='report') $nid = arg(1);
-  $vendor = node_load($nid);
-  $title = $vendor->title;
-  drupal_set_title($title);
-  
-  return 'this is report';
-}
