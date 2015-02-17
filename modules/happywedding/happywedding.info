@@ -377,6 +377,7 @@ features[user_role][] = administrator
 features[user_role][] = editor
 features[user_role][] = operator
 features[user_role][] = vendor
+features[uuid_node][] = 75c8778b-fe2d-4bec-b7d3-01f34045e14c
 features[uuid_term][] = 0bca9ffd-7828-45e0-9e99-f7eeaf440f1e
 features[uuid_term][] = 10b9d27c-d5eb-4564-b439-fc2bd2c18a34
 features[uuid_term][] = 147dafd8-732b-4738-923b-48b4b535e9ee
