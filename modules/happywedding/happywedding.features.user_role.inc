@@ -13,25 +13,31 @@ function happywedding_user_default_roles() {
   // Exported role: administrator.
   $roles['administrator'] = array(
     'name' => 'administrator',
-    'weight' => 2,
+    'weight' => 3,
   );
 
   // Exported role: editor.
   $roles['editor'] = array(
     'name' => 'editor',
-    'weight' => 3,
+    'weight' => 4,
   );
 
   // Exported role: operator.
   $roles['operator'] = array(
     'name' => 'operator',
-    'weight' => 4,
+    'weight' => 5,
+  );
+
+  // Exported role: unverified user.
+  $roles['unverified user'] = array(
+    'name' => 'unverified user',
+    'weight' => 1,
   );
 
   // Exported role: vendor.
   $roles['vendor'] = array(
     'name' => 'vendor',
-    'weight' => 5,
+    'weight' => 6,
   );
 
   return $roles;

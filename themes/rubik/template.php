@@ -145,8 +145,55 @@ function rubik_preprocess_page(&$vars) {
   $disable_sticky = theme_get_setting('rubik_disable_sticky_sidebar');
   drupal_add_js(array('rubik' => array('disable_sticky' => $disable_sticky)), array('type' => 'setting'));
 
+  
+  $vars['user_avatar'] = '';
+  if ($vars['logged_in']) {
+    $user = user_load($vars['user']->uid);
+    if ($user->picture){
+    $vars['user_avatar'] = theme_image_style(
+      array(
+        'style_name' => 'user_avatar',
+        'path' =>$user->picture->uri,
+        'attributes' => array(
+        'class' => 'avatar'
+            ),
+        'width' => NULL,
+        'height' => NULL,             
+        )
+      );
+    } else{
+      //echo '<a title="Profile" href=/user><img src="/sites/all/themes/my_theme/images/default.png" /></a>';
+    }
+  } else {
+    //echo '<img src="/sites/all/themes/my_theme/images/default.png" />';
+  }
 }
 
+
+//function my_theme_preprocess_page (&$variables) {
+//        if ($variables['logged_in']) {
+//        $user = user_load($variables['user']->uid);
+//        if ($user->picture){
+//        $variables['user_avatar'] = theme_image_style(
+//                            array(
+//                                'style_name' => 'thumbnail',
+//                                'path' =>$user->picture->uri,
+//                                'attributes' => array(
+//                                'class' => 'avatar'
+//                                    ),
+//                                'width' => NULL,
+//                                'height' => NULL,             
+//                                )
+//                            );
+//        }
+//        else{
+//            echo '<a title="Profile" href=/user><img src="/sites/all/themes/my_theme/images/default.png" /></a>';
+//                }
+//        }
+//        else {
+//            echo '<img src="/sites/all/themes/my_theme/images/default.png" />';
+//                    }
+//}
 /**
  * Preprocessor for theme('fieldset').
  */

@@ -55,9 +55,11 @@ body {
 
 
 /*set max img width*/
+/*
 img {
   max-width: 100%;
 }
+*/
 
 
 /* Main Wraps
@@ -730,6 +732,7 @@ h1.page-title {
   margin: 0.5em 1em 0.5em 0;
   float: left;
 }
+/*
 .page-node #content-wrap img {
   border: 1px solid #CCCCCC;
   padding: 6px;
@@ -737,6 +740,7 @@ h1.page-title {
   max-width: 97.4%;
   margin: 0.5em 1em 0.5em 0;
 }
+*/
 
 .node-teaser p {
   margin-bottom: 1em;

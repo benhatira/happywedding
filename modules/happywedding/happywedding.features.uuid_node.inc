@@ -83,7 +83,7 @@ function happywedding_uuid_features_default_content() {
     'data' => array(),
   ),
   'webform' => array(
-    'nid' => 107,
+    'nid' => 1,
     'next_serial' => 4,
     'confirmation' => '<p>Your message has been submitted.</p>',
     'confirmation_format' => 'filtered_html',
@@ -120,7 +120,7 @@ function happywedding_uuid_features_default_content() {
     'emails' => array(),
     'components' => array(
       1 => array(
-        'nid' => 107,
+        'nid' => 1,
         'cid' => 1,
         'pid' => 0,
         'form_key' => 'name',
@@ -148,7 +148,7 @@ function happywedding_uuid_features_default_content() {
         'page_num' => 1,
       ),
       2 => array(
-        'nid' => 107,
+        'nid' => 1,
         'cid' => 2,
         'pid' => 0,
         'form_key' => 'email',
@@ -173,7 +173,7 @@ function happywedding_uuid_features_default_content() {
         'page_num' => 1,
       ),
       3 => array(
-        'nid' => 107,
+        'nid' => 1,
         'cid' => 3,
         'pid' => 0,
         'form_key' => 'message',
@@ -199,7 +199,7 @@ function happywedding_uuid_features_default_content() {
         'page_num' => 1,
       ),
       4 => array(
-        'nid' => 107,
+        'nid' => 1,
         'cid' => 4,
         'pid' => 0,
         'form_key' => 'type_of_question',
@@ -233,7 +233,7 @@ website|Website issue',
   ),
   'comment_count' => 0,
   'date' => '2015-02-16 13:46:50 +0700',
-  'user_uuid' => '095ea6d2-23ae-434b-9a04-ad8004aa52b3',
+  'user_uuid' => 'f779a0e5-ba33-4235-ac2c-164e7c1037b6',
 );
   return $nodes;
 }

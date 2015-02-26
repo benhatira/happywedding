@@ -2,7 +2,33 @@
 
 Drupal.behaviors.happywedding = {
   attach: function (context, settings) {
-    $(".form-item-field-vendor-category-und").hide()
+    
+    settings.happywedding = settings.happywedding || {};
+    if(settings.happywedding.categories ) {
+    console.log(settings.happywedding.categories);
+      
+      $('.category-select').change(function(){
+        console.log($(this).val());
+        current_tid = $(this).val();
+        $.each(settings.happywedding.categories, function(i, category){
+          console.log(category);
+          if(category.tid==current_tid) {
+            console.log(category.tid);
+            var $subselect = $('.subcategory-select');
+            var newoption = '';
+            $.each(category.children, function(i, child){
+              newoption += '<option value="'+child.tid+'">'+child.name+'</option>';
+            });
+            $subselect.html(newoption);
+            return false;
+          }
+        });
+      });
+    }
+    
+    
+    //$('.field-name-field-vendor-tags').hide()
+    //$(".form-item-field-vendor-category-und").hide()
     $("input[id^=edit-field-vendor-tags]:not([id*=children])").on('change', function(){
       //console.log("change")
       

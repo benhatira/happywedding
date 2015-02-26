@@ -116,6 +116,7 @@
             }
             print drupal_render($main_menu_tree);
           ?>
+          <?php print  best_responsive_login_menu($logged_in); ?>
         </div>
         <div id="secondary-menu">
           <?php 
@@ -139,9 +140,15 @@
       <div class="flexslider-container">
         <div id="single-post-slider" class="flexslider">
           <ul class="slides">
-            <li class="slide"><img src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/slide-image-1.jpg'; ?>" alt="Slide"/></li>
+            <?php foreach($ads as $key => $ad): ?>
+              <li class="slide"><img src="<?php print $ad["url"]; ?>" alt="<?php print $ad["title"];?>"/></li>
+            
+
+            <?php endforeach; ?>
+            
+<!--               <li class="slide"><img src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/slide-image-1.jpg'; ?>" alt="Slide"/></li>         
             <li class="slide"><img src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/slide-image-2.jpg'; ?>" alt="Slide"/></li>
-            <li class="slide"><img src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/slide-image-3.jpg'; ?>" alt="Slide"/></li>
+            <li class="slide"><img src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/slide-image-3.jpg'; ?>" alt="Slide"/></li>-->
           </ul><!-- /slides -->
         </div><!-- /flexslider -->
       </div>
@@ -195,8 +202,58 @@
 
     <div class="clear"></div>
   </div>
-
-  <?php if ($page['footer_first'] || $page['footer_second'] || $page['footer_third']  || $page['footer']): ?>
+  
+  
+  
+  
+  <footer id="footer-bottom">
+    <div id="footer-area" class="clearfix">
+      <div id="footer-block-wrap" class="clearfix">
+        <div class="footer-block">
+          <div class='title'><?php print t("WHAT'S HAPPY WEDDING LIFE");?></div>
+          <div class='description'>
+            <?php print t("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."); ?>
+          </div>
+          
+        </div>
+        <div class="footer-block">
+          <div class='title'><?php print t("ABOUT US");?></div>
+          <div class='description'>
+            <ul>
+              <li><a href="/company"><?php print t("COMPANY"); ?></a></li>
+              <li><a href="/contactus"><?php print t("CONTACT US"); ?></a></li>
+              <li><a href="/bo/vendor/login"><?php print t("TO VENDOR"); ?></a></li>
+              <li><a href="/advertise"><?php print t("TO ADVERTISE"); ?></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-block remove-margin">
+          <div class='title'><?php print t("Social Media Channels");?></div>
+          <div class='description'>
+            <?php print t("Connect with Happywedding.life on Social media for real-time updates and exclusive content."); ?>
+          </div>
+          <div id="header-social" class="clearfix">
+            <ul>
+            <?php if ($facebook_url): ?>
+              <li><a target="_blank" title="<?php print $site_name; ?> in Facebook" href="<?php print $facebook_url; ?>"><img alt="Facebook" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/facebook.png'; ?>"> </a>
+              </li><?php endif; ?>
+            <?php if ($twitter_url): ?>
+              <li><a target="_blank" title="<?php print $site_name; ?> in Twitter" href="<?php print $twitter_url; ?>"><img alt="Twitter" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/twitter.png'; ?>"> </a>
+              </li><?php endif; ?>
+              <?php if ($google_plus_url): ?>
+              <li><a target="_blank" title="<?php print $site_name; ?> in Google+" href="<?php print $google_plus_url; ?>"><img alt="Google+" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/google.png'; ?>"> </a>
+              </li><?php endif; ?>
+              <?php if ($pinterest_url): ?>
+              <li><a target="_blank" title="<?php print $site_name; ?> in Pinterest" href="<?php print $pinterest_url; ?>"><img alt="Pinterest" src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/social/pinterest.png'; ?>"> </a>
+              </li><?php endif; ?>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <div class="clear"></div>
+  </footer>
+  
+  <!--<?php if ($page['footer_first'] || $page['footer_second'] || $page['footer_third']  || $page['footer']): ?>
   <footer id="footer-bottom">
     <div id="footer-area" class="clearfix">
       <?php if ($page['footer_first'] || $page['footer_second'] || $page['footer_third']): ?>
@@ -218,7 +275,7 @@
     </div>
   </footer>
   <?php endif; ?>
-
+-->
 <!--
   <div id="copyright">
     <?php print t('Copyright'); ?> &copy; <?php echo date("Y"); ?>, <a href="<?php print $front_page; ?>"><?php print $site_name; ?></a>. <?php print t('Theme by'); ?>  <a href="http://www.devsaran.com" target="_blank">Devsaran</a>

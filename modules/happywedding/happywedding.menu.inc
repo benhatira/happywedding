@@ -10,10 +10,10 @@ function happywedding_menu() {
     //'access arguments' => array('access content'),
   );
 
-  $items['bo/vendor'] = array(
+  $items['bo/vendor/redirect'] = array(
     'page callback' => 'happywedding_bo_vendor_redirect',
     'page arguments' => array(2),
-    'access arguments' => array('create vendor content'),
+    'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
     'title' => "For Vendor",
     
@@ -40,6 +40,14 @@ function happywedding_menu() {
     
     //'type' => MENU_LOCAL_TASK,
     //'title' => "Vendors Info",
+  );
+  
+  $items['bo/vendor/%/categories'] = array(
+    'page callback' => 'happywedding_bo_vendor_categories',
+    'page arguments' => array(2),
+    'access arguments' => array('create vendor content'),
+    'type' => MENU_LOCAL_TASK,
+    'title' => "Products",
   );
   
   $items['bo/vendor/%/report'] = array(
@@ -75,6 +83,14 @@ function happywedding_menu() {
     //'type' => MENU_LOCAL_TASK,
     //'title' => "Vendors Info",
   );
+  $items['node/%/categories'] = array(
+    'page callback' => 'happywedding_bo_vendor_categories',
+    'page arguments' => array(2),
+    'access arguments' => array('create vendor content' ),
+    'access callback' => '_happywedding_node_vendors_access_callback',
+    'type' => MENU_LOCAL_TASK,
+    'title' => "Products",
+  );
   
 /*  $items['happywedding/%ctools_js/comment/reply/%node'] = array(
     'title' => 'Comment',
@@ -91,7 +107,45 @@ function happywedding_menu_alter(&$items) {
   // Set a custom access callback function for our view page display path.
   $items['node/%/products']['access callback'] = 'happywedding_node_vendors_access_callback';
   $items['node/%/photos']['access callback'] = 'happywedding_node_vendors_access_callback';
+  
+  
+  $items['comment/%/delete']['access callback'] = 'happywedding_comment_delete_access';
+  $items['comment/%/delete']['access arguments'] = array(1);
+
 }
+
+/**
+ * New access callback for comment/%/delete - Allows to delete own comment.
+ */
+function happywedding_comment_delete_access($cid) {
+  global $user;
+
+  if (!user_is_logged_in()) {
+    return FALSE;
+  }
+
+  // Allow admin to delete any comments.
+  if (user_access('administer comments')){
+    return TRUE;
+  }
+  
+  // Load the comment.
+  $comment = comment_load($cid);
+  echo 'comment uid = ' . $comment->uid . ', user uid = ' . $user->uid ;
+  // If user is comment author ..
+  if ($comment->uid == $user->uid) {
+    // .. check if comment mode for this node type is flat.
+    $node = node_load($comment->nid);
+    $comment_mode = variable_get('comment_default_mode_' . $node->type, COMMENT_MODE_THREADED);
+    if ($comment_mode == COMMENT_MODE_FLAT) {
+    // Comment mode is flat and user is author of the comment.
+    return TRUE;
+    }
+  }
+  
+  return FALSE;
+}
+
 
 function happywedding_module_implements_alter(&$implementations, $hook) {
   // When the implementations of hook_menu_alter are called, we need our module

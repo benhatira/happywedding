@@ -54,6 +54,29 @@ function happywedding_menu_default_menu_links() {
     'language' => 'und',
     'menu_links_customized' => 1,
   );
+  // Exported menu link: main-menu_:bo/vendor
+  $menu_links['main-menu_:bo/vendor'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'bo/vendor',
+    'router_path' => 'bo/vendor',
+    'link_title' => 'ร้านค้า',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'main-menu_:bo/vendor',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -44,
+    'customized' => 1,
+    'language' => 'th',
+    'menu_links_customized' => 1,
+  );
   // Exported menu link: main-menu_:forum
   $menu_links['main-menu_:forum'] = array(
     'menu_name' => 'main-menu',
@@ -72,7 +95,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => -48,
     'customized' => 1,
     'language' => 'th',
     'menu_links_customized' => 1,
@@ -95,7 +118,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -43,
+    'weight' => -45,
     'customized' => 1,
     'language' => 'th',
     'menu_links_customized' => 1,
@@ -118,7 +141,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -45,
+    'weight' => -47,
     'customized' => 1,
     'language' => 'th',
     'menu_links_customized' => 1,
@@ -141,7 +164,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -44,
+    'weight' => -46,
     'customized' => 1,
     'language' => 'th',
     'menu_links_customized' => 1,
@@ -164,7 +187,7 @@ function happywedding_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -41,
     'customized' => 1,
     'language' => 'en',
     'menu_links_customized' => 1,
@@ -539,6 +562,7 @@ function happywedding_menu_default_menu_links() {
   t('Vendor');
   t('Vendors');
   t('ฟอรัม');
+  t('ร้านค้า');
   t('หน้าแรก');
   t('เวนเดอร์');
   t('แกลลอรี่');

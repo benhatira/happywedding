@@ -28,6 +28,15 @@ function happywedding_user_default_permissions() {
     'module' => 'views',
   );
 
+  // Exported permission: 'access all webform results'.
+  $permissions['access all webform results'] = array(
+    'name' => 'access all webform results',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
+  );
+
   // Exported permission: 'access comments'.
   $permissions['access comments'] = array(
     'name' => 'access comments',
@@ -96,6 +105,33 @@ function happywedding_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'overlay',
+  );
+
+  // Exported permission: 'access own webform results'.
+  $permissions['access own webform results'] = array(
+    'name' => 'access own webform results',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
+  );
+
+  // Exported permission: 'access own webform submissions'.
+  $permissions['access own webform submissions'] = array(
+    'name' => 'access own webform submissions',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
+  );
+
+  // Exported permission: 'access rules debug'.
+  $permissions['access rules debug'] = array(
+    'name' => 'access rules debug',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
   );
 
   // Exported permission: 'access site in maintenance mode'.
@@ -280,6 +316,15 @@ function happywedding_user_default_permissions() {
     'module' => 'panels_mini',
   );
 
+  // Exported permission: 'administer module filter'.
+  $permissions['administer module filter'] = array(
+    'name' => 'administer module filter',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'module_filter',
+  );
+
   // Exported permission: 'administer modules'.
   $permissions['administer modules'] = array(
     'name' => 'administer modules',
@@ -352,6 +397,15 @@ function happywedding_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'administer rules'.
+  $permissions['administer rules'] = array(
+    'name' => 'administer rules',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
   // Exported permission: 'administer search'.
   $permissions['administer search'] = array(
     'name' => 'administer search',
@@ -406,6 +460,15 @@ function happywedding_user_default_permissions() {
     'module' => 'statistics',
   );
 
+  // Exported permission: 'administer tabtamer'.
+  $permissions['administer tabtamer'] = array(
+    'name' => 'administer tabtamer',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'tabtamer',
+  );
+
   // Exported permission: 'administer taxonomy'.
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
@@ -413,6 +476,24 @@ function happywedding_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'administer theme assignments'.
+  $permissions['administer theme assignments'] = array(
+    'name' => 'administer theme assignments',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'themekey',
+  );
+
+  // Exported permission: 'administer themekey settings'.
+  $permissions['administer themekey settings'] = array(
+    'name' => 'administer themekey settings',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'themekey',
   );
 
   // Exported permission: 'administer themes'.
@@ -440,6 +521,15 @@ function happywedding_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'administer uuid'.
+  $permissions['administer uuid'] = array(
+    'name' => 'administer uuid',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'uuid',
   );
 
   // Exported permission: 'administer views'.
@@ -487,6 +577,15 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'bypass rules access'.
+  $permissions['bypass rules access'] = array(
+    'name' => 'bypass rules access',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
   // Exported permission: 'cancel account'.
   $permissions['cancel account'] = array(
     'name' => 'cancel account',
@@ -514,6 +613,13 @@ function happywedding_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'create ad content'.
+  $permissions['create ad content'] = array(
+    'name' => 'create ad content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create article content'.
   $permissions['create article content'] = array(
     'name' => 'create article content',
@@ -527,6 +633,15 @@ function happywedding_user_default_permissions() {
   // Exported permission: 'create forum content'.
   $permissions['create forum content'] = array(
     'name' => 'create forum content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create inquiry content'.
+  $permissions['create inquiry content'] = array(
+    'name' => 'create inquiry content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -597,6 +712,13 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create webform content'.
+  $permissions['create webform content'] = array(
+    'name' => 'create webform content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'customize shortcut links'.
   $permissions['customize shortcut links'] = array(
     'name' => 'customize shortcut links',
@@ -604,6 +726,22 @@ function happywedding_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'shortcut',
+  );
+
+  // Exported permission: 'delete all webform submissions'.
+  $permissions['delete all webform submissions'] = array(
+    'name' => 'delete all webform submissions',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
+  );
+
+  // Exported permission: 'delete any ad content'.
+  $permissions['delete any ad content'] = array(
+    'name' => 'delete any ad content',
+    'roles' => array(),
+    'module' => 'node',
   );
 
   // Exported permission: 'delete any article content'.
@@ -619,6 +757,13 @@ function happywedding_user_default_permissions() {
   // Exported permission: 'delete any forum content'.
   $permissions['delete any forum content'] = array(
     'name' => 'delete any forum content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any inquiry content'.
+  $permissions['delete any inquiry content'] = array(
+    'name' => 'delete any inquiry content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -666,6 +811,20 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any webform content'.
+  $permissions['delete any webform content'] = array(
+    'name' => 'delete any webform content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own ad content'.
+  $permissions['delete own ad content'] = array(
+    'name' => 'delete own ad content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete own article content'.
   $permissions['delete own article content'] = array(
     'name' => 'delete own article content',
@@ -679,6 +838,15 @@ function happywedding_user_default_permissions() {
   // Exported permission: 'delete own forum content'.
   $permissions['delete own forum content'] = array(
     'name' => 'delete own forum content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own inquiry content'.
+  $permissions['delete own inquiry content'] = array(
+    'name' => 'delete own inquiry content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -730,6 +898,22 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete own webform content'.
+  $permissions['delete own webform content'] = array(
+    'name' => 'delete own webform content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own webform submissions'.
+  $permissions['delete own webform submissions'] = array(
+    'name' => 'delete own webform submissions',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
+  );
+
   // Exported permission: 'delete revisions'.
   $permissions['delete revisions'] = array(
     'name' => 'delete revisions',
@@ -764,6 +948,22 @@ function happywedding_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'edit all webform submissions'.
+  $permissions['edit all webform submissions'] = array(
+    'name' => 'edit all webform submissions',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
+  );
+
+  // Exported permission: 'edit any ad content'.
+  $permissions['edit any ad content'] = array(
+    'name' => 'edit any ad content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any article content'.
   $permissions['edit any article content'] = array(
     'name' => 'edit any article content',
@@ -777,6 +977,13 @@ function happywedding_user_default_permissions() {
   // Exported permission: 'edit any forum content'.
   $permissions['edit any forum content'] = array(
     'name' => 'edit any forum content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any inquiry content'.
+  $permissions['edit any inquiry content'] = array(
+    'name' => 'edit any inquiry content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -824,6 +1031,13 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any webform content'.
+  $permissions['edit any webform content'] = array(
+    'name' => 'edit any webform content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit node original values'.
   $permissions['edit node original values'] = array(
     'name' => 'edit node original values',
@@ -853,6 +1067,13 @@ function happywedding_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
+  // Exported permission: 'edit own ad content'.
+  $permissions['edit own ad content'] = array(
+    'name' => 'edit own ad content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit own article content'.
   $permissions['edit own article content'] = array(
     'name' => 'edit own article content',
@@ -868,6 +1089,7 @@ function happywedding_user_default_permissions() {
     'name' => 'edit own comments',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'comment',
   );
@@ -875,6 +1097,15 @@ function happywedding_user_default_permissions() {
   // Exported permission: 'edit own forum content'.
   $permissions['edit own forum content'] = array(
     'name' => 'edit own forum content',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own inquiry content'.
+  $permissions['edit own inquiry content'] = array(
+    'name' => 'edit own inquiry content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -927,6 +1158,22 @@ function happywedding_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit own webform content'.
+  $permissions['edit own webform content'] = array(
+    'name' => 'edit own webform content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own webform submissions'.
+  $permissions['edit own webform submissions'] = array(
+    'name' => 'edit own webform submissions',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
+  );
+
   // Exported permission: 'edit terms in categories'.
   $permissions['edit terms in categories'] = array(
     'name' => 'edit terms in categories',
@@ -961,6 +1208,15 @@ function happywedding_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
+  // Exported permission: 'edit webform components'.
+  $permissions['edit webform components'] = array(
+    'name' => 'edit webform components',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'webform',
+  );
+
   // Exported permission: 'execute php code'.
   $permissions['execute php code'] = array(
     'name' => 'execute php code',
@@ -978,6 +1234,15 @@ function happywedding_user_default_permissions() {
       'authenticated user' => 'authenticated user',
       'editor' => 'editor',
       'operator' => 'operator',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'flag is_new'.
+  $permissions['flag is_new'] = array(
+    'name' => 'flag is_new',
+    'roles' => array(
+      'administrator' => 'administrator',
     ),
     'module' => 'flag',
   );
@@ -1195,6 +1460,15 @@ function happywedding_user_default_permissions() {
       'authenticated user' => 'authenticated user',
       'editor' => 'editor',
       'operator' => 'operator',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'unflag is_new'.
+  $permissions['unflag is_new'] = array(
+    'name' => 'unflag is_new',
+    'roles' => array(
+      'administrator' => 'administrator',
     ),
     'module' => 'flag',
   );

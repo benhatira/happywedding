@@ -106,6 +106,29 @@ function happywedding_flag_default_flags() {
 function happywedding_image_default_styles() {
   $styles = array();
 
+  // Exported image style: front_slideshow.
+  $styles['front_slideshow'] = array(
+    'name' => 'front_slideshow',
+    'label' => 'Front slideshow (1024x400)',
+    'effects' => array(
+      4 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 1024,
+          'height' => 400,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: gallery_photo.
   $styles['gallery_photo'] = array(
     'name' => 'gallery_photo',
@@ -123,6 +146,52 @@ function happywedding_image_default_styles() {
         'data' => array(
           'width' => 170,
           'height' => 170,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: general_thumbnail.
+  $styles['general_thumbnail'] = array(
+    'name' => 'general_thumbnail',
+    'label' => 'General Thumbnail (100x100)',
+    'effects' => array(
+      2 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 100,
+          'height' => 100,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: news_photo.
+  $styles['news_photo'] = array(
+    'name' => 'news_photo',
+    'label' => 'News photo (260x210)',
+    'effects' => array(
+      3 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 260,
+          'height' => 210,
         ),
         'weight' => 1,
       ),
@@ -152,6 +221,29 @@ function happywedding_image_default_styles() {
     ),
   );
 
+  // Exported image style: sidebar_announce.
+  $styles['sidebar_announce'] = array(
+    'name' => 'sidebar_announce',
+    'label' => 'Sidebar announce (230x230)',
+    'effects' => array(
+      5 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 230,
+          'height' => 230,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: tips_thumbnail.
   $styles['tips_thumbnail'] = array(
     'name' => 'tips_thumbnail',
@@ -169,6 +261,29 @@ function happywedding_image_default_styles() {
         'data' => array(
           'width' => 230,
           'height' => 230,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: user_avatar.
+  $styles['user_avatar'] = array(
+    'name' => 'user_avatar',
+    'label' => 'User avatar (150x150)',
+    'effects' => array(
+      1 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 150,
+          'height' => 150,
         ),
         'weight' => 1,
       ),
@@ -206,10 +321,26 @@ function happywedding_image_default_styles() {
  */
 function happywedding_node_info() {
   $items = array(
+    'ad' => array(
+      'name' => t('Ad'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'article' => array(
-      'name' => t('Tip'),
+      'name' => t('Article'),
       'base' => 'node_content',
       'description' => t('Use <em>articles</em> for time-sensitive content like news, press releases or blog posts.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'inquiry' => array(
+      'name' => t('Inquiry'),
+      'base' => 'node_content',
+      'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

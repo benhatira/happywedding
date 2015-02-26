@@ -1,0 +1,626 @@
+.webmaster-menu
+  background-color #ab0070
+  font-weight 700
+  font-family 'Lucida Grande', 'Lucida Sans Unicode', sans-serif
+  font-size 14px
+  ul
+    &.menu
+      & > li
+        &:hover
+          & > a
+            background-color #510033
+.clear
+  clear both
+body
+  a
+    color #999
+    &:hover
+      text-decoration none
+      color #ccc
+  td
+    vertical-align middle
+    padding 5px 6px
+  input
+    -webkit-box-sizing border-box /* Safari/Chrome, other WebKit */
+    -moz-box-sizing border-box    /* Firefox, other Gecko */
+    box-sizing border-box
+.container
+  min-height 600px
+#wrap
+  width 1024px
+
+#navigation
+  position relative
+  height 80px
+  top 0
+  right 0
+  margin-top 0
+  #main-menu
+    height 52px
+    background #343434
+    & > ul
+      & > li
+        & > a
+          padding 10px 20px
+          font-size 16px
+    .nav-right
+      float right
+  #secondary-menu
+    height 30px
+    clear both
+    background #999
+    ul
+      margin 0
+      & > li
+        list-style none
+        float left
+        height 30px
+        & > a
+          color #eaeaea
+          padding 5px 12px 5px 8px
+          font-weight bold
+          display block
+          font-size 11px
+
+#navigation a:hover, #navigation a.active
+  color #fff
+
+#navigation #secondary-menu ul>li>a:hover, #navigation #secondary-menu ul>li>a.active-trail
+  color #fff
+
+  
+.view-top-reviews, .view-tips-sidebar
+  img
+    display block
+  td
+    padding 2px 3px
+  td.views-field.views-field-subject , .views-field-title
+    font-size 12px
+    a
+      display block
+    
+
+  td.views-field.views-field-picture,td.views-field-field-image
+    width 70px
+
+.vendors-navigation
+  ul
+    margin 0px
+    background #999
+    & > li
+      list-style none
+      display inline-block
+      height 30px
+      width 14%
+      position relative
+      & > a
+        display block
+        padding 3px 10px
+        color #ddd
+        font-weight 700
+        &:hover
+          color #fff
+      &:hover
+        .sub-menu
+          visibility visible
+    &.sub-menu
+      position absolute
+      z-index 1
+      min-width 130px
+      visibility hidden
+      li
+        display block
+        width auto
+        min-height 30px
+        height auto
+
+.panel-2col-stacked, .panel-2col
+  .panel-col-first
+    width 75%
+  .panel-col-last
+    width 24.9%
+
+.views-responsive-grid
+  .views-column
+    width 32%
+    margin 3px 5px 8px 0
+    display inline-block
+    position relative
+    height 230px
+  &.views-columns-4
+    .views-column
+      width 23%
+      padding 4px
+      margin 3px 1px 1px 0
+  &.views-columns-5
+    .views-column
+      width 18%
+      height 170px
+      margin 5px
+      
+.view-subpage-tips
+  .views-field-field-image
+    img
+      width 230px
+      height 230px
+      display block
+  .shadow
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    background rgba(0,0,0,0.7)
+    visibility hidden
+    opacity 0
+    transition visibility 0s linear 0.3s,opacity 0.3s ease-in-out
+  &:hover
+    .shadow
+      visibility visible
+      opacity 1
+      transition-delay 0s
+    .views-field-title-field, .views-field-title
+      background-color rgba(220,220,220,1)
+      a
+        color #666
+  .views-field-ops
+    position  absolute
+    right 0
+    z-index 5
+  .views-field-title, .views-field-title-field, .views-field-title-field-et
+    display block
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    padding 2px 10px
+    height 30px
+    z-index 1
+    background-color rgba(160,160,160,0.6)
+    font-weight 700
+    transition background-color ease-in-out 0.3s
+    a
+      color white
+      transition color ease-out 0.3s
+.view-gallery
+  .views-column
+    position relative
+    height auto
+  &.bookmarks
+    .views-field-ops
+      position absolute
+      right 0
+      top 0
+      bottom 0
+      left 0
+      margin auto
+      z-index 5
+      width 80px
+      text-align center
+      height 25px
+      background #ccc
+      display none
+  .views-column:hover
+    .views-field-ops
+      display block
+.view-user-bookmarks.forums
+  .views-field-name, .views-field-created, .views-field-ops
+    display inline
+  .views-field-comment-count
+    float right
+.view-user-reviews
+  .views-field-title a
+    display block
+  .views-field-subject a:nth-child(1)
+    display block
+  .views-field-subject a:nth-child(2)
+    margin 5px
+//Vendor Block   
+.view-vendors-block
+  .views-column
+    border 1px solid #ddd
+    padding 4px 0
+  .views-field-title
+    font-size 16px
+    font-weight 700
+  .views-field-province
+    font-size 11px
+    height 25px
+  .views-field-field-vendor-category
+    font-size 12px
+    height 25px
+  .views-field-field-vendor-photo
+    width 231px
+    height 137px
+    img
+      display block
+  .views-field-field-rating
+    height 20px
+  .views-field-ops
+    position absolute
+    top 0
+    right 0
+    font-size 10px
+
+.page-node
+  #content-wrap
+    .field-name-field-image
+      img
+        display block
+        margin auto
+  .region-content
+    .content
+      position relative
+
+//a
+//  &.write-review
+//    position absolute
+//    right 0
+
+.links
+  .comment-add
+    display none
+
+.pane-views-gallery-block
+  background #666
+  padding 10px 10px
+  .pane-title
+    color #fff
+    text-align center
+
+.panel-col-last
+  .views-exposed-form
+    overflow hidden
+    overflow-x scroll
+
+.view-id-vendors_block
+  .views-exposed-form
+    display none
+
+#search-vendors
+  padding-bottom 10px
+  .form-submit
+    display none
+  .subcategories
+    float left
+    padding-right 10px
+
+.bef-select-as-links
+  width 700px
+  height 25px
+
+.form-type-bef-link
+  float left
+  padding 5px
+  width 68px
+  text-align center
+
+.node-type-vendor
+  .panel-col-top
+    .field-name-field-location
+      &.field-type-location
+        float left
+    .panel-pane.pane-custom.pane-2// write review button
+      position absolute
+      top 30px
+      display block
+      background #ccc
+      font-size 12px
+      padding 2px 20px
+      right 0
+      p
+        margin  0
+  .pane-node-field-vendor-photo
+    clear both
+    width 70%
+    height 300px
+    overflow hidden
+    float left
+  .pane-views-vendor-comments-view-block-1
+    width 30%
+    height 300px
+    float left
+  .panel-col-top
+    .panel-separator
+      display none
+  
+  ul.vendor-detail-navigation 
+    margin 0px
+    list-style-type none
+  ul.vendor-detail-navigation li
+      display inline-block
+      padding 2px 10px
+      min-width 120px
+      background #ccc
+  .pane-node-flag-bookmark-link
+      float right
+      display inline-block
+      width 190px
+      text-align center
+      height 29px
+      background #ccc
+  .pane-custom.pane-1
+      width 80%
+      display inline-block
+
+  .field-name-field-location
+    .country-name
+      display inline-block
+    .region
+      display inline-block
+
+  .pane-node-field-vendor-tags
+    float left
+
+  .field
+    &.field-name-field-vendor-tags
+      &.field-type-taxonomy-term-reference
+        .field-item
+          display inline-block
+    
+  .field-type-taxonomy-term-reference .field-item, .adr .region, .adr .country-name
+    background #ccc
+    margin 2px 3px
+    padding 1px 5px
+    font-size 12px
+    border-radius 4px
+  .field-name-field-vendor-photo.field-type-image
+    .field-item:nth-child(1)
+      height 297px
+      width 350px
+      float left
+      margin-right 3px
+      img
+        height 297px
+        width 350px
+    .field-item:nth-child(n+2)
+      height 147px
+      width 150px
+      float left
+      margin 0 3px 3px 0
+      img
+        height 147px
+        width 150px
+  .pane-block.pane-views-vendor-comments-view-block-1 
+    position relative
+    .view-header a.write-review
+      display none
+      position absolute
+      top 4px
+      //display block
+      background #ccc
+      font-size 12px
+      padding 2px 20px
+    .user-picture
+      float left
+      margin 20px 5px 5px 10px
+    .comment-detail
+      float left
+      margin 20px 0px 0px 5px
+      width 195px
+      .subject
+        font-size 16px
+      .body
+        font-size 13px
+      .post-date
+        display none
+        
+    
+  .pane-views-vendor-comments-view-block    
+    .user
+      width 80px
+      padding 30px 50px
+      height 110px
+      float left
+      clear both
+    .comment-detail
+      float left
+      margin-top 20px
+      width 500px
+      .fivestar-user-stars
+        width 100px
+        height 20px
+        float left
+      .subject
+        font-size 16px
+      .body
+        font-size 12px
+      .post-date
+        font-size 11px
+        display block
+  .pane-views-vendor-products-view-block
+    .views-field
+      &.views-field-field-photo
+        display block
+        width 170px
+        float left
+        margin-right 10px
+      &.views-field-field-price
+        position absolute
+        right 0
+        top 0
+        text-align right
+        padding 2px 20px
+        background #ccc
+        .field-content
+          display inline-block
+        span.views-label
+          &.views-label-field-price
+            display inline-block
+
+      &.views-field-title
+        font-size 16px
+
+    .views-row
+      clear both
+      position relative
+      margin-bottom 5px
+      height 180px
+
+  .pane-views-vendor-news-view-block
+    .views-field
+      &.views-field-body
+        width 60%
+        float left
+    .views-field
+      &.views-field-title
+        font-size 16px
+      &.views-field-field-photo
+        float right
+        width 260px
+        height 210px
+        
+    .item-list
+      clear both
+      text-align right
+      margin-top 10px
+      ul
+        &.pager
+          text-align right
+    .news-price
+      float right
+      padding 5px 20px
+      background #ccc
+      font-size 16px
+  .gmap-control
+    margin 10px auto
+
+    
+    
+    
+// Log in styles
+.pane-fb-connect-login-primary
+  .ajax-progress-throbber, .fb_connected
+    display none
+
+.page-login
+  .panel-col-first.panel-panel, .panel-2col-stacked .panel-col-last
+    width 45%
+    border 3px solid
+    padding 10px
+    margin-right 10px
+    height 330px
+
+  .panel-pane.pane-block
+    &.pane-fboauth-login
+      text-align center
+    &.pane-user-login
+      background #ccc
+      .form-item
+        text-align center
+        margin-bottom 3px
+
+  .pane-block.pane-user-login
+    h2.pane-title
+        font-size 14px
+        font-weight 400
+    .item-list
+      display none
+
+  div#edit-actions
+    text-align center
+    margin 0px
+    .form-submit
+      width 138px
+      margin 0
+      border-radius 0px
+      margin-bottom 10px
+
+  .pane-not-member
+    a.register.button
+      display block
+      margin auto
+      width 200px
+      text-align center
+      padding 5px 0
+      background #ccc
+      color #555
+div#mini-panel-register_description
+  padding 40px  60px  
+  strong 
+    font-size 18px
+// register user form
+.pane-create-account-top
+  text-align center
+  padding 30px 0
+  border 2px solid #aaa
+.pane-happywedding-user-register-form
+  text-align center
+  padding 20px 80px
+  border 2px solid #aaa
+  margin-top 20px
+  h2
+    &.pane-title
+      text-align left
+  input
+    &.password-field
+      width 90%
+
+.panel-pane
+  &.pane-happywedding-user-register-form
+    input
+      width 100%
+    #edit-actions .form-submit
+      margin-right  0px
+    .form-item
+      &.form-type-password
+        width 48%
+        position absolute
+        display block
+    .form-type-password-confirm
+      position relative
+      height 32px
+    .form-item-pass-pass1
+      left 0
+    .form-item-pass-pass2    
+      right 0
+    .password-strength 
+      display none
+
+    div.password-confirm
+      display none
+    .password-suggestions
+      display none !important
+    .field-name-field-first-name
+      float left
+      width 48%
+    .field-name-field-last-name
+      float right
+      width 48%
+    #edit-account
+      clear both
+    //  width 48%
+
+.page-user
+  .panel-left
+    width 240px
+    text-align center
+    float left
+    height 500px
+    .avatar-wrapper
+      margin 10px
+      border 1px solid #ccc
+      padding 10px 10px
+
+    .username
+      font-size 18px
+      font-weight 600
+
+    .wedding-day
+      font-size 12px
+  .user-content-wrapper
+    float left
+    width 720px
+    margin-top 10px
+
+
+  
+
+
+
+
+
+
+
+
+

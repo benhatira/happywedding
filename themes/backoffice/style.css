@@ -438,6 +438,7 @@ div.submitted {
  * Tables.
  */
 table {
+  clear:both;
   width: 100%;
   font-size: 0.923em;
   margin: 0 0 10px;
@@ -1016,3 +1017,5 @@ ul.term-reference-tree-level li .term-reference-tree-level li .term-reference-tr
     
 }
 #edit-field-vendor-tags-und >ul.term-reference-tree-level >li{ clear:both; }
+#views-exposed-form-vendor-products-page{display:none;}
+.field-name-field-product-category{display:none;}

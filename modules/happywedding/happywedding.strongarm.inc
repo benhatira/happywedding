@@ -21,8 +21,22 @@ function happywedding_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'clean_url';
-  $strongarm->value = '1';
+  $strongarm->value = 1;
   $export['clean_url'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_ad';
+  $strongarm->value = '1';
+  $export['comment_ad'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_ad';
+  $strongarm->value = 0;
+  $export['comment_anonymous_ad'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -30,6 +44,13 @@ function happywedding_strongarm() {
   $strongarm->name = 'comment_anonymous_article';
   $strongarm->value = 0;
   $export['comment_anonymous_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_inquiry';
+  $strongarm->value = 0;
+  $export['comment_anonymous_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -69,9 +90,23 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_ad';
+  $strongarm->value = 1;
+  $export['comment_default_mode_ad'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_article';
   $strongarm->value = 1;
   $export['comment_default_mode_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_inquiry';
+  $strongarm->value = 0;
+  $export['comment_default_mode_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -98,8 +133,15 @@ function happywedding_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_vendor';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_default_mode_vendor'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_ad';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_ad'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -107,6 +149,13 @@ function happywedding_strongarm() {
   $strongarm->name = 'comment_default_per_page_article';
   $strongarm->value = '50';
   $export['comment_default_per_page_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_inquiry';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -153,9 +202,23 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_ad';
+  $strongarm->value = 1;
+  $export['comment_form_location_ad'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_article';
   $strongarm->value = 1;
   $export['comment_form_location_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_inquiry';
+  $strongarm->value = 1;
+  $export['comment_form_location_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -188,6 +251,13 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_inquiry';
+  $strongarm->value = '2';
+  $export['comment_inquiry'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_news';
   $strongarm->value = '1';
   $export['comment_news'] = $strongarm;
@@ -202,9 +272,23 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_ad';
+  $strongarm->value = '1';
+  $export['comment_preview_ad'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_article';
   $strongarm->value = '1';
   $export['comment_preview_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_inquiry';
+  $strongarm->value = '0';
+  $export['comment_preview_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -244,9 +328,23 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_ad';
+  $strongarm->value = 1;
+  $export['comment_subject_field_ad'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_article';
   $strongarm->value = 1;
   $export['comment_subject_field_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_inquiry';
+  $strongarm->value = 1;
+  $export['comment_subject_field_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -294,7 +392,7 @@ function happywedding_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'configurable_timezones';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['configurable_timezones'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -356,9 +454,23 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_comment_filter_ad';
+  $strongarm->value = 0;
+  $export['entity_translation_comment_filter_ad'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_comment_filter_article';
   $strongarm->value = 0;
   $export['entity_translation_comment_filter_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_comment_filter_inquiry';
+  $strongarm->value = 0;
+  $export['entity_translation_comment_filter_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -394,11 +506,15 @@ function happywedding_strongarm() {
   $strongarm->name = 'entity_translation_entity_types';
   $strongarm->value = array(
     'node' => 'node',
-    'taxonomy_term' => 0,
-    'comment' => 0,
-    'user' => 0,
   );
   $export['entity_translation_entity_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_hide_translation_links_ad';
+  $strongarm->value = 0;
+  $export['entity_translation_hide_translation_links_ad'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -406,6 +522,13 @@ function happywedding_strongarm() {
   $strongarm->name = 'entity_translation_hide_translation_links_article';
   $strongarm->value = 0;
   $export['entity_translation_hide_translation_links_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_hide_translation_links_inquiry';
+  $strongarm->value = 0;
+  $export['entity_translation_hide_translation_links_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -438,9 +561,23 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_node_metadata_ad';
+  $strongarm->value = '0';
+  $export['entity_translation_node_metadata_ad'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_node_metadata_article';
   $strongarm->value = '0';
   $export['entity_translation_node_metadata_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_node_metadata_inquiry';
+  $strongarm->value = '0';
+  $export['entity_translation_node_metadata_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -533,6 +670,55 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'fboauth_id';
+  $strongarm->value = '454908264659542';
+  $export['fboauth_id'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fboauth_secret';
+  $strongarm->value = 'a43485179ddadeb34df2807ee40812a3';
+  $export['fboauth_secret'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fboauth_user_connections';
+  $strongarm->value = array();
+  $export['fboauth_user_connections'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fboauth_user_email';
+  $strongarm->value = 1;
+  $export['fboauth_user_email'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fboauth_user_picture';
+  $strongarm->value = 'picture';
+  $export['fboauth_user_picture'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fboauth_user_properties';
+  $strongarm->value = array();
+  $export['fboauth_user_properties'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'fboauth_user_username';
+  $strongarm->value = 'name';
+  $export['fboauth_user_username'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_comment__comment_node_vendor';
   $strongarm->value = array(
     'view_modes' => array(
@@ -556,6 +742,29 @@ function happywedding_strongarm() {
     ),
   );
   $export['field_bundle_settings_comment__comment_node_vendor'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__ad';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'locations' => array(
+          'weight' => '30',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__ad'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -606,9 +815,51 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__news';
+  $strongarm->name = 'field_bundle_settings_node__inquiry';
   $strongarm->value = array(
     'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'locations' => array(
+          'weight' => '2',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '1',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__inquiry'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__news';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'locations' => array(
@@ -849,7 +1100,7 @@ function happywedding_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'gmap_marker_file';
-  $strongarm->value = '18';
+  $strongarm->value = '1';
   $export['gmap_marker_file'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -982,17 +1233,17 @@ function happywedding_strongarm() {
   $strongarm->name = 'imce_profiles';
   $strongarm->value = array(
     1 => array(
-      'name' => 'Editor',
+      'name' => 'User-1',
       'usertab' => 1,
-      'filesize' => '0',
-      'quota' => '0',
-      'tuquota' => '0',
+      'filesize' => 0,
+      'quota' => 0,
+      'tuquota' => 0,
       'extensions' => '*',
       'dimensions' => '1200x1200',
-      'filenum' => '0',
+      'filenum' => 0,
       'directories' => array(
         0 => array(
-          'name' => 'editor/%uid',
+          'name' => '.',
           'subnav' => 1,
           'browse' => 1,
           'upload' => 1,
@@ -1006,30 +1257,24 @@ function happywedding_strongarm() {
       'thumbnails' => array(
         0 => array(
           'name' => 'Small',
-          'dimensions' => '120x120',
+          'dimensions' => '90x90',
           'prefix' => 'small_',
           'suffix' => '',
         ),
         1 => array(
           'name' => 'Medium',
-          'dimensions' => '320x320',
+          'dimensions' => '120x120',
           'prefix' => 'medium_',
           'suffix' => '',
         ),
         2 => array(
           'name' => 'Large',
-          'dimensions' => '640x640',
+          'dimensions' => '180x180',
           'prefix' => 'large_',
           'suffix' => '',
         ),
-        3 => array(
-          'name' => 'Extra-Large',
-          'dimensions' => '960x960',
-          'prefix' => 'xlarge_',
-          'suffix' => '',
-        ),
       ),
-      'mkdirnum' => '0',
+      'mkdirnum' => 0,
     ),
     2 => array(
       'name' => 'Sample profile',
@@ -1128,9 +1373,23 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_ad';
+  $strongarm->value = '0';
+  $export['language_content_type_ad'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_article';
   $strongarm->value = '4';
   $export['language_content_type_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_inquiry';
+  $strongarm->value = '0';
+  $export['language_content_type_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1168,13 +1427,13 @@ function happywedding_strongarm() {
     'language' => 'en',
     'name' => 'English',
     'native' => 'English',
-    'direction' => '0',
+    'direction' => 0,
     'enabled' => 1,
-    'plurals' => '0',
+    'plurals' => 0,
     'formula' => '',
     'domain' => '',
     'prefix' => '',
-    'weight' => '0',
+    'weight' => 0,
     'javascript' => '',
   );
   $export['language_default'] = $strongarm;
@@ -1183,40 +1442,14 @@ function happywedding_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_negotiation_language';
-  $strongarm->value = array(
-    'locale-session' => array(
-      'callbacks' => array(
-        'language' => 'locale_language_from_session',
-        'switcher' => 'locale_language_switcher_session',
-        'url_rewrite' => 'locale_language_url_rewrite_session',
-      ),
-      'file' => 'includes/locale.inc',
-    ),
-    'language-default' => array(
-      'callbacks' => array(
-        'language' => 'language_from_default',
-      ),
-    ),
-  );
+  $strongarm->value = array();
   $export['language_negotiation_language'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_negotiation_language_content';
-  $strongarm->value = array(
-    'locale-interface' => array(
-      'callbacks' => array(
-        'language' => 'locale_language_from_interface',
-      ),
-      'file' => 'includes/locale.inc',
-    ),
-    'language-default' => array(
-      'callbacks' => array(
-        'language' => 'language_from_default',
-      ),
-    ),
-  );
+  $strongarm->value = array();
   $export['language_negotiation_language_content'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1301,8 +1534,15 @@ function happywedding_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'location_use_province_abbreviation';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['location_use_province_abbreviation'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_ad';
+  $strongarm->value = array();
+  $export['menu_options_ad'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1312,6 +1552,13 @@ function happywedding_strongarm() {
     0 => 'main-menu',
   );
   $export['menu_options_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_inquiry';
+  $strongarm->value = array();
+  $export['menu_options_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1350,9 +1597,23 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_ad';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_ad'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_article';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_inquiry';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1413,9 +1674,38 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'module_filter_recent_modules';
+  $strongarm->value = array(
+    'rules_admin' => 1424167829,
+    'admin_views' => 1424233758,
+    'themekey_compat' => 1424254022,
+    'fb_connect' => 1424323106,
+    'fb_user' => 1424323106,
+    'fb_app' => 1424322956,
+    'fb' => 1424323076,
+    'fb_devel' => 1424322580,
+    'location_entity' => 1424425096,
+    'i18n_panels' => 1424664996,
+    'views_slideshow_cycle' => 1424679366,
+  );
+  $export['module_filter_recent_modules'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_admin_theme';
   $strongarm->value = 0;
   $export['node_admin_theme'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_ad';
+  $strongarm->value = array(
+    0 => 'status',
+    1 => 'promote',
+  );
+  $export['node_options_ad'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1425,6 +1715,15 @@ function happywedding_strongarm() {
     0 => 'status',
   );
   $export['node_options_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_inquiry';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1465,6 +1764,13 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_ad';
+  $strongarm->value = '0';
+  $export['node_preview_ad'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_article';
   $strongarm->value = '1';
   $export['node_preview_article'] = $strongarm;
@@ -1472,8 +1778,15 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_news';
+  $strongarm->name = 'node_preview_inquiry';
   $strongarm->value = '0';
+  $export['node_preview_inquiry'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_news';
+  $strongarm->value = '1';
   $export['node_preview_news'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1500,9 +1813,23 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_ad';
+  $strongarm->value = 1;
+  $export['node_submitted_ad'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_article';
   $strongarm->value = 1;
   $export['node_submitted_article'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_inquiry';
+  $strongarm->value = 1;
+  $export['node_submitted_inquiry'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1556,6 +1883,20 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'page_manager_node_view_disabled';
+  $strongarm->value = FALSE;
+  $export['page_manager_node_view_disabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_manager_user_view_disabled';
+  $strongarm->value = TRUE;
+  $export['page_manager_user_view_disabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_article_pattern';
   $strongarm->value = '[node:field_category]/[node:nid]/[node:title]';
   $export['pathauto_node_article_pattern'] = $strongarm;
@@ -1577,6 +1918,37 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'rules_event_whitelist';
+  $strongarm->value = array(
+    'comment_insert--comment_node_vendor' => 0,
+    'user_login' => 1,
+  );
+  $export['rules_event_whitelist'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'site_403';
+  $strongarm->value = '';
+  $export['site_403'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'site_404';
+  $strongarm->value = '';
+  $export['site_404'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'site_frontpage';
+  $strongarm->value = 'home';
+  $export['site_frontpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'statistics_count_content_views';
   $strongarm->value = 1;
   $export['statistics_count_content_views'] = $strongarm;
@@ -1587,6 +1959,470 @@ function happywedding_strongarm() {
   $strongarm->name = 'statistics_count_content_views_ajax';
   $strongarm->value = 1;
   $export['statistics_count_content_views_ajax'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'tabtamer_tab_settings';
+  $strongarm->value = array(
+    'node/%/webform' => array(
+      'weight' => '1',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform-results' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform-results',
+      'tabtamer_title' => '',
+    ),
+    'node/%/report' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%/report',
+      'tabtamer_title' => '',
+    ),
+    'node/%/view' => array(
+      'weight' => '-10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/view',
+      'tabtamer_title' => '',
+    ),
+    'node/%/edit' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/edit',
+      'tabtamer_title' => '',
+    ),
+    'node/%/delete' => array(
+      'weight' => '1',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/delete',
+      'tabtamer_title' => '',
+    ),
+    'node/%/revisions' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/revisions',
+      'tabtamer_title' => '',
+    ),
+    'node/%/track' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/track',
+      'tabtamer_title' => '',
+    ),
+    'node/%/devel' => array(
+      'weight' => '100',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/devel',
+      'tabtamer_title' => '',
+    ),
+    'node/%/translate' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/translate',
+      'tabtamer_title' => '',
+    ),
+    'node/%/products' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%/products',
+      'tabtamer_title' => '',
+    ),
+    'node/%/photos' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%/photos',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform/components' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform/components',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform/conditionals' => array(
+      'weight' => '1',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform/conditionals',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform/configure' => array(
+      'weight' => '5',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform/configure',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform/emails' => array(
+      'weight' => '4',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform/emails',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform/components/%' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform/components/%webform_menu_component',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform/components/%/clone' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform/components/%webform_menu_component/clone',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform/components/%/delete' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform/components/%webform_menu_component/delete',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform-results/submissions' => array(
+      'weight' => '4',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform-results/submissions',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform-results/analysis' => array(
+      'weight' => '5',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform-results/analysis',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform-results/table' => array(
+      'weight' => '6',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform-results/table',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform-results/download' => array(
+      'weight' => '7',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform-results/download',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform-results/clear' => array(
+      'weight' => '8',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform-results/clear',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform-results/analysis/%' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform-results/analysis/%webform_menu_component',
+      'tabtamer_title' => '',
+    ),
+    'node/%/webform-results/analysis/%/more' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/webform-results/analysis/%webform_menu_component/more',
+      'tabtamer_title' => '',
+    ),
+    'node/%/submission/%/view' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/submission/%webform_menu_submission/view',
+      'tabtamer_title' => '',
+    ),
+    'node/%/submission/%/edit' => array(
+      'weight' => '1',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/submission/%webform_menu_submission/edit',
+      'tabtamer_title' => '',
+    ),
+    'node/%/submission/%/delete' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/submission/%webform_menu_submission/delete',
+      'tabtamer_title' => '',
+    ),
+    'node/%/submission/%/devel' => array(
+      'weight' => '100',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/submission/%webform_menu_submission/devel',
+      'tabtamer_title' => '',
+    ),
+    'node/%/submission/%/devel/load' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/submission/%webform_menu_submission/devel/load',
+      'tabtamer_title' => '',
+    ),
+    'node/%/submission/%/devel/token' => array(
+      'weight' => '5',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%webform_menu/submission/%webform_menu_submission/devel/token',
+      'tabtamer_title' => '',
+    ),
+    'node/%/devel/load' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/devel/load',
+      'tabtamer_title' => '',
+    ),
+    'node/%/devel/render' => array(
+      'weight' => '100',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%node/devel/render',
+      'tabtamer_title' => '',
+    ),
+    'comment/%/view' => array(
+      'weight' => '-10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'comment/%/view',
+      'tabtamer_title' => '',
+    ),
+    'comment/%/edit' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'comment/%comment/edit',
+      'tabtamer_title' => '',
+    ),
+    'comment/%/delete' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'comment/%/delete',
+      'tabtamer_title' => '',
+    ),
+    'comment/%/devel' => array(
+      'weight' => '100',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'comment/%comment/devel',
+      'tabtamer_title' => '',
+    ),
+    'comment/%/devel/load' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'comment/%comment/devel/load',
+      'tabtamer_title' => '',
+    ),
+    'comment/%/devel/render' => array(
+      'weight' => '100',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'comment/%comment/devel/render',
+      'tabtamer_title' => '',
+    ),
+    'bo/vendor/%/dashboard' => array(
+      'weight' => '-100',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'bo/vendor/%/dashboard',
+      'tabtamer_title' => '',
+    ),
+    'bo/vendor/%/categories' => array(
+      'weight' => '-98',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'bo/vendor/%/categories',
+      'tabtamer_title' => '',
+    ),
+    'bo/vendor/%/report' => array(
+      'weight' => '-95',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'bo/vendor/%/report',
+      'tabtamer_title' => '',
+    ),
+    'bo/vendor/%/contactus' => array(
+      'weight' => '-93',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'bo/vendor/%/contactus',
+      'tabtamer_title' => '',
+    ),
+    'bo/vendor/%/reviews' => array(
+      'weight' => '-94',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'bo/vendor/%/reviews',
+      'tabtamer_title' => '',
+    ),
+    'bo/vendor/%/info' => array(
+      'weight' => '-99',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'bo/vendor/%/info',
+      'tabtamer_title' => '',
+    ),
+    'bo/vendor/%/news' => array(
+      'weight' => '-97',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'bo/vendor/%/news',
+      'tabtamer_title' => '',
+    ),
+    'bo/vendor/%/photos' => array(
+      'weight' => '-96',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'bo/vendor/%/photos',
+      'tabtamer_title' => '',
+    ),
+    'bo/vendor/%/categories/products' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'bo/vendor/%/categories/products',
+      'tabtamer_title' => '',
+    ),
+    'bo/vendor/%/reviews/new' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'bo/vendor/%/reviews/new',
+      'tabtamer_title' => '',
+    ),
+    'user/%/imce' => array(
+      'weight' => '-94',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user/imce',
+      'tabtamer_title' => '',
+    ),
+    'user/%/shortcuts' => array(
+      'weight' => '-96',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user/shortcuts',
+      'tabtamer_title' => '',
+    ),
+    'user/%/track/navigation' => array(
+      'weight' => '-95',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user/track/navigation',
+      'tabtamer_title' => '',
+    ),
+    'user/%/devel' => array(
+      'weight' => '-93',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user/devel',
+      'tabtamer_title' => '',
+    ),
+    'user/%/view' => array(
+      'weight' => '-99',
+      'action' => 'hidden',
+      'tabtamer_original_path' => 'user/%user/view',
+      'tabtamer_title' => '',
+    ),
+    'user/%/edit' => array(
+      'weight' => '-97',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user/edit',
+      'tabtamer_title' => 'SETTINGS',
+    ),
+    'user/%/bookmarks' => array(
+      'weight' => '-100',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%/bookmarks',
+      'tabtamer_title' => '',
+    ),
+    'user/%/reviews' => array(
+      'weight' => '-98',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%/reviews',
+      'tabtamer_title' => '',
+    ),
+    'user/%/devel/load' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user/devel/load',
+      'tabtamer_title' => '',
+    ),
+    'user/%/devel/render' => array(
+      'weight' => '100',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user/devel/render',
+      'tabtamer_title' => '',
+    ),
+    'user/%/edit/account' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%user_category/edit/account',
+      'tabtamer_title' => '',
+    ),
+    'user/%/bookmarks/vendors' => array(
+      'weight' => '1',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%/bookmarks/vendors',
+      'tabtamer_title' => '',
+    ),
+    'user/%/bookmarks/photos' => array(
+      'weight' => '2',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%/bookmarks/photos',
+      'tabtamer_title' => '',
+    ),
+    'user/%/bookmarks/forums' => array(
+      'weight' => '3',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%/bookmarks/forums',
+      'tabtamer_title' => '',
+    ),
+    'user/login' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/login',
+      'tabtamer_title' => '',
+    ),
+    'user/register' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/register',
+      'tabtamer_title' => '',
+    ),
+    'user/password' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/password',
+      'tabtamer_title' => '',
+    ),
+    'search/node' => array(
+      'weight' => '-10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'search/node',
+      'tabtamer_title' => '',
+    ),
+    'search/user' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'search/user',
+      'tabtamer_title' => '',
+    ),
+    'search/node/%' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'search/node/%menu_tail',
+      'tabtamer_title' => '',
+    ),
+    'search/user/%' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'search/user/%menu_tail',
+      'tabtamer_title' => '',
+    ),
+    'taxonomy/term/%/view' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/view',
+      'tabtamer_title' => '',
+    ),
+    'taxonomy/term/%/edit' => array(
+      'weight' => '10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/edit',
+      'tabtamer_title' => '',
+    ),
+    'taxonomy/term/%/devel' => array(
+      'weight' => '100',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/devel',
+      'tabtamer_title' => '',
+    ),
+    'taxonomy/term/%/devel/load' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/devel/load',
+      'tabtamer_title' => '',
+    ),
+    'taxonomy/term/%/devel/render' => array(
+      'weight' => '100',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/devel/render',
+      'tabtamer_title' => '',
+    ),
+  );
+  $export['tabtamer_tab_settings'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1730,6 +2566,46 @@ foo
       'validator' => 'themekey_validator_date_time',
       'page cache' => 1,
     ),
+    'node:field_ad_photo_alt' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">alt</em> of the field <em class="placeholder">field_ad_photo</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_ad_photo_fid' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">fid</em> of the field <em class="placeholder">field_ad_photo</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_ad_photo_height' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">height</em> of the field <em class="placeholder">field_ad_photo</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_ad_photo_title' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">title</em> of the field <em class="placeholder">field_ad_photo</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_ad_photo_width' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">width</em> of the field <em class="placeholder">field_ad_photo</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_ad_type_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_ad_type</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_ad_url_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_ad_url</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_ad_url_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_ad_url</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_address_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_address</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_address_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_address</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_admin_name_format' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_admin_name</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -1764,6 +2640,22 @@ foo
     ),
     'node:field_contact_tel_value' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_contact_tel</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_customer_email_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_customer_email</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_customer_email_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_customer_email</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_customer_name_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_customer_name</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_customer_name_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_customer_name</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
     'node:field_facebook_format' => array(
@@ -1862,6 +2754,10 @@ foo
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">target</em> of the field <em class="placeholder">field_rating</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
+    'node:field_request_brochure_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_request_brochure</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_start_date_value' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_start_date</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -1874,12 +2770,20 @@ foo
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">tid</em> of the field <em class="placeholder">field_tags</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
+    'node:field_to_vendor_target_id' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">target_id</em> of the field <em class="placeholder">field_to_vendor</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_url_format' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_url</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
     'node:field_url_value' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_url</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_user_location_lid' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">lid</em> of the field <em class="placeholder">field_user_location</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
     'node:field_vendor_category_value' => array(
@@ -1912,6 +2816,14 @@ foo
     ),
     'node:field_vendor_tags_tid' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">tid</em> of the field <em class="placeholder">field_vendor_tags</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_wedding_attendees_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_wedding_attendees</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_wedding_date_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_wedding_date</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
     'node:language' => array(
@@ -2119,6 +3031,11 @@ foo
       'validator' => 'themekey_validator_ctype_digit',
       'page cache' => 1,
     ),
+    'themekey_compat:module_system_triggers_theme' => array(
+      'description' => 'The property <em class="placeholder">themekey_compat:module_system_triggers_theme</em> could not be selected from the property drop-down. You got this static property by activating the <em class="placeholder">System</em> module at the ThemeKey Compatibility <a href="/admin/config/user-interface/themekey/settings/compat">settings</a>. You can move the property to any position in the rule chain.',
+      'page cache' => 1,
+      'static' => TRUE,
+    ),
     'user:hostname' => array(
       'description' => 'User: Hostname - The user hostname property which is the IP address of client machine, adjusted for reverse proxy. Text from Drupal bootstrap.inc:
       If Drupal is behind a reverse proxy, we use the X-Forwarded-For header instead of $_SERVER[\'REMOTE_ADDR\'], which would be the IP address of the proxy server, and not the client\'s.',
@@ -2164,6 +3081,22 @@ foo
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'themekey_compat_modules_enabled';
+  $strongarm->value = array(
+    0 => 'system',
+  );
+  $export['themekey_compat_modules_enabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'themekey_compat_modules_no_default_theme';
+  $strongarm->value = array();
+  $export['themekey_compat_modules_no_default_theme'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'themekey_cron_rules_processed';
   $strongarm->value = array();
   $export['themekey_cron_rules_processed'] = $strongarm;
@@ -2179,81 +3112,191 @@ foo
       'callback' => 'themekey_comment_cid2nid',
     ),
     1 => array(
+      'src' => 'node:nid',
+      'dst' => 'path:node_alias',
+      'callback' => 'themekey_path_nid2alias',
+    ),
+    2 => array(
+      'src' => 'profile:uid',
+      'dst' => 'themekey_ui:author_triggers_theme',
+      'callback' => 'themekey_user_profile2theme',
+    ),
+    3 => array(
       'src' => 'system:dummy',
       'dst' => 'locale:language_from_browser',
       'callback' => 'themekey_locale_dummy2language_from_browser',
     ),
-    2 => array(
+    4 => array(
+      'src' => 'taxonomy:tid',
+      'dst' => 'taxonomy:vid',
+      'callback' => 'themekey_taxonomy_tid2vid',
+    ),
+    5 => array(
+      'src' => 'taxonomy:tid',
+      'dst' => 'taxonomy:tid_and_childs',
+      'callback' => 'themekey_taxonomy_tid2tid_and_parents',
+    ),
+    6 => array(
+      'src' => 'node:nid',
+      'dst' => 'taxonomy:tid',
+      'callback' => 'themekey_taxonomy_nid2tid',
+    ),
+    7 => array(
+      'src' => 'taxonomy:tid',
+      'dst' => 'taxonomy:name',
+      'callback' => 'themekey_taxonomy_tid2name',
+    ),
+    8 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:query_param',
+      'callback' => 'themekey_dummy2query_param',
+    ),
+    9 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:cookie',
+      'callback' => 'themekey_dummy2cookie',
+    ),
+    10 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:http_header',
+      'callback' => 'themekey_dummy2http_header',
+    ),
+    11 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:post',
+      'callback' => 'themekey_dummy2post',
+    ),
+    12 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:query_string',
+      'callback' => 'themekey_dummy2query_string',
+    ),
+    13 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:date_time',
+      'callback' => 'themekey_dummy2date_time',
+    ),
+    14 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:date',
+      'callback' => 'themekey_dummy2date',
+    ),
+    15 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:month',
+      'callback' => 'themekey_dummy2month',
+    ),
+    16 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:time',
+      'callback' => 'themekey_dummy2time',
+    ),
+    17 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:day_of_week',
+      'callback' => 'themekey_dummy2day_of_week',
+    ),
+    18 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:day_of_month',
+      'callback' => 'themekey_dummy2day_of_month',
+    ),
+    19 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:user_browser',
+      'callback' => 'themekey_dummy2user_browser',
+    ),
+    20 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:user_os',
+      'callback' => 'themekey_dummy2user_os',
+    ),
+    21 => array(
+      'src' => 'system:user_browser',
+      'dst' => 'system:user_browser_simplified',
+      'callback' => 'themekey_user_browser2user_browser_simplified',
+    ),
+    22 => array(
+      'src' => 'system:user_os',
+      'dst' => 'system:user_os_simplified',
+      'callback' => 'themekey_user_os2user_os_simplified',
+    ),
+    23 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:session',
+      'callback' => 'themekey_dummy2session',
+    ),
+    24 => array(
       'src' => 'node:nid',
       'dst' => 'node:changed',
       'callback' => 'themekey_node_nid2changed',
     ),
-    3 => array(
+    25 => array(
       'src' => 'node:nid',
       'dst' => 'node:created',
       'callback' => 'themekey_node_nid2created',
     ),
-    4 => array(
+    26 => array(
       'src' => 'node:changed',
       'dst' => 'node:changed_date_time',
       'callback' => 'themekey_node_timestamp2datetime',
     ),
-    5 => array(
+    27 => array(
       'src' => 'node:created',
       'dst' => 'node:created_date_time',
       'callback' => 'themekey_node_timestamp2datetime',
     ),
-    6 => array(
+    28 => array(
       'src' => 'node:changed',
       'dst' => 'node:changed_date',
       'callback' => 'themekey_node_timestamp2date',
     ),
-    7 => array(
+    29 => array(
       'src' => 'node:created',
       'dst' => 'node:created_date',
       'callback' => 'themekey_node_timestamp2date',
     ),
-    8 => array(
+    30 => array(
       'src' => 'node:nid',
       'dst' => 'node:language',
       'callback' => 'themekey_node_nid2language',
     ),
-    9 => array(
+    31 => array(
       'src' => 'node:nid',
       'dst' => 'node:vid',
       'callback' => 'themekey_node_nid2vid',
     ),
-    10 => array(
+    32 => array(
       'src' => 'node:nid',
       'dst' => 'node:promote',
       'callback' => 'themekey_node_nid2promote',
     ),
-    11 => array(
+    33 => array(
       'src' => 'node:nid',
       'dst' => 'node:sticky',
       'callback' => 'themekey_node_nid2sticky',
     ),
-    12 => array(
+    34 => array(
       'src' => 'node:nid',
       'dst' => 'node:type',
       'callback' => 'themekey_node_nid2type',
     ),
-    13 => array(
+    35 => array(
       'src' => 'node:nid',
       'dst' => 'node:uid',
       'callback' => 'themekey_node_nid2uid',
     ),
-    14 => array(
+    36 => array(
       'src' => 'node:nid',
       'dst' => 'node:title',
       'callback' => 'themekey_node_nid2title',
     ),
-    15 => array(
+    37 => array(
       'src' => 'drupal:get_q',
       'dst' => 'node:type',
       'callback' => 'themekey_node_get_q2type',
     ),
-    16 => array(
+    38 => array(
       'src' => 'node:nid',
       'dst' => 'node:body_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2264,7 +3307,7 @@ foo
         'translatable' => '1',
       ),
     ),
-    17 => array(
+    39 => array(
       'src' => 'node:nid',
       'dst' => 'node:body_summary',
       'callback' => 'themekey_node_nid2field_value',
@@ -2275,7 +3318,7 @@ foo
         'translatable' => '1',
       ),
     ),
-    18 => array(
+    40 => array(
       'src' => 'node:nid',
       'dst' => 'node:body_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2286,7 +3329,7 @@ foo
         'translatable' => '1',
       ),
     ),
-    19 => array(
+    41 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_tags_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2297,7 +3340,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    20 => array(
+    42 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_image_fid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2308,7 +3351,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    21 => array(
+    43 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_image_alt',
       'callback' => 'themekey_node_nid2field_value',
@@ -2319,7 +3362,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    22 => array(
+    44 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_image_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -2330,7 +3373,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    23 => array(
+    45 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_image_width',
       'callback' => 'themekey_node_nid2field_value',
@@ -2341,7 +3384,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    24 => array(
+    46 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_image_height',
       'callback' => 'themekey_node_nid2field_value',
@@ -2352,227 +3395,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    25 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_category_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_category',
-        'type' => 'list_integer',
-        'column' => 'value',
-        'translatable' => '0',
-      ),
-    ),
-    26 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:title_field_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'title_field',
-        'type' => 'text',
-        'column' => 'value',
-        'translatable' => '1',
-      ),
-    ),
-    27 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:title_field_format',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'title_field',
-        'type' => 'text',
-        'column' => 'format',
-        'translatable' => '1',
-      ),
-    ),
-    28 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_photo_fid',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_photo',
-        'type' => 'image',
-        'column' => 'fid',
-        'translatable' => '0',
-      ),
-    ),
-    29 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_photo_alt',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_photo',
-        'type' => 'image',
-        'column' => 'alt',
-        'translatable' => '0',
-      ),
-    ),
-    30 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_photo_title',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_photo',
-        'type' => 'image',
-        'column' => 'title',
-        'translatable' => '0',
-      ),
-    ),
-    31 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_photo_width',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_photo',
-        'type' => 'image',
-        'column' => 'width',
-        'translatable' => '0',
-      ),
-    ),
-    32 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_photo_height',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_photo',
-        'type' => 'image',
-        'column' => 'height',
-        'translatable' => '0',
-      ),
-    ),
-    33 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_url_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_url',
-        'type' => 'text',
-        'column' => 'value',
-        'translatable' => '0',
-      ),
-    ),
-    34 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_url_format',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_url',
-        'type' => 'text',
-        'column' => 'format',
-        'translatable' => '0',
-      ),
-    ),
-    35 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_facebook_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_facebook',
-        'type' => 'text',
-        'column' => 'value',
-        'translatable' => '0',
-      ),
-    ),
-    36 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_facebook_format',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_facebook',
-        'type' => 'text',
-        'column' => 'format',
-        'translatable' => '0',
-      ),
-    ),
-    37 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_contact_email_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_contact_email',
-        'type' => 'text',
-        'column' => 'value',
-        'translatable' => '0',
-      ),
-    ),
-    38 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_contact_email_format',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_contact_email',
-        'type' => 'text',
-        'column' => 'format',
-        'translatable' => '0',
-      ),
-    ),
-    39 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_contact_tel_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_contact_tel',
-        'type' => 'text',
-        'column' => 'value',
-        'translatable' => '0',
-      ),
-    ),
-    40 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_contact_tel_format',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_contact_tel',
-        'type' => 'text',
-        'column' => 'format',
-        'translatable' => '0',
-      ),
-    ),
-    41 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_contact_name_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_contact_name',
-        'type' => 'text',
-        'column' => 'value',
-        'translatable' => '0',
-      ),
-    ),
-    42 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_contact_name_format',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_contact_name',
-        'type' => 'text',
-        'column' => 'format',
-        'translatable' => '0',
-      ),
-    ),
-    43 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_vendor_category_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_vendor_category',
-        'type' => 'list_integer',
-        'column' => 'value',
-        'translatable' => '0',
-      ),
-    ),
-    44 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_location_lid',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_location',
-        'type' => 'location',
-        'column' => 'lid',
-        'translatable' => '0',
-      ),
-    ),
-    45 => array(
+    47 => array(
       'src' => 'node:nid',
       'dst' => 'node:taxonomy_forums_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2583,62 +3406,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    46 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_vendor_photo_fid',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_vendor_photo',
-        'type' => 'image',
-        'column' => 'fid',
-        'translatable' => '0',
-      ),
-    ),
-    47 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_vendor_photo_alt',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_vendor_photo',
-        'type' => 'image',
-        'column' => 'alt',
-        'translatable' => '0',
-      ),
-    ),
     48 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_vendor_photo_title',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_vendor_photo',
-        'type' => 'image',
-        'column' => 'title',
-        'translatable' => '0',
-      ),
-    ),
-    49 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_vendor_photo_width',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_vendor_photo',
-        'type' => 'image',
-        'column' => 'width',
-        'translatable' => '0',
-      ),
-    ),
-    50 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_vendor_photo_height',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_vendor_photo',
-        'type' => 'image',
-        'column' => 'height',
-        'translatable' => '0',
-      ),
-    ),
-    51 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_rating_rating',
       'callback' => 'themekey_node_nid2field_value',
@@ -2649,7 +3417,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    52 => array(
+    49 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_rating_target',
       'callback' => 'themekey_node_nid2field_value',
@@ -2660,128 +3428,40 @@ foo
         'translatable' => '0',
       ),
     ),
-    53 => array(
+    50 => array(
       'src' => 'node:nid',
-      'dst' => 'node:field_vendor_tags_tid',
+      'dst' => 'node:field_category_value',
       'callback' => 'themekey_node_nid2field_value',
       'args' => array(
-        'field_name' => 'field_vendor_tags',
-        'type' => 'taxonomy_term_reference',
-        'column' => 'tid',
-        'translatable' => '0',
-      ),
-    ),
-    54 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_price_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_price',
-        'type' => 'number_float',
-        'column' => 'value',
-        'translatable' => '0',
-      ),
-    ),
-    55 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_product_vendor_target_id',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_product_vendor',
-        'type' => 'entityreference',
-        'column' => 'target_id',
-        'translatable' => '0',
-      ),
-    ),
-    56 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_product_category_tid',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_product_category',
-        'type' => 'taxonomy_term_reference',
-        'column' => 'tid',
-        'translatable' => '0',
-      ),
-    ),
-    57 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_photo_vendor_target_id',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_photo_vendor',
-        'type' => 'entityreference',
-        'column' => 'target_id',
-        'translatable' => '0',
-      ),
-    ),
-    58 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_photo_category_tid',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_photo_category',
-        'type' => 'taxonomy_term_reference',
-        'column' => 'tid',
-        'translatable' => '0',
-      ),
-    ),
-    59 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_start_date_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_start_date',
-        'type' => 'datestamp',
-        'column' => 'value',
-        'translatable' => '0',
-      ),
-    ),
-    60 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_admin_name_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_admin_name',
-        'type' => 'text',
-        'column' => 'value',
-        'translatable' => '0',
-      ),
-    ),
-    61 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_admin_name_format',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_admin_name',
-        'type' => 'text',
-        'column' => 'format',
-        'translatable' => '0',
-      ),
-    ),
-    62 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_vendor_plan_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_vendor_plan',
+        'field_name' => 'field_category',
         'type' => 'list_integer',
         'column' => 'value',
         'translatable' => '0',
       ),
     ),
-    63 => array(
+    51 => array(
       'src' => 'node:nid',
-      'dst' => 'node:field_tag_price_value',
+      'dst' => 'node:title_field_value',
       'callback' => 'themekey_node_nid2field_value',
       'args' => array(
-        'field_name' => 'field_tag_price',
-        'type' => 'number_float',
+        'field_name' => 'title_field',
+        'type' => 'text',
         'column' => 'value',
-        'translatable' => '0',
+        'translatable' => '1',
       ),
     ),
-    64 => array(
+    52 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:title_field_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'title_field',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '1',
+      ),
+    ),
+    53 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_files_fid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2792,7 +3472,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    65 => array(
+    54 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_files_display',
       'callback' => 'themekey_node_nid2field_value',
@@ -2803,7 +3483,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    66 => array(
+    55 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_files_description',
       'callback' => 'themekey_node_nid2field_value',
@@ -2814,7 +3494,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    67 => array(
+    56 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_news_vendor_target_id',
       'callback' => 'themekey_node_nid2field_value',
@@ -2825,135 +3505,605 @@ foo
         'translatable' => '0',
       ),
     ),
+    57 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_photo_fid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_photo',
+        'type' => 'image',
+        'column' => 'fid',
+        'translatable' => '0',
+      ),
+    ),
+    58 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_photo_alt',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_photo',
+        'type' => 'image',
+        'column' => 'alt',
+        'translatable' => '0',
+      ),
+    ),
+    59 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_photo_title',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_photo',
+        'type' => 'image',
+        'column' => 'title',
+        'translatable' => '0',
+      ),
+    ),
+    60 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_photo_width',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_photo',
+        'type' => 'image',
+        'column' => 'width',
+        'translatable' => '0',
+      ),
+    ),
+    61 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_photo_height',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_photo',
+        'type' => 'image',
+        'column' => 'height',
+        'translatable' => '0',
+      ),
+    ),
+    62 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_photo_category_tid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_photo_category',
+        'type' => 'taxonomy_term_reference',
+        'column' => 'tid',
+        'translatable' => '0',
+      ),
+    ),
+    63 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_photo_vendor_target_id',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_photo_vendor',
+        'type' => 'entityreference',
+        'column' => 'target_id',
+        'translatable' => '0',
+      ),
+    ),
+    64 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_price_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_price',
+        'type' => 'number_float',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    65 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_product_category_tid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_product_category',
+        'type' => 'taxonomy_term_reference',
+        'column' => 'tid',
+        'translatable' => '0',
+      ),
+    ),
+    66 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_product_vendor_target_id',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_product_vendor',
+        'type' => 'entityreference',
+        'column' => 'target_id',
+        'translatable' => '0',
+      ),
+    ),
+    67 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_tag_price_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_tag_price',
+        'type' => 'number_float',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
     68 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_admin_name_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_admin_name',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    69 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_admin_name_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_admin_name',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    70 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_contact_email_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_contact_email',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    71 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_contact_email_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_contact_email',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    72 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_contact_name_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_contact_name',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    73 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_contact_name_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_contact_name',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    74 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_contact_tel_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_contact_tel',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    75 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_contact_tel_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_contact_tel',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    76 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_facebook_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_facebook',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    77 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_facebook_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_facebook',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    78 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_location_lid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_location',
+        'type' => 'location',
+        'column' => 'lid',
+        'translatable' => '0',
+      ),
+    ),
+    79 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_start_date_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_start_date',
+        'type' => 'datestamp',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    80 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_url_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_url',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    81 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_url_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_url',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    82 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_vendor_category_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_vendor_category',
+        'type' => 'list_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    83 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_vendor_photo_fid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_vendor_photo',
+        'type' => 'image',
+        'column' => 'fid',
+        'translatable' => '0',
+      ),
+    ),
+    84 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_vendor_photo_alt',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_vendor_photo',
+        'type' => 'image',
+        'column' => 'alt',
+        'translatable' => '0',
+      ),
+    ),
+    85 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_vendor_photo_title',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_vendor_photo',
+        'type' => 'image',
+        'column' => 'title',
+        'translatable' => '0',
+      ),
+    ),
+    86 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_vendor_photo_width',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_vendor_photo',
+        'type' => 'image',
+        'column' => 'width',
+        'translatable' => '0',
+      ),
+    ),
+    87 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_vendor_photo_height',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_vendor_photo',
+        'type' => 'image',
+        'column' => 'height',
+        'translatable' => '0',
+      ),
+    ),
+    88 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_vendor_plan_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_vendor_plan',
+        'type' => 'list_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    89 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_vendor_tags_tid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_vendor_tags',
+        'type' => 'taxonomy_term_reference',
+        'column' => 'tid',
+        'translatable' => '0',
+      ),
+    ),
+    90 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_wedding_date_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_wedding_date',
+        'type' => 'datetime',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    91 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_wedding_attendees_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_wedding_attendees',
+        'type' => 'list_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    92 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_user_location_lid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_user_location',
+        'type' => 'location',
+        'column' => 'lid',
+        'translatable' => '0',
+      ),
+    ),
+    93 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_ad_photo_fid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_ad_photo',
+        'type' => 'image',
+        'column' => 'fid',
+        'translatable' => '0',
+      ),
+    ),
+    94 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_ad_photo_alt',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_ad_photo',
+        'type' => 'image',
+        'column' => 'alt',
+        'translatable' => '0',
+      ),
+    ),
+    95 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_ad_photo_title',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_ad_photo',
+        'type' => 'image',
+        'column' => 'title',
+        'translatable' => '0',
+      ),
+    ),
+    96 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_ad_photo_width',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_ad_photo',
+        'type' => 'image',
+        'column' => 'width',
+        'translatable' => '0',
+      ),
+    ),
+    97 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_ad_photo_height',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_ad_photo',
+        'type' => 'image',
+        'column' => 'height',
+        'translatable' => '0',
+      ),
+    ),
+    98 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_ad_type_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_ad_type',
+        'type' => 'list_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    99 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_ad_url_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_ad_url',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    100 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_ad_url_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_ad_url',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    101 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_to_vendor_target_id',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_to_vendor',
+        'type' => 'entityreference',
+        'column' => 'target_id',
+        'translatable' => '0',
+      ),
+    ),
+    102 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_customer_name_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_customer_name',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    103 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_customer_name_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_customer_name',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    104 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_customer_email_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_customer_email',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    105 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_customer_email_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_customer_email',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    106 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_address_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_address',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    107 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_address_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_address',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    108 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_request_brochure_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_request_brochure',
+        'type' => 'list_boolean',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    109 => array(
       'src' => 'system:dummy',
       'dst' => 'overlay:mode',
       'callback' => 'themekey_overlay_dummy2mode',
     ),
-    69 => array(
-      'src' => 'node:nid',
-      'dst' => 'path:node_alias',
-      'callback' => 'themekey_path_nid2alias',
-    ),
-    70 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:query_param',
-      'callback' => 'themekey_dummy2query_param',
-    ),
-    71 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:cookie',
-      'callback' => 'themekey_dummy2cookie',
-    ),
-    72 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:http_header',
-      'callback' => 'themekey_dummy2http_header',
-    ),
-    73 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:post',
-      'callback' => 'themekey_dummy2post',
-    ),
-    74 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:query_string',
-      'callback' => 'themekey_dummy2query_string',
-    ),
-    75 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:date_time',
-      'callback' => 'themekey_dummy2date_time',
-    ),
-    76 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:date',
-      'callback' => 'themekey_dummy2date',
-    ),
-    77 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:month',
-      'callback' => 'themekey_dummy2month',
-    ),
-    78 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:time',
-      'callback' => 'themekey_dummy2time',
-    ),
-    79 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:day_of_week',
-      'callback' => 'themekey_dummy2day_of_week',
-    ),
-    80 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:day_of_month',
-      'callback' => 'themekey_dummy2day_of_month',
-    ),
-    81 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:user_browser',
-      'callback' => 'themekey_dummy2user_browser',
-    ),
-    82 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:user_os',
-      'callback' => 'themekey_dummy2user_os',
-    ),
-    83 => array(
-      'src' => 'system:user_browser',
-      'dst' => 'system:user_browser_simplified',
-      'callback' => 'themekey_user_browser2user_browser_simplified',
-    ),
-    84 => array(
-      'src' => 'system:user_os',
-      'dst' => 'system:user_os_simplified',
-      'callback' => 'themekey_user_os2user_os_simplified',
-    ),
-    85 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:session',
-      'callback' => 'themekey_dummy2session',
-    ),
-    86 => array(
-      'src' => 'taxonomy:tid',
-      'dst' => 'taxonomy:vid',
-      'callback' => 'themekey_taxonomy_tid2vid',
-    ),
-    87 => array(
-      'src' => 'taxonomy:tid',
-      'dst' => 'taxonomy:tid_and_childs',
-      'callback' => 'themekey_taxonomy_tid2tid_and_parents',
-    ),
-    88 => array(
-      'src' => 'node:nid',
-      'dst' => 'taxonomy:tid',
-      'callback' => 'themekey_taxonomy_nid2tid',
-    ),
-    89 => array(
-      'src' => 'taxonomy:tid',
-      'dst' => 'taxonomy:name',
-      'callback' => 'themekey_taxonomy_tid2name',
-    ),
-    90 => array(
-      'src' => 'profile:uid',
-      'dst' => 'themekey_ui:author_triggers_theme',
-      'callback' => 'themekey_user_profile2theme',
-    ),
-    91 => array(
+    110 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:vid',
       'callback' => 'themekey_views_getq2vid',
     ),
-    92 => array(
+    111 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:machine_name',
       'callback' => 'themekey_views_getq2machine_name',
     ),
-    93 => array(
+    112 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:human_name',
       'callback' => 'themekey_views_getq2human_name',
+    ),
+    113 => array(
+      'src' => 'system:dummy',
+      'dst' => 'themekey_compat:module_system_triggers_theme',
+      'callback' => 'themekey_compat_dummy2theme',
+      'args' => array(
+        'module' => 'system',
+      ),
     ),
   );
   $export['themekey_maps'] = $strongarm;
@@ -2964,13 +4114,13 @@ foo
   $strongarm->name = 'themekey_modules';
   $strongarm->value = array(
     0 => 'comment',
-    1 => 'locale',
-    2 => 'node',
-    3 => 'overlay',
-    4 => 'path',
+    1 => 'path',
+    2 => 'user',
+    3 => 'locale',
+    4 => 'taxonomy',
     5 => 'system',
-    6 => 'taxonomy',
-    7 => 'user',
+    6 => 'node',
+    7 => 'overlay',
     8 => 'views',
   );
   $export['themekey_modules'] = $strongarm;
@@ -3046,19 +4196,19 @@ foo
       'fit' => 5,
     ),
     7 => array(
-      'path' => 'node/#',
+      'path' => 'user/#',
       'callbacks' => array(),
       'wildcards' => array(
-        1 => 'node:nid',
+        1 => 'profile:uid',
       ),
       'weight' => 1,
       'fit' => 2,
     ),
     8 => array(
-      'path' => 'user/#',
+      'path' => 'node/#',
       'callbacks' => array(),
       'wildcards' => array(
-        1 => 'profile:uid',
+        1 => 'node:nid',
       ),
       'weight' => 1,
       'fit' => 2,
@@ -3090,6 +4240,16 @@ foo
     'node:created' => 'node:created',
     'node:created_date' => 'node:created_date',
     'node:created_date_time' => 'node:created_date_time',
+    'node:field_ad_photo_alt' => 'node:field_ad_photo_alt',
+    'node:field_ad_photo_fid' => 'node:field_ad_photo_fid',
+    'node:field_ad_photo_height' => 'node:field_ad_photo_height',
+    'node:field_ad_photo_title' => 'node:field_ad_photo_title',
+    'node:field_ad_photo_width' => 'node:field_ad_photo_width',
+    'node:field_ad_type_value' => 'node:field_ad_type_value',
+    'node:field_ad_url_format' => 'node:field_ad_url_format',
+    'node:field_ad_url_value' => 'node:field_ad_url_value',
+    'node:field_address_format' => 'node:field_address_format',
+    'node:field_address_value' => 'node:field_address_value',
     'node:field_admin_name_format' => 'node:field_admin_name_format',
     'node:field_admin_name_value' => 'node:field_admin_name_value',
     'node:field_category_value' => 'node:field_category_value',
@@ -3099,6 +4259,10 @@ foo
     'node:field_contact_name_value' => 'node:field_contact_name_value',
     'node:field_contact_tel_format' => 'node:field_contact_tel_format',
     'node:field_contact_tel_value' => 'node:field_contact_tel_value',
+    'node:field_customer_email_format' => 'node:field_customer_email_format',
+    'node:field_customer_email_value' => 'node:field_customer_email_value',
+    'node:field_customer_name_format' => 'node:field_customer_name_format',
+    'node:field_customer_name_value' => 'node:field_customer_name_value',
     'node:field_facebook_format' => 'node:field_facebook_format',
     'node:field_facebook_value' => 'node:field_facebook_value',
     'node:field_files_description' => 'node:field_files_description',
@@ -3123,11 +4287,14 @@ foo
     'node:field_product_vendor_target_id' => 'node:field_product_vendor_target_id',
     'node:field_rating_rating' => 'node:field_rating_rating',
     'node:field_rating_target' => 'node:field_rating_target',
+    'node:field_request_brochure_value' => 'node:field_request_brochure_value',
     'node:field_start_date_value' => 'node:field_start_date_value',
     'node:field_tag_price_value' => 'node:field_tag_price_value',
     'node:field_tags_tid' => 'node:field_tags_tid',
+    'node:field_to_vendor_target_id' => 'node:field_to_vendor_target_id',
     'node:field_url_format' => 'node:field_url_format',
     'node:field_url_value' => 'node:field_url_value',
+    'node:field_user_location_lid' => 'node:field_user_location_lid',
     'node:field_vendor_category_value' => 'node:field_vendor_category_value',
     'node:field_vendor_photo_alt' => 'node:field_vendor_photo_alt',
     'node:field_vendor_photo_fid' => 'node:field_vendor_photo_fid',
@@ -3136,6 +4303,8 @@ foo
     'node:field_vendor_photo_width' => 'node:field_vendor_photo_width',
     'node:field_vendor_plan_value' => 'node:field_vendor_plan_value',
     'node:field_vendor_tags_tid' => 'node:field_vendor_tags_tid',
+    'node:field_wedding_attendees_value' => 'node:field_wedding_attendees_value',
+    'node:field_wedding_date_value' => 'node:field_wedding_date_value',
     'node:language' => 'node:language',
     'node:nid' => 'node:nid',
     'node:promote' => 'node:promote',
@@ -3200,16 +4369,279 @@ foo
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'user_email_verification';
+  $strongarm->value = 0;
+  $export['user_email_verification'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_cancel_confirm_body';
+  $strongarm->value = '[user:name],
+
+A request to cancel your account has been made at [site:name].
+
+You may now cancel your account on [site:url-brief] by clicking this link or copying and pasting it into your browser:
+
+[user:cancel-url]
+
+NOTE: The cancellation of your account is not reversible.
+
+This link expires in one day and nothing will happen if it is not used.
+
+--  [site:name] team';
+  $export['user_mail_cancel_confirm_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_cancel_confirm_subject';
+  $strongarm->value = 'Account cancellation request for [user:name] at [site:name]';
+  $export['user_mail_cancel_confirm_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_password_reset_body';
+  $strongarm->value = '[user:name],
+
+A request to reset the password for your account has been made at [site:name].
+
+You may now log in by clicking this link or copying and pasting it to your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password. It expires after one day and nothing will happen if it\'s not used.
+
+--  [site:name] team';
+  $export['user_mail_password_reset_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_password_reset_subject';
+  $strongarm->value = 'Replacement login information for [user:name] at [site:name]';
+  $export['user_mail_password_reset_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_admin_created_body';
+  $strongarm->value = '[user:name],
+
+A site administrator at [site:name] has created an account for you. You may now log in by clicking this link or copying and pasting it to your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password.
+
+After setting your password, you will be able to log in at [site:login-url] in the future using:
+
+username: [user:name]
+password: Your password
+
+--  [site:name] team';
+  $export['user_mail_register_admin_created_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_admin_created_subject';
+  $strongarm->value = 'An administrator created an account for you at [site:name]';
+  $export['user_mail_register_admin_created_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_no_approval_required_body';
+  $strongarm->value = '[user:name],
+
+Thank you for registering at [site:name]. You may now log in by clicking this link or copying and pasting it to your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password.
+
+After setting your password, you will be able to log in at [site:login-url] in the future using:
+
+username: [user:name]
+password: Your password
+
+--  [site:name] team';
+  $export['user_mail_register_no_approval_required_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_no_approval_required_subject';
+  $strongarm->value = 'Account details for [user:name] at [site:name]';
+  $export['user_mail_register_no_approval_required_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_pending_approval_body';
+  $strongarm->value = '[user:name],
+
+Thank you for registering at [site:name]. Your application for an account is currently pending approval. Once it has been approved, you will receive another e-mail containing information about how to log in, set your password, and other details.
+
+
+--  [site:name] team';
+  $export['user_mail_register_pending_approval_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_pending_approval_subject';
+  $strongarm->value = 'Account details for [user:name] at [site:name] (pending admin approval)';
+  $export['user_mail_register_pending_approval_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_activated_body';
+  $strongarm->value = '[user:name],
+
+Your account at [site:name] has been activated.
+
+You may now log in by clicking this link or copying and pasting it into your browser:
+
+[user:one-time-login-url]
+
+This link can only be used once to log in and will lead you to a page where you can set your password.
+
+After setting your password, you will be able to log in at [site:login-url] in the future using:
+
+username: [user:name]
+password: Your password
+
+--  [site:name] team';
+  $export['user_mail_status_activated_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_activated_notify';
+  $strongarm->value = 1;
+  $export['user_mail_status_activated_notify'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_activated_subject';
+  $strongarm->value = 'Account details for [user:name] at [site:name] (approved)';
+  $export['user_mail_status_activated_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_blocked_body';
+  $strongarm->value = '[user:name],
+
+Your account on [site:name] has been blocked.
+
+--  [site:name] team';
+  $export['user_mail_status_blocked_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_blocked_notify';
+  $strongarm->value = 0;
+  $export['user_mail_status_blocked_notify'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_blocked_subject';
+  $strongarm->value = 'Account details for [user:name] at [site:name] (blocked)';
+  $export['user_mail_status_blocked_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_canceled_body';
+  $strongarm->value = '[user:name],
+
+Your account on [site:name] has been canceled.
+
+--  [site:name] team';
+  $export['user_mail_status_canceled_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_canceled_notify';
+  $strongarm->value = 0;
+  $export['user_mail_status_canceled_notify'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_canceled_subject';
+  $strongarm->value = 'Account details for [user:name] at [site:name] (canceled)';
+  $export['user_mail_status_canceled_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'user_pictures';
-  $strongarm->value = '1';
+  $strongarm->value = 1;
   $export['user_pictures'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'user_picture_default';
+  $strongarm->value = 'public://pictures/picture-default.png';
+  $export['user_picture_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_picture_default_upload';
+  $strongarm->value = (object) array(
+    'uid' => '1',
+    'status' => 0,
+    'filename' => 'default-avatar.png',
+    'uri' => 'temporary://default-avatar.png',
+    'filemime' => 'image/png',
+    'filesize' => 35365,
+    'source' => 'user_picture_default_upload',
+    'destination' => 'temporary://default-avatar.png',
+    'timestamp' => 1424668999,
+    'uuid' => 'ded09384-93b2-44ed-b961-a361b013a06e',
+    'fid' => '26',
+  );
+  $export['user_picture_default_upload'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_picture_dimensions';
+  $strongarm->value = '1024x1024';
+  $export['user_picture_dimensions'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_picture_path';
+  $strongarm->value = 'pictures';
+  $export['user_picture_path'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'user_picture_style';
-  $strongarm->value = 'thumbnail';
+  $strongarm->value = 'user_avatar';
   $export['user_picture_style'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'webform_node_webform';
+  $strongarm->value = TRUE;
+  $export['webform_node_webform'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -10,6 +10,8 @@ include_once 'happywedding.import.inc';
 include_once 'happywedding.node.inc';
 include_once 'happywedding.views.inc';
 include_once 'happywedding.vendor.inc';
+include_once 'happywedding.user.inc';
+include_once 'happywedding.blocks.inc';
 
 function happywedding_init() {
   // Do not load modal_forms during the Drupal installation process, e.g. if part
@@ -122,3 +124,5 @@ function _happywedding_doheader() {
 
   $already_added = TRUE;
 }
+
+

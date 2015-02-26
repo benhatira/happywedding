@@ -60,6 +60,54 @@ function best_responsive_preprocess_page(&$vars) {
   else {
     $vars['secondary_menu'] = FALSE;
   }
+ // $vars['user_data'] = array();
+  
+  if ($vars['logged_in']) {
+    $user = user_load($vars['user']->uid);
+    $vars['user_data'] = array( 'name' => $user->name);
+    $vars['user_data']['wedding_days_away'] = t('Your wedding is') . ' 233 ' . ('days away.');
+    if( !empty($user->picture->uri)) {
+    $vars['user_data']['avatar'] = theme_image_style(
+      array(
+        'style_name' => 'user_avatar',
+        'path' => $user->picture->uri ,
+        'attributes' => array(
+        'class' => 'avatar'
+            ),
+        'width' => 150,
+        'height' => 150,             
+        )
+      );
+    } else
+      $vars['user_data']['avatar'] = '<img class="avatar" typeof="foaf:Image" src="'. variable_get('user_picture_default').'" width="150" height="150" alt="">';
+    
+  } else {
+   
+    //echo '<img src="/sites/all/themes/my_theme/images/default.png" />';
+  }
+  
+  $vars['ads'] = _get_ads_views();
+  
+}
+
+function _get_ads_views() {
+  
+  $view = views_get_view('ads_view');
+  //dpm($view);
+  $view->execute();
+  $images = array();
+  foreach($view->result as $key => $val) {
+    $image = array( 
+      "title" => $val->node_title, 
+      "uri" => $val->field_field_ad_photo[0]['raw']['uri'], 
+      "style" => $val->field_field_ad_photo[0]['rendered']['#image_style'] );
+    
+    $image["url"] = image_style_url($image["style"], $image["uri"] );
+    //$image["path"] = image_style_path($image["style"], $image["uri"] );
+    //$image["path"] = '/'. variable_get('file_public_path', conf_path() . '/files') . '/' . file_uri_target($image["path"]);
+    $images[] = $image;
+  }
+  return $images;
 }
 
 /**
@@ -114,4 +162,21 @@ function best_responsive_page_alter($page) {
 if (drupal_is_front_page()) {
   drupal_add_js(drupal_get_path('theme', 'best_responsive') . '/js/flexslider-min.js');
   drupal_add_js(drupal_get_path('theme', 'best_responsive') . '/js/slide.js');
+}
+
+function best_responsive_login_menu($logged_in){
+  global $user;
+  $output = "<ul class='nav-right'>";
+  if($logged_in) {
+    $output .= "<li class='login button'><a href='/user'>". t("MY PAGE"). "</a></li>";
+    $output .= "<li class='logout button'><a href='/user/logout'>". t("LOGOUT"). "</a></li>";
+  } else {
+    $output .= "<li class='login button'><a href='/login'> ". t("LOGIN"). "</a></li>";
+    $output .= "<li class='register button'><a href='/register'>" . t("REGISTER"). "</a></li>";
+  }
+    //$output           <li>t("L_SWITCHER")</li>
+          
+  $output .= "</ul>";
+  return $output;
+
 }

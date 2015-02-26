@@ -30,6 +30,14 @@ function happywedding_uuid_features_default_users() {
     2 => 'authenticated user',
     5 => 'operator',
   ),
+  'field_first_name' => array(),
+  'field_last_name' => array(),
+  'field_birthdate' => array(),
+  'field_gender' => array(),
+  'field_wedding_date' => array(),
+  'field_wedding_attendees' => array(),
+  'field_budget' => array(),
+  'field_user_location' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:UserAccount',
@@ -68,6 +76,14 @@ function happywedding_uuid_features_default_users() {
     2 => 'authenticated user',
     4 => 'editor',
   ),
+  'field_first_name' => array(),
+  'field_last_name' => array(),
+  'field_birthdate' => array(),
+  'field_gender' => array(),
+  'field_wedding_date' => array(),
+  'field_wedding_attendees' => array(),
+  'field_budget' => array(),
+  'field_user_location' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:UserAccount',

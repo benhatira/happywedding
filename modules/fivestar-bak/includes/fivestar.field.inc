@@ -737,7 +737,7 @@ function fivestar_field_prepare_view($entity_type, $entities, $field, $instances
     }
     if(!empty($exposed_widgets)) {
       $votes = fivestar_get_votes_multiple($entity_type, $exposed_widgets, $field['settings']['axis']);
-      dpm($votes);
+      //dpm($votes);
       foreach($votes[$entity_type] as $id => $vote) {
         // Populating the $items[$id] array even for items with no value forces
         // the render system to output a widget.
