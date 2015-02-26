@@ -93,6 +93,7 @@ function best_responsive_preprocess_page(&$vars) {
 function _get_ads_views() {
   
   $view = views_get_view('ads_view');
+  if($view==null) return array();
   //dpm($view);
   $view->execute();
   $images = array();
@@ -166,13 +167,21 @@ if (drupal_is_front_page()) {
 
 function best_responsive_login_menu($logged_in){
   global $user;
-  $output = "<ul class='nav-right'>";
+  $output = "<ul class='nav nav-login'>";
   if($logged_in) {
-    $output .= "<li class='login button'><a href='/user'>". t("MY PAGE"). "</a></li>";
-    $output .= "<li class='logout button'><a href='/user/logout'>". t("LOGOUT"). "</a></li>";
+    $output .= "<li class='login fleft'><a href='/user'>". t("MY PAGE"). "</a></li>";
+    $output .= "<li class='logout fleft'><a href='/user/logout'>". t("LOGOUT"). "</a></li>";
   } else {
-    $output .= "<li class='login button'><a href='/login'> ". t("LOGIN"). "</a></li>";
-    $output .= "<li class='register button'><a href='/register'>" . t("REGISTER"). "</a></li>";
+    $output .= "<li class='login fleft'><a href='/user'>". t("LOGIN / REGISTER"). "</a></li>";
+    $output .= "<li class='vendor fleft'><a href='/bo/vendor'>". t("FOR VENDORS"). "</a></li>";
+    $output .= "<li class='vendor fright'><a href='/bo/vendor'>". t("ENG"). "</a></li>";
+    //Social icon
+    $output .= "<li class='vendor fright'>";
+    $output .= "<span class='facebook icon'></span>";
+    $output .= "<span class='twitter icon'></span>";
+    $output .= "<span class='instagram icon'></span>";
+    $output .= "<span class='mail icon'></span>";
+    $output .= "</li>";
   }
     //$output           <li>t("L_SWITCHER")</li>
           

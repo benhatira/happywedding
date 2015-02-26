@@ -1,3 +1,16 @@
+div#logo {
+    height: 137px;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#logo img {
+    margin: auto;
+}
+
+
+
 .webmaster-menu
   background-color #ab0070
   font-weight 700
@@ -13,10 +26,11 @@
   clear both
 body
   a
+    text-decoration none
     color #999
-    &:hover
-      text-decoration none
-      color #ccc
+//    &:hover
+//      
+//      color #ccc
   td
     vertical-align middle
     padding 5px 6px
@@ -27,8 +41,41 @@ body
 .container
   min-height 600px
 #wrap
-  width 1024px
+  width 1140px
+#home-slider
+  border-top 1px solid #a0a2ac
+.nav-login
+  margin 0
+  height 30px
+  li.vendor
+    background #cbcbcb
+    a
+      color black
+  li
+    height 30px
+    padding 8px 20px
+    display block
+    list-style none
+    a
+      color white
+      line-height 1em
+      display block
+      float left
+    &.login
+      &:before
+        content ''
+        width 20px
+        height 20px
+        display block
+        margin-right 10px
+        float left
+        background url('/sites/all/themes/best_responsive/images/sprites.png') -34px -8px
 
+.fleft
+  float left
+.fright
+  float right
+  
 #navigation
   position relative
   height 80px
@@ -36,37 +83,46 @@ body
   right 0
   margin-top 0
   #main-menu
-    height 52px
-    background #343434
+    position absolute
+    top 7px
+    width 100%
+    z-index 1
+    height 45px
+    background url(/sites/all/themes/best_responsive/images/nav-bg.png)
     & > ul
       & > li
         & > a
-          padding 10px 20px
+          line-height 32px
+          padding 7px 20px
           font-size 16px
-    .nav-right
-      float right
+          height 45px
   #secondary-menu
-    height 30px
     clear both
-    background #999
+    height 57px
+    background #2a2a2a
+    font-size 16px
+    padding 0 30px
+    line-height 2.9em
     ul
       margin 0
       & > li
         list-style none
         float left
-        height 30px
+        height 57px
         & > a
-          color #eaeaea
-          padding 5px 12px 5px 8px
-          font-weight bold
+          color white
+          padding 5px 28px 5px 28px
           display block
-          font-size 11px
+          height 57px
+          font-size 16px
 
 #navigation a:hover, #navigation a.active
-  color #fff
+  color #f084b5
 
 #navigation #secondary-menu ul>li>a:hover, #navigation #secondary-menu ul>li>a.active-trail
-  color #fff
+  color black
+  background #f084b5
+
 
   
 .view-top-reviews, .view-tips-sidebar
@@ -83,20 +139,63 @@ body
   td.views-field.views-field-picture,td.views-field-field-image
     width 70px
 
+.vendors-navigation:before
+    content ''
+    position absolute
+    width 50px
+    background #41372d
+    height 68px
+    left -23px
+    top 15px
+    z-index 0
+.vendors-navigation:after
+  content ''
+  position absolute
+  width 50px
+  background #41372d
+  height 68px
+  right -23px
+  top 15px
+  z-index 0
+
 .vendors-navigation
+  position relative
+  height  68px
+  background #41372d
+  padding 11px 18px
+  font-size 16px
+  ul.menu
+    &>li
+      >a
+        padding-left 47px
+        background url(/sites/all/themes/best_responsive/images/sprites.png)
+      &:nth-child(1)>a
+        background-position 0 -109px
+      &:nth-child(2)>a
+        background-position 0 -158px
+      &:nth-child(3)>a
+        background-position 0 -204px
+      &:nth-child(4)>a
+        background-position 0 -250px
+      &:nth-child(5)>a
+        background-position 0 -294px
+      &:nth-child(6)>a
+        background-position 0 -337px
+      &:nth-child(7)>a
+        background-position 0 -376px
   ul
     margin 0px
-    background #999
     & > li
       list-style none
       display inline-block
-      height 30px
+      height 45px
+      line-height 45px
       width 14%
       position relative
       & > a
         display block
-        padding 3px 10px
-        color #ddd
+        //padding 3px 10px
+        color #fff
         font-weight 700
         &:hover
           color #fff
@@ -106,27 +205,84 @@ body
     &.sub-menu
       position absolute
       z-index 1
-      min-width 130px
+      min-width 200px
+      margin-top 12px
       visibility hidden
+      background white
+      color black
       li
         display block
         width auto
         min-height 30px
         height auto
+        a
+          color #555
+          font-weight 100
+          padding-left 30px
 
 .panel-2col-stacked, .panel-2col
   .panel-col-first
     width 75%
   .panel-col-last
     width 24.9%
+.panel-col-first .panel-pane
+  &.pane-block
+    margin-bottom 30px
+    .pane-title
+      font-size 24px
+      height 43px
+      border-bottom 1px dotted black
+    .pane-content
+      border-top 1px solid black
+      margin-top 2px
+      & > .view
+        border-top 1px solid #ebebeb
+        padding-top 29px
+    
+
+.panel-col-last .panel-pane
+  border 1px solid #adadad
+  margin-bottom 30px
+  table
+    margin-bottom 0px
+  .pane-title
+    font 28px "Times New Roman"
+    height 53px
+    line-height 53px
+    text-align center
+  .views-exposed-form
+    background #e6e5e4
+    height 40px
+    font-size 12px
+  .view-content
+    tr
+      padding 7px 4px
+      height 94px
+      border-bottom 1px dotted #adadad
+      background white
+  .view-top-reviews img, .view-tips-sidebar img
+    width 91px
+    height 76px
+    border 1px solid #dcdcdc
+  td.views-field
+    border none
+    &.views-field-title
+      padding-left 10px
+      color #f084b5
+      font 18px Times news roman
 
 .views-responsive-grid
   .views-column
     width 32%
-    margin 3px 5px 8px 0
+    margin 0px 5px 0px 0
     display inline-block
     position relative
     height 230px
+    width 250px
+    height 280px
+    border 1px solid #9b9592
+    margin-right 26px
+
   &.views-columns-4
     .views-column
       width 23%
@@ -137,7 +293,8 @@ body
       width 18%
       height 170px
       margin 5px
-      
+  .views-column-last
+    margin-right 0px
 .view-subpage-tips
   .views-field-field-image
     img
@@ -154,15 +311,15 @@ body
     visibility hidden
     opacity 0
     transition visibility 0s linear 0.3s,opacity 0.3s ease-in-out
-  &:hover
+  .views-column:hover
     .shadow
       visibility visible
       opacity 1
       transition-delay 0s
     .views-field-title-field, .views-field-title
-      background-color rgba(220,220,220,1)
+      background-color transparent//rgba(220,220,220,1)
       a
-        color #666
+        color #f084b5
   .views-field-ops
     position  absolute
     right 0
@@ -174,9 +331,9 @@ body
     left 0
     right 0
     padding 2px 10px
-    height 30px
+    height 60px
+    background-color rgba(0,0,0,0.7)
     z-index 1
-    background-color rgba(160,160,160,0.6)
     font-weight 700
     transition background-color ease-in-out 0.3s
     a
@@ -218,10 +375,10 @@ body
 //Vendor Block   
 .view-vendors-block
   .views-column
-    border 1px solid #ddd
-    padding 4px 0
+    border 1px solid #e7e6e5
+    padding 9px
   .views-field-title
-    font-size 16px
+    font-size 18px
     font-weight 700
   .views-field-province
     font-size 11px
@@ -230,12 +387,13 @@ body
     font-size 12px
     height 25px
   .views-field-field-vendor-photo
-    width 231px
-    height 137px
+    width 232px
+    height 146px
     img
       display block
   .views-field-field-rating
-    height 20px
+    height 28px
+    margin-bottom 18px
   .views-field-ops
     position absolute
     top 0
@@ -271,7 +429,7 @@ body
 .panel-col-last
   .views-exposed-form
     overflow hidden
-    overflow-x scroll
+    //overflow-x scroll
 
 .view-id-vendors_block
   .views-exposed-form

@@ -13,6 +13,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -45,7 +48,7 @@ table {
 /* Body & Main
 ================================================== */
 body {
-  background: #ddd url("images/bg.png");
+  background: #ddd; /*url("images/bg.png");*/
   nowhitespace: afterproperty;
   font: 14px/1.8 'Open Sans', Helvetica, Arial, sans-serif;
   color: #666;
@@ -75,12 +78,14 @@ img {
 }
 
 #main-content {
-  margin: 30px 0;
+/*  margin: 30px 0;*/
+  padding: 20px 20px 0px 20px;
+  background: white;
 }
 
 .container {
   background: #fff;
-  padding: 30px;
+  padding: 3px;
 }
 
 #content {
@@ -340,12 +345,7 @@ a:focus {
   position: relative;
   /*  background: #111 url("images/vintage.png");*/
   background: black;
-  margin-bottom: 30px;
-}
-
-#site-logo {
-  float: left;
-  padding: 25px 0 20px 10px;
+/*  margin-bottom: 30px;*/
 }
 
 /*logo*/
@@ -455,6 +455,7 @@ a:focus {
   top: -10px;
 }
 
+/*
 #navigation #main-menu > ul a {
   font-size: 1em;
   height: 32px;
@@ -464,6 +465,7 @@ a:focus {
   text-decoration: none;
   font-weight: 600;
 }
+*/
 
 #navigation #main-menu > ul > li > a {
   border-radius: 2px;
@@ -476,22 +478,24 @@ a:focus {
   position: relative;
 }
 
+/*
 #navigation #main-menu > ul > li > a:hover {
   color: #fff;
 }
+*/
 
 #navigation #main-menu > ul > li > a.active {
-  background: #e73420;
-  color: #fff;
   font-weight: bold;
 }
 
+/*
 #navigation #main-menu > ul > li.sfHover > a,
 #navigation a.active,
 #navigation a.active:hover,
 #navigation #main-menu > ul > li > a.active-trail {
   color: #fff;
 }
+*/
 
 /*drop-down styles*/
 #navigation #main-menu > ul ul {
@@ -554,9 +558,11 @@ a:focus {
 /* Homepage
 ================================================== */
 
+/*
 #home-slider{
   margin-bottom: 30px;
 }
+*/
 
 #site-slogan {
   padding: 20px;

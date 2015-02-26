@@ -96,16 +96,17 @@
 -->
     <?php endif; ?>
     <header id="header" class="clearfix">
-<!--
+      <?php print  best_responsive_login_menu($logged_in); ?>
       <div id="logo">
         <?php if ($logo): ?><div id="site-logo"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
           <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
         </a></div><?php endif; ?>
+<!--
         <h1 id="site-name">
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><span><?php print $site_name; ?></span></a>
         </h1>
-      </div>
 -->
+      </div>
       <nav id="navigation" role="navigation">
         <div id="main-menu">
           <?php 
@@ -116,8 +117,25 @@
             }
             print drupal_render($main_menu_tree);
           ?>
-          <?php print  best_responsive_login_menu($logged_in); ?>
         </div>
+        
+        <?php if ($is_front): ?>
+        <?php if ($site_slogan): ?><h2 id="site-slogan"><?php print $site_slogan; ?></h2><?php endif; ?>
+        <?php if (theme_get_setting('slideshow_display','best_responsive')): ?>
+        <div id="home-slider">
+          <div class="flexslider-container">
+            <div id="single-post-slider" class="flexslider">
+              <ul class="slides">
+                <?php foreach($ads as $key => $ad): ?>
+                  <li class="slide"><img src="<?php print $ad["url"]; ?>" alt="<?php print $ad["title"];?>"/></li>
+                <?php endforeach; ?>
+              </ul><!-- /slides -->
+            </div><!-- /flexslider -->
+          </div>
+        </div>
+        <?php endif; ?>
+        <?php endif; ?>
+        
         <div id="secondary-menu">
           <?php 
             if (module_exists('i18n_menu')) {
@@ -133,29 +151,6 @@
   </div>
 
   <div id="main-content" class="clearfix">
-    <?php if ($is_front): ?>
-    <?php if ($site_slogan): ?><h2 id="site-slogan"><?php print $site_slogan; ?></h2><?php endif; ?>
-    <?php if (theme_get_setting('slideshow_display','best_responsive')): ?>
-    <div id="home-slider">
-      <div class="flexslider-container">
-        <div id="single-post-slider" class="flexslider">
-          <ul class="slides">
-            <?php foreach($ads as $key => $ad): ?>
-              <li class="slide"><img src="<?php print $ad["url"]; ?>" alt="<?php print $ad["title"];?>"/></li>
-            
-
-            <?php endforeach; ?>
-            
-<!--               <li class="slide"><img src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/slide-image-1.jpg'; ?>" alt="Slide"/></li>         
-            <li class="slide"><img src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/slide-image-2.jpg'; ?>" alt="Slide"/></li>
-            <li class="slide"><img src="<?php print base_path() . drupal_get_path('theme', 'best_responsive') . '/images/slide-image-3.jpg'; ?>" alt="Slide"/></li>-->
-          </ul><!-- /slides -->
-        </div><!-- /flexslider -->
-      </div>
-    </div>
-    <?php endif; ?>
-    <?php endif; ?>
-
     <?php if($page['preface_first'] || $page['preface_middle'] || $page['preface_last'] || $page['header']) : ?>
     <div id="preface-area" class="clearfix">
       <?php if($page['preface_first'] || $page['preface_middle'] || $page['preface_last']) : ?>
@@ -172,7 +167,6 @@
       </div>
       <div class="clear"></div>
       <?php endif; ?>
-
       <?php print render($page['header']); ?>
     </div>
     <?php endif; ?>
