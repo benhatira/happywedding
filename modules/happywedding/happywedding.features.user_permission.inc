@@ -1208,15 +1208,6 @@ function happywedding_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
-  // Exported permission: 'edit webform components'.
-  $permissions['edit webform components'] = array(
-    'name' => 'edit webform components',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'webform',
-  );
-
   // Exported permission: 'execute php code'.
   $permissions['execute php code'] = array(
     'name' => 'execute php code',

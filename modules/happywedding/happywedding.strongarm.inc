@@ -1676,9 +1676,6 @@ function happywedding_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'module_filter_recent_modules';
   $strongarm->value = array(
-    'rules_admin' => 1424167829,
-    'admin_views' => 1424233758,
-    'themekey_compat' => 1424254022,
     'fb_connect' => 1424323106,
     'fb_user' => 1424323106,
     'fb_app' => 1424322956,
@@ -1687,6 +1684,7 @@ function happywedding_strongarm() {
     'location_entity' => 1424425096,
     'i18n_panels' => 1424664996,
     'views_slideshow_cycle' => 1424679366,
+    'themekey_features' => 1424924389,
   );
   $export['module_filter_recent_modules'] = $strongarm;
 

@@ -389,3 +389,178 @@ function happywedding_node_info() {
   drupal_alter('node_info', $items);
   return $items;
 }
+
+/**
+ * Implements hook_themekey_features_rule_chain().
+ */
+function happywedding_themekey_features_rule_chain() {
+if (!defined('THEMEKEY_PAGECACHE_UNSUPPORTED')) {
+    define('THEMEKEY_PAGECACHE_UNSUPPORTED', 0);
+    define('THEMEKEY_PAGECACHE_SUPPORTED', 1);
+    define('THEMEKEY_PAGECACHE_TIMEBASED', 2);
+  }
+$rules = array(
+  0 => array(
+    'rule' => array(
+      'property' => 'drupal:path',
+      'operator' => '=',
+      'value' => 'bo/vendor',
+      'theme' => 'rubik',
+      'enabled' => 1,
+      'wildcards' => array(),
+      'module' => 'happywedding',
+    ),
+    'string' => '"drupal:path = bo/vendor >>> rubik"',
+    'childs' => array(),
+  ),
+  1 => array(
+    'rule' => array(
+      'property' => 'drupal:path',
+      'operator' => '=',
+      'value' => 'bo/vendor/%wildcard',
+      'theme' => 'rubik',
+      'enabled' => 1,
+      'wildcards' => array(
+        2 => 'wildcard',
+      ),
+      'module' => 'happywedding',
+    ),
+    'string' => '"drupal:path = bo/vendor/%wildcard >>> rubik"',
+    'childs' => array(),
+  ),
+  2 => array(
+    'rule' => array(
+      'property' => 'user:role',
+      'operator' => '=',
+      'value' => 'vendor',
+      'theme' => 'rubik',
+      'enabled' => 1,
+      'wildcards' => 'a:0:{}',
+      'module' => 'happywedding',
+    ),
+    'string' => '"user:role = vendor >>> rubik"',
+    'childs' => array(
+      0 => array(
+        'rule' => array(
+          'property' => 'drupal:path',
+          'operator' => '=',
+          'value' => 'node/add/%',
+          'theme' => 'rubik',
+          'enabled' => 1,
+          'wildcards' => array(),
+          'module' => 'happywedding',
+        ),
+        'string' => '"drupal:path = node/add/% >>> rubik"',
+        'childs' => array(),
+      ),
+      1 => array(
+        'rule' => array(
+          'property' => 'drupal:path',
+          'operator' => '=',
+          'value' => 'node/%/edit',
+          'theme' => 'rubik',
+          'enabled' => 1,
+          'wildcards' => array(),
+          'module' => 'happywedding',
+        ),
+        'string' => '"drupal:path = node/%/edit >>> rubik"',
+        'childs' => array(),
+      ),
+      2 => array(
+        'rule' => array(
+          'property' => 'drupal:path',
+          'operator' => '=',
+          'value' => 'user',
+          'theme' => 'rubik',
+          'enabled' => 1,
+          'wildcards' => array(),
+          'module' => 'happywedding',
+        ),
+        'string' => '"drupal:path = user >>> rubik"',
+        'childs' => array(),
+      ),
+      3 => array(
+        'rule' => array(
+          'property' => 'drupal:path',
+          'operator' => '=',
+          'value' => 'user/%',
+          'theme' => 'rubik',
+          'enabled' => 1,
+          'wildcards' => array(),
+          'module' => 'happywedding',
+        ),
+        'string' => '"drupal:path = user/% >>> rubik"',
+        'childs' => array(),
+      ),
+      4 => array(
+        'rule' => array(
+          'property' => 'drupal:path',
+          'operator' => '=',
+          'value' => 'user/%/edit',
+          'theme' => 'rubik',
+          'enabled' => 1,
+          'wildcards' => array(),
+          'module' => 'happywedding',
+        ),
+        'string' => '"drupal:path = user/%/edit >>> rubik"',
+        'childs' => array(),
+      ),
+    ),
+  ),
+  3 => array(
+    'rule' => array(
+      'property' => 'user:role',
+      'operator' => '~',
+      'value' => '/operator|admin|editor/',
+      'theme' => 'ThemeKeyAdminTheme',
+      'enabled' => 1,
+      'wildcards' => 'a:0:{}',
+      'module' => 'happywedding',
+    ),
+    'string' => '"user:role ~ /operator|admin|editor/ >>> ThemeKeyAdminTheme"',
+    'childs' => array(
+      0 => array(
+        'rule' => array(
+          'property' => 'drupal:path',
+          'operator' => '=',
+          'value' => 'node/%/%/%',
+          'theme' => 'ThemeKeyAdminTheme',
+          'enabled' => 1,
+          'wildcards' => array(),
+          'module' => 'happywedding',
+        ),
+        'string' => '"drupal:path = node/%/%/% >>> ThemeKeyAdminTheme"',
+        'childs' => array(),
+      ),
+      1 => array(
+        'rule' => array(
+          'property' => 'drupal:path',
+          'operator' => '=',
+          'value' => 'node/%/%',
+          'theme' => 'ThemeKeyAdminTheme',
+          'enabled' => 1,
+          'wildcards' => array(),
+          'module' => 'happywedding',
+        ),
+        'string' => '"drupal:path = node/%/% >>> ThemeKeyAdminTheme"',
+        'childs' => array(),
+      ),
+    ),
+  ),
+  4 => array(
+    'rule' => array(
+      'property' => 'themekey_compat:module_system_triggers_theme',
+      'operator' => '=',
+      'value' => 'static',
+      'theme' => 'default',
+      'enabled' => 1,
+      'wildcards' => 'a:0:{}',
+      'module' => 'happywedding',
+    ),
+    'string' => '"themekey_compat:module_system_triggers_theme = static >>> triggered"',
+    'childs' => array(),
+  ),
+);
+
+return $rules;
+}

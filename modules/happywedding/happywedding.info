@@ -75,6 +75,7 @@ dependencies[] = term_reference_tree
 dependencies[] = text
 dependencies[] = themekey
 dependencies[] = themekey_compat
+dependencies[] = themekey_features
 dependencies[] = title
 dependencies[] = token
 dependencies[] = toolbar
@@ -307,6 +308,11 @@ features[rules_config][] = rules_vendor_login
 features[taxonomy][] = categories
 features[taxonomy][] = forums
 features[taxonomy][] = tags
+features[themekey_features_rule_chain][] = drupal:path = bo/vendor >>> rubik
+features[themekey_features_rule_chain][] = drupal:path = bo/vendor/%wildcard >>> rubik
+features[themekey_features_rule_chain][] = themekey_compat:module_system_triggers_theme = static >>> triggered
+features[themekey_features_rule_chain][] = user:role = vendor >>> ... rule cascade
+features[themekey_features_rule_chain][] = user:role ~ /operator|admin|editor/ >>> ... rule cascade
 features[user_permission][] = access administration pages
 features[user_permission][] = access all views
 features[user_permission][] = access all webform results
@@ -442,7 +448,6 @@ features[user_permission][] = edit terms in categories
 features[user_permission][] = edit terms in forums
 features[user_permission][] = edit terms in tags
 features[user_permission][] = edit translation shared fields
-features[user_permission][] = edit webform components
 features[user_permission][] = execute php code
 features[user_permission][] = flag bookmark
 features[user_permission][] = flag is_new
