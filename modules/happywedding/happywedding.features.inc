@@ -37,7 +37,7 @@ function happywedding_flag_default_flags() {
     'title' => 'Bookmark',
     'global' => 0,
     'types' => array(),
-    'flag_short' => 'Save',
+    'flag_short' => 'Favorite',
     'flag_long' => 'Save this to view it later',
     'flag_message' => 'Saved',
     'unflag_short' => 'Unsave',
@@ -236,8 +236,8 @@ function happywedding_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 230,
-          'height' => 230,
+          'width' => 254,
+          'height' => 237,
         ),
         'weight' => 1,
       ),
@@ -247,9 +247,9 @@ function happywedding_image_default_styles() {
   // Exported image style: tips_thumbnail.
   $styles['tips_thumbnail'] = array(
     'name' => 'tips_thumbnail',
-    'label' => 'Tip Thumbnail (230x230)',
+    'label' => 'Tip Thumbnail (247x278)',
     'effects' => array(
-      1 => array(
+      6 => array(
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'image_scale_and_crop_effect',
@@ -259,8 +259,8 @@ function happywedding_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 230,
-          'height' => 230,
+          'width' => 248,
+          'height' => 278,
         ),
         'weight' => 1,
       ),
@@ -293,9 +293,9 @@ function happywedding_image_default_styles() {
   // Exported image style: vendor_thumbnail.
   $styles['vendor_thumbnail'] = array(
     'name' => 'vendor_thumbnail',
-    'label' => 'Vendor thumbnail (220x130)',
+    'label' => 'Vendor thumbnail (231x146)',
     'effects' => array(
-      3 => array(
+      7 => array(
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'image_scale_and_crop_effect',
@@ -305,8 +305,8 @@ function happywedding_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 220,
-          'height' => 130,
+          'width' => 231,
+          'height' => 146,
         ),
         'weight' => 1,
       ),

@@ -418,7 +418,7 @@ echo _happywedding_render_searchbox();
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'LOOK FOR';
   $display->uuid = '3ac4f9d1-5c00-4d14-beb6-4ab347b50fce';
   $display->content = array();
   $display->panels = array();
@@ -431,7 +431,7 @@ echo _happywedding_render_searchbox();
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => 'vendors navigation',
-      'title' => 'Vendors Navigation',
+      'title' => '',
       'body' => '<?php
 echo _happywedding_render_vendors_navigation();
 ?>',
@@ -455,7 +455,7 @@ echo _happywedding_render_vendors_navigation();
     $pane->uuid = '338134b8-38bf-4ffb-87e1-f73fc5065e89';
     $display->content['new-338134b8-38bf-4ffb-87e1-f73fc5065e89'] = $pane;
     $display->panels['middle'][0] = 'new-338134b8-38bf-4ffb-87e1-f73fc5065e89';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-338134b8-38bf-4ffb-87e1-f73fc5065e89';
   $mini->display = $display;
   $export['vendors_navigation'] = $mini;

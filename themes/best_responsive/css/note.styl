@@ -9,8 +9,44 @@ div#logo {
     margin: auto;
 }
 
+pink = #f084b5
 
+hide-for-hover()
+  visibility hidden
+  opacity 0
+  transition visibility 0s linear 0.3s,opacity 0.3s ease-in-out
+show-for-hover()
+  visibility visible
+  opacity 1
+  transition-delay 0s
+hilight-title()
+  text-align center
+  background url(/sites/all/themes/best_responsive/images/sprites.png) 0 -430px;
+  height 70px
+  line-height 70px
+  font-size 26px
+  margin 20px 0
+flag-button()
+  width 95px
+  display inline-block
+  height 38px
+  font-size 13px
+  color black
+  background #ececec
+  position absolute
+  right 0
+  z-index 5
+  left 0
+  margin auto
+  top 0
+  bottom 0
+  a
+    color red
+    display block
+    text-align center
+    padding 5px
 
+  
 .webmaster-menu
   background-color #ab0070
   font-weight 700
@@ -27,7 +63,7 @@ div#logo {
 body
   a
     text-decoration none
-    color #999
+    color black
 //    &:hover
 //      
 //      color #ccc
@@ -75,16 +111,16 @@ body
   float left
 .fright
   float right
-  
+.page-home #main-menu
+  position absolute
+  top 7px
 #navigation
   position relative
   height 80px
   top 0
   right 0
   margin-top 0
-  #main-menu
-    position absolute
-    top 7px
+  #main-menu  
     width 100%
     z-index 1
     height 45px
@@ -96,6 +132,9 @@ body
           padding 7px 20px
           font-size 16px
           height 45px
+          color white
+    li:hover a, a.active
+      color pink
   #secondary-menu
     clear both
     height 57px
@@ -116,12 +155,9 @@ body
           height 57px
           font-size 16px
 
-#navigation a:hover, #navigation a.active
-  color #f084b5
-
 #navigation #secondary-menu ul>li>a:hover, #navigation #secondary-menu ul>li>a.active-trail
   color black
-  background #f084b5
+  background pink
 
 
   
@@ -162,12 +198,12 @@ body
   position relative
   height  68px
   background #41372d
-  padding 11px 18px
+  padding 0px 18px
   font-size 16px
   ul.menu
     &>li
       >a
-        padding-left 47px
+        padding 11px 0px 12px 47px
         background url(/sites/all/themes/best_responsive/images/sprites.png)
       &:nth-child(1)>a
         background-position 0 -109px
@@ -202,13 +238,24 @@ body
       &:hover
         .sub-menu
           visibility visible
+          max-height 500px
+          opacity 1
+          top 68px
     &.sub-menu
       position absolute
+      max-height 0
+      transition max-height 0.15s ease-out
       z-index 1
       min-width 200px
-      margin-top 12px
-      visibility hidden
-      background white
+      position absolute
+      max-height 0
+      overflow hidden
+      transition max-height 0.5s ease-out,opacity 0.3s ease-out,top 0.3s ease-in-out
+      opacity 0
+      top 72px
+      /* z-index: -10; */
+      min-width: 200px;
+      background #e6e5e4
       color black
       li
         display block
@@ -224,40 +271,50 @@ body
   .panel-col-first
     width 75%
   .panel-col-last
-    width 24.9%
-.panel-col-first .panel-pane
-  &.pane-block
-    margin-bottom 30px
+    width 24%
+    margin-left 10px
+    img
+      display block
+.panel-col-first 
+  .panel-pane.pane-block
     .pane-title
       font-size 24px
       height 43px
       border-bottom 1px dotted black
+
     .pane-content
       border-top 1px solid black
       margin-top 2px
       & > .view
         border-top 1px solid #ebebeb
         padding-top 29px
-    
+  & .inside > .panel-pane:nth-child(1)
+    .pane-title
+      hilight-title()
+.pane-views-gallery-block, .pane-vendors-navigation
+  .pane-title
+    hilight-title()
+.panel-pane
+  margin-bottom 30px
 
 .panel-col-last .panel-pane
   border 1px solid #adadad
-  margin-bottom 30px
   table
     margin-bottom 0px
   .pane-title
     font 28px "Times New Roman"
-    height 53px
-    line-height 53px
     text-align center
+    background url(/sites/all/themes/best_responsive/images/sprites.png) 0 -430px;
+    height 78px
+    line-height 50px
   .views-exposed-form
     background #e6e5e4
     height 40px
     font-size 12px
   .view-content
     tr
-      padding 7px 4px
-      height 94px
+      padding 6px 4px
+      height 90px
       border-bottom 1px dotted #adadad
       background white
   .view-top-reviews img, .view-tips-sidebar img
@@ -267,9 +324,29 @@ body
   td.views-field
     border none
     &.views-field-title
-      padding-left 10px
-      color #f084b5
+      padding-left 7px
+      color pink
       font 18px Times news roman
+      a
+        color pink
+        line-height 1em
+      p
+        color #555
+        font-size 14px
+        height 53px
+        margin 5px 2px 0 0
+    &.views-field-subject
+      padding-left 7px
+      a:nth-child(1)
+        color pink
+        font 18px Times news roman
+      a:nth-child(2)
+        color #555
+        font-size 12px
+        margin 5px 2px 0 0
+      .fivestar-user-stars
+        height 30px
+        padding 5px 0
 
 .views-responsive-grid
   .views-column
@@ -286,7 +363,7 @@ body
   &.views-columns-4
     .views-column
       width 23%
-      padding 4px
+      //padding 4px
       margin 3px 1px 1px 0
   &.views-columns-5
     .views-column
@@ -296,10 +373,17 @@ body
   .views-column-last
     margin-right 0px
 .view-subpage-tips
+  .more-link
+    border-top 1px solid black
+    height 30px
+    background pink
+    margin-right 4px
+    a
+      color black
   .views-field-field-image
     img
-      width 230px
-      height 230px
+      //width 250px
+      //height 280px
       display block
   .shadow
     position absolute
@@ -308,22 +392,17 @@ body
     right 0
     bottom 0
     background rgba(0,0,0,0.7)
-    visibility hidden
-    opacity 0
-    transition visibility 0s linear 0.3s,opacity 0.3s ease-in-out
+    hide-for-hover()
   .views-column:hover
-    .shadow
-      visibility visible
-      opacity 1
-      transition-delay 0s
+    .shadow, .views-field-ops
+      show-for-hover()
     .views-field-title-field, .views-field-title
       background-color transparent//rgba(220,220,220,1)
       a
-        color #f084b5
+        color pink
   .views-field-ops
-    position  absolute
-    right 0
-    z-index 5
+    flag-button()
+    hide-for-hover()
   .views-field-title, .views-field-title-field, .views-field-title-field-et
     display block
     position absolute
@@ -377,28 +456,81 @@ body
   .views-column
     border 1px solid #e7e6e5
     padding 9px
+  .views-column:hover .views-field-nothing
+    show-for-hover()
   .views-field-title
     font-size 18px
-    font-weight 700
+    margin-bottom 7px
+    //font-weight 700
   .views-field-province
     font-size 11px
     height 25px
+    margin-right 5px
+    float left
+    span
+      padding 2px 0
+      height 25px
+      display block
   .views-field-field-vendor-category
-    font-size 12px
+    font-size 11px
     height 25px
+    li
+      list-style-type none
+      display inline-block
+      height 25px
+      margin 0px 1px
+      background #eee
+      padding 2px 8px
   .views-field-field-vendor-photo
-    width 232px
+    width 231px
     height 146px
     img
       display block
   .views-field-field-rating
     height 28px
     margin-bottom 18px
+    height 30px
+    margin 10px 0px
+    width 140px
+    border 1px solid #eee
   .views-field-ops
     position absolute
     top 0
     right 0
     font-size 10px
+  .views-field.views-field-nothing
+    hide-for-hover()
+    position absolute
+    bottom 9px
+    width 231px
+    height 146px
+    background rgba(0,0,0,.75)
+    .shadow
+      position absolute
+      width 100%
+      bottom 0
+      top 0
+      margin auto
+      height 38px
+      text-align center
+      & > span
+        width 95px
+        display inline-block
+        height 38px
+        font-size 13px
+        background pink
+        color black
+        &.flag-wrapper
+          &.flag-bookmark
+            background #ececec
+          a
+            color red
+      a
+        height 100%
+        width auto
+        padding 6px 0px
+        display inline-block
+
 
 .page-node
   #content-wrap
@@ -420,11 +552,13 @@ body
     display none
 
 .pane-views-gallery-block
-  background #666
+  
   padding 10px 10px
   .pane-title
-    color #fff
     text-align center
+  .pane-content
+    padding 40px 0
+    background #eee
 
 .panel-col-last
   .views-exposed-form
@@ -770,6 +904,50 @@ div#mini-panel-register_description
     float left
     width 720px
     margin-top 10px
+
+
+    
+    
+
+.footer-block
+  padding 30px 40px 0
+  .description
+    color pink
+  .title
+    color white
+    margin-bottom 20px
+  &.last
+    text-align right
+  &.middle
+    text-align center
+    li
+      list-style-type none
+      a
+        color white
+    ul
+      text-align left
+      margin-left 40%
+  .social
+    width 38px
+    height 38px
+    background pink
+    border-radius 40px
+    background pink url(/sites/all/themes/best_responsive/images/sprites.png)
+  .facebook
+    background-position 0 -66px
+  .twitter
+    background-position -39px -66px
+  .gplus
+    background-position -78px -66px
+  .pinterest
+    background-position -116px -66px
+.copyright
+  text-align center
+  height 30px
+  font-size 11px
+  color white
+  margin-top 10px
+
 
 
   

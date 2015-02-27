@@ -86,7 +86,6 @@ dependencies[] = uuid
 dependencies[] = uuid_features
 dependencies[] = views
 dependencies[] = views_bulk_operations
-dependencies[] = views_litepager
 dependencies[] = views_responsive_grid
 dependencies[] = views_slideshow
 dependencies[] = views_slideshow_galleria

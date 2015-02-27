@@ -831,38 +831,21 @@ h1.page-title {
 
 /*footer main*/
 #footer-area {
-  background: #111 url("images/vintage.png");
-  padding: 40px;
+  background: #111    url("images/vintage.png");
   font-size: 0.929em;
   position: relative;
 }
 
-#footer-area a {
-  color: #aaa;
-}
-
-#footer-area a:hover {
-  color: #e73420;
-  text-decoration: none;
-}
 
 .footer-block {
-  float: left;
-  width: 260px;
-  margin-right: 50px;
+  float: left;width:33%;
 }
+
 
 .footer-block.remove-margin {
   margin-right: 0;
 }
 
-.footer-block .block {
-  margin-bottom: 30px;
-}
-
-#footer-area .region-footer .block {
-  margin-bottom: 30px;
-}
 
 #footer-area .block > h2 {
   color: #fff;
