@@ -172,7 +172,7 @@ function best_responsive_login_menu($logged_in){
     $output .= "<li class='login fleft'><a href='/user'>". t("MY PAGE"). "</a></li>";
     $output .= "<li class='logout fleft'><a href='/user/logout'>". t("LOGOUT"). "</a></li>";
   } else {
-    $output .= "<li class='login fleft'><a href='/user'>". t("LOGIN / REGISTER"). "</a></li>";
+    $output .= "<li class='login fleft'><a href='/login'>". t("LOGIN / REGISTER"). "</a></li>";
     $output .= "<li class='vendor fleft'><a href='/bo/vendor'>". t("FOR VENDORS"). "</a></li>";
     $output .= "<li class='vendor fright'><a href='/bo/vendor'>". t("ENG"). "</a></li>";
     //Social icon
