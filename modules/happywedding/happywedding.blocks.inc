@@ -85,6 +85,26 @@ function _happywedding_vendor_register_form_block() {
       "0" => array()
     )
   );
+  $provinces = location_get_provinces("TH");
+  
+  $form["field_location"] = array(
+    "#type" => "select",
+    "#attributes" => array(
+      "class" => array("field-type-list-integer"),
+      "name" => array("field-location")
+    ),
+    "#weight" => 4,
+    "#title" => "Location",
+    "#tree" => 1,
+    "#required" => 1,
+    "#delta" => 0,
+    "#field_name" => "field_location",
+    "#language" => "und",
+    "#options" => $provinces,
+    "und" => array(
+      "0" => array()
+    )
+  );
   
   dpm(location_get_provinces("TH")); //xx not select 
 
