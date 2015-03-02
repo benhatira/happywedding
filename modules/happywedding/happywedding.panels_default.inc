@@ -276,7 +276,7 @@ function happywedding_default_panels_mini() {
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => 'search vendors',
-      'title' => 'Search Vendors',
+      'title' => '',
       'body' => '<?php
 echo _happywedding_render_searchbox();
 ?>

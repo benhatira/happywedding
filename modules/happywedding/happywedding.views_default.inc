@@ -516,7 +516,7 @@ function happywedding_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Gallery';
+  $handler->display->display_options['title'] = 'GALLERY';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -685,7 +685,7 @@ $category="?category=".$_GET[\'category\'];
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Gallery';
+  $handler->display->display_options['title'] = 'GALLERY';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -940,7 +940,7 @@ $category="?category=".$_GET[\'category\'];
   /* Display: Vendor Gallery Block */
   $handler = $view->new_display('block', 'Vendor Gallery Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Gallery';
+  $handler->display->display_options['title'] = 'GALLERY';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -981,7 +981,7 @@ $category="?category=".$_GET[\'category\'];
   $handler->display->display_options['block_description'] = 'Vendor Gallery block';
   $translatables['gallery'] = array(
     t('Master'),
-    t('Gallery'),
+    t('GALLERY'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -1087,19 +1087,30 @@ $category="?category=".$_GET[\'category\'];
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   /* Field: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';
   $handler->display->display_options['fields']['ops']['table'] = 'flagging';
   $handler->display->display_options['fields']['ops']['field'] = 'ops';
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = '';
+  $handler->display->display_options['fields']['ops']['exclude'] = TRUE;
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href=\'[path]\'>   <div class=\'shadow\' ></div>   </a>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class=\'shadow\'>
+<span class=\'see-more\'>[view_node]</span>
+[ops]
+</div>';
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '[path]';
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -1130,7 +1141,7 @@ $category="?category=".$_GET[\'category\'];
   /* Display: Venue Top */
   $handler = $view->new_display('block', 'Venue Top', 'block_12');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Venue Top';
+  $handler->display->display_options['title'] = 'VENUE';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -1178,7 +1189,7 @@ $category="?category=".$_GET[\'category\'];
   /* Display: What's news */
   $handler = $view->new_display('block', 'What\'s news', 'block_13');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'What\'s new';
+  $handler->display->display_options['title'] = 'WHAT\'S NEW';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -1203,7 +1214,7 @@ $category="?category=".$_GET[\'category\'];
   /* Display: Honeymoon&Travel Top */
   $handler = $view->new_display('block', 'Honeymoon&Travel Top', 'block_14');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Honeymoons & Travel';
+  $handler->display->display_options['title'] = 'HONEYMOONS & TRAVEL';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -1286,7 +1297,7 @@ $category="?category=".$_GET[\'category\'];
   $handler->display->display_options['arguments']['field_category_value']['validate']['type'] = 'php';
   $handler->display->display_options['arguments']['field_category_value']['validate_options']['code'] = '$field = field_info_field(\'field_category\');
 if (array_key_exists($argument, $field[\'settings\'][\'allowed_values\'])) {
-  $handler->options[\'title\'] = $field[\'settings\'][\'allowed_values\'][$argument];
+  $handler->options[\'title\'] = strtoupper($field[\'settings\'][\'allowed_values\'][$argument]);
   return true;
 
 
@@ -1297,7 +1308,7 @@ return false;';
   /* Display: Relates all */
   $handler = $view->new_display('block', 'Relates all', 'relate_tips');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Relate Tips';
+  $handler->display->display_options['title'] = 'RELATE TIPS';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['link_url'] = 'tips/!1';
@@ -1337,19 +1348,24 @@ return false;';
     t('last »'),
     t('flag'),
     t('Path'),
-    t('<a href=\'[path]\'>   <div class=\'shadow\' ></div>   </a>'),
+    t('<div class=\'shadow\'>
+<span class=\'see-more\'>[view_node]</span>
+[ops]
+</div>'),
     t('Block'),
     t('Suppage Tips Default'),
     t('Venue Top'),
+    t('VENUE'),
     t('What\'s news'),
+    t('WHAT\'S NEW'),
     t('What\'s new'),
     t('Honeymoon&Travel Top'),
-    t('Honeymoons & Travel'),
+    t('HONEYMOONS & TRAVEL'),
     t('Honeymoons Top'),
     t('Tips block all'),
     t('All'),
     t('Relates all'),
-    t('Relate Tips'),
+    t('RELATE TIPS'),
     t('Relates tips'),
   );
   $export['subpage_tips'] = $view;
@@ -1517,7 +1533,7 @@ return false;';
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Popular';
+  $handler->display->display_options['title'] = 'POPULAR';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -1676,7 +1692,7 @@ return false;';
   $handler->display->display_options['block_description'] = 'Tips rank';
   $translatables['tips_sidebar'] = array(
     t('Master'),
-    t('Popular'),
+    t('POPULAR'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -1701,7 +1717,7 @@ return false;';
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Pickup reviews';
+  $handler->display->display_options['title'] = 'PICKUP REVIEWS';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -1872,7 +1888,7 @@ return false;';
   $handler = $view->new_display('block', 'Block', 'block');
   $translatables['top_reviews'] = array(
     t('Master'),
-    t('Pickup reviews'),
+    t('PICKUP REVIEWS'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -2012,13 +2028,6 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Flags: Flag link */
-  $handler->display->display_options['fields']['ops']['id'] = 'ops';
-  $handler->display->display_options['fields']['ops']['table'] = 'flagging';
-  $handler->display->display_options['fields']['ops']['field'] = 'ops';
-  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['ops']['label'] = '';
-  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
   /* Field: Entity translation: Title: translated */
   $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
   $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
@@ -2044,12 +2053,28 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Field: Flags: Flag link */
+  $handler->display->display_options['fields']['ops']['id'] = 'ops';
+  $handler->display->display_options['fields']['ops']['table'] = 'flagging';
+  $handler->display->display_options['fields']['ops']['field'] = 'ops';
+  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['ops']['label'] = '';
+  $handler->display->display_options['fields']['ops']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="[path]"><div class="shadow"></div></a>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class=\'shadow\'>
+<span class=\'see-more\'>[view_node]</span>
+[ops]
+</div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -2087,7 +2112,7 @@ $url = "/user/$arg/bookmarks";
   );
   $handler->display->display_options['path'] = 'user/%/bookmarks/articles';
   $handler->display->display_options['menu']['type'] = 'default tab';
-  $handler->display->display_options['menu']['title'] = 'Tips';
+  $handler->display->display_options['menu']['title'] = 'TIPS';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'user-menu';
   $handler->display->display_options['menu']['context'] = 0;
@@ -2134,6 +2159,15 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['fields']['province']['field'] = 'province';
   $handler->display->display_options['fields']['province']['label'] = '';
   $handler->display->display_options['fields']['province']['element_label_colon'] = FALSE;
+  /* Field: Content: Vendor category */
+  $handler->display->display_options['fields']['field_vendor_category']['id'] = 'field_vendor_category';
+  $handler->display->display_options['fields']['field_vendor_category']['table'] = 'field_data_field_vendor_category';
+  $handler->display->display_options['fields']['field_vendor_category']['field'] = 'field_vendor_category';
+  $handler->display->display_options['fields']['field_vendor_category']['label'] = '';
+  $handler->display->display_options['fields']['field_vendor_category']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_vendor_category']['delta_limit'] = '2';
+  $handler->display->display_options['fields']['field_vendor_category']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_vendor_category']['multi_type'] = 'ul';
   /* Field: Field: Rating */
   $handler->display->display_options['fields']['field_rating']['id'] = 'field_rating';
   $handler->display->display_options['fields']['field_rating']['table'] = 'field_data_field_rating';
@@ -2149,14 +2183,6 @@ $url = "/user/$arg/bookmarks";
     'style' => 'average',
     'text' => 'none',
   );
-  /* Field: Content: Vendor category */
-  $handler->display->display_options['fields']['field_vendor_category']['id'] = 'field_vendor_category';
-  $handler->display->display_options['fields']['field_vendor_category']['table'] = 'field_data_field_vendor_category';
-  $handler->display->display_options['fields']['field_vendor_category']['field'] = 'field_vendor_category';
-  $handler->display->display_options['fields']['field_vendor_category']['label'] = '';
-  $handler->display->display_options['fields']['field_vendor_category']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_vendor_category']['delta_limit'] = '5';
-  $handler->display->display_options['fields']['field_vendor_category']['delta_offset'] = '0';
   /* Field: Content: Vendor photo */
   $handler->display->display_options['fields']['field_vendor_photo']['id'] = 'field_vendor_photo';
   $handler->display->display_options['fields']['field_vendor_photo']['table'] = 'field_data_field_vendor_photo';
@@ -2176,7 +2202,23 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['fields']['ops']['field'] = 'ops';
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['fields']['ops']['label'] = '';
+  $handler->display->display_options['fields']['ops']['exclude'] = TRUE;
   $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class=\'shadow\'>
+<span class=\'see-more\'>[view_node]</span>
+[ops]
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -2213,7 +2255,7 @@ $url = "/user/$arg/bookmarks";
   );
   $handler->display->display_options['path'] = 'user/%/bookmarks/vendors';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Vendor';
+  $handler->display->display_options['menu']['title'] = 'VENDORS';
   $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
@@ -2289,6 +2331,7 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'photo' => 'photo',
+    'product' => 'product',
   );
   /* Filter criterion: Content: Category (field_photo_category) */
   $handler->display->display_options['filters']['field_photo_category_tid']['id'] = 'field_photo_category_tid';
@@ -2322,7 +2365,7 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['filters']['field_photo_category_tid']['vocabulary'] = 'categories';
   $handler->display->display_options['path'] = 'user/%/bookmarks/photos';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Photos';
+  $handler->display->display_options['menu']['title'] = 'PHOTOS';
   $handler->display->display_options['menu']['weight'] = '2';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
@@ -2405,7 +2448,7 @@ $url = "/user/$arg/bookmarks";
   );
   $handler->display->display_options['path'] = 'user/%/bookmarks/forums';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Forums';
+  $handler->display->display_options['menu']['title'] = 'FORUMS';
   $handler->display->display_options['menu']['weight'] = '3';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
@@ -2435,7 +2478,11 @@ $url = "/user/$arg/bookmarks";
     t('bookmark'),
     t('All'),
     t('Articles'),
-    t('<a href="[path]"><div class="shadow"></div></a>'),
+    t('Link'),
+    t('<div class=\'shadow\'>
+<span class=\'see-more\'>[view_node]</span>
+[ops]
+</div>'),
     t('Category'),
     t('Nid'),
     t('Photos'),
@@ -2723,7 +2770,7 @@ $url = "/user/$arg/bookmarks";
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Reviews';
+  $handler->display->display_options['title'] = 'REVIEWS';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access comments';
@@ -2951,7 +2998,7 @@ $url = "/user/$arg/bookmarks";
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $translatables['vendor_comments_view'] = array(
     t('Master'),
-    t('Reviews'),
+    t('REVIEWS'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -4638,7 +4685,7 @@ return $cur_province_id;';
   /* Display: Vendor lastest view */
   $handler = $view->new_display('block', 'Vendor lastest view', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Lastest view';
+  $handler->display->display_options['title'] = 'LASTEST VIEW';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
@@ -4661,7 +4708,7 @@ return $cur_province_id;';
   /* Display: Recommend vendors : venue */
   $handler = $view->new_display('block', 'Recommend vendors : venue', 'block_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Recommend vendors';
+  $handler->display->display_options['title'] = 'RECOMMEND VENDORS';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -4710,7 +4757,7 @@ return $cur_province_id;';
   /* Display: Recommend vendors : honeymoon */
   $handler = $view->new_display('block', 'Recommend vendors : honeymoon', 'block_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Recommend vendors';
+  $handler->display->display_options['title'] = 'RECOMMEND VENDORS';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -4760,7 +4807,7 @@ return $cur_province_id;';
   /* Display: Recommend vendors */
   $handler = $view->new_display('block', 'Recommend vendors', 'block_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Recommend vendors';
+  $handler->display->display_options['title'] = 'RECOMMEND VENDORS';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['cache'] = FALSE;
@@ -4800,12 +4847,13 @@ return $cur_province_id;';
     t('All'),
     t('Category'),
     t('Vendor lastest view'),
-    t('Lastest view'),
+    t('LASTEST VIEW'),
     t('Recommend vendors : venue'),
-    t('Recommend vendors'),
+    t('RECOMMEND VENDORS'),
     t('Recommend vendors: venue'),
     t('Recommend vendors : honeymoon'),
     t('Recommend vendors: honeymoon'),
+    t('Recommend vendors'),
   );
   $export['vendors_block'] = $view;
 

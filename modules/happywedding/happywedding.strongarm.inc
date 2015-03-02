@@ -984,6 +984,15 @@ function happywedding_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'flag_default_flag_status';
+  $strongarm->value = array(
+    'bookmark' => TRUE,
+  );
+  $export['flag_default_flag_status'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'gmap_api_key';
   $strongarm->value = '';
   $export['gmap_api_key'] = $strongarm;
@@ -1676,14 +1685,6 @@ function happywedding_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'module_filter_recent_modules';
   $strongarm->value = array(
-    'fb_connect' => 1424323106,
-    'fb_user' => 1424323106,
-    'fb_app' => 1424322956,
-    'fb' => 1424323076,
-    'fb_devel' => 1424322580,
-    'location_entity' => 1424425096,
-    'i18n_panels' => 1424664996,
-    'views_slideshow_cycle' => 1424679366,
     'themekey_features' => 1424924389,
   );
   $export['module_filter_recent_modules'] = $strongarm;

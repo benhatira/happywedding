@@ -30,8 +30,10 @@ function _happywedding_render_searchbox() {
   $field = field_info_field('field_vendor_category');
   $catid = arg(1);
   if(!isset($catid)) $catid = 1;
+  if($catid=='all') return '';
   $label = $field['settings']['allowed_values'][$catid];
-  $output = "<div class='search-vendors-title'>$label : Search vendors</div>";
+  $output = '';
+  //$output = "<div class='search-vendors-title'>$label : Search vendors</div>";
   $output .= "<form id='search-vendors' name='search-vendors' action='/vendors/$catid?' method='GET'>";
   //$output .= "<input name='category' value=''>";
   $cur_term_id = isset($_GET['term-id'])? $_GET['term-id'] : '';
@@ -137,9 +139,13 @@ function _happywedding_get_terms_from_category_label($label){
 //  ->propertyCondition('name', $name)
 //  //->propertyCondition('vid', 1)
 //  ->execute();
+  $weight = -100;
   foreach ($term_array as $key => $value ) {
     //dpm($value);
-    $parent = $value;
+    if($value->weight>$weight) {
+      $parent = $value;
+      $weight = $parent->weight;
+    }
 //    /break;
   }
   $term_list = taxonomy_get_children($parent->tid, $parent->vid );

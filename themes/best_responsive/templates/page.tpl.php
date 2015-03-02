@@ -124,12 +124,36 @@
         <?php if (theme_get_setting('slideshow_display','best_responsive')): ?>
         <div id="home-slider">
           <div class="flexslider-container">
-            <div id="single-post-slider" class="flexslider">
+            <div id="single-post-slider" class="flexslider"  style="position: relative; top: 0px; left: 0px; width: 1140px;
+        height: 400px; overflow: hidden;">
+        <!-- Slides Container -->
+              <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1140px; height: 400px;
+            overflow: hidden;">
+                <?php foreach($ads as $key => $ad): ?>
+                  <div><img u="image" src="<?php print $ad["url"]; ?>" width="800px" alt="<?php print $ad["title"];?>" /></div>
+                <?php endforeach; ?>
+                
+              </div>
+              <!-- Arrow Left -->
+              <span u="arrowleft" class="jssora13l" style="width: 40px; height: 50px; top: 153px; left: 0px;">
+              </span>
+              <!-- Arrow Right -->
+              <span u="arrowright" class="jssora13r" style="width: 40px; height: 50px; top: 153px; right: 0px">
+              </span>
+              <!-- Arrow Navigator Skin End -->
+                      <!-- bullet navigator container -->
+              <div u="navigator" class="jssorb03" style="position: absolute; bottom: 35px; right: 16px;">
+                  <!-- bullet navigator item prototype -->
+                  <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"></div>
+              </div>
+<!--
               <ul class="slides">
                 <?php foreach($ads as $key => $ad): ?>
-                  <li class="slide"><img src="<?php print $ad["url"]; ?>" alt="<?php print $ad["title"];?>"/></li>
+                  <li class="slide"><img src="<?php print $ad["url"]; ?>" width="800px" alt="<?php print $ad["title"];?>"/></li>
                 <?php endforeach; ?>
-              </ul><!-- /slides -->
+              </ul> /slides 
+-->
+
             </div><!-- /flexslider -->
           </div>
         </div>

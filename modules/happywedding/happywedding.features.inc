@@ -109,7 +109,7 @@ function happywedding_image_default_styles() {
   // Exported image style: front_slideshow.
   $styles['front_slideshow'] = array(
     'name' => 'front_slideshow',
-    'label' => 'Front slideshow (1024x400)',
+    'label' => 'Front slideshow (800x400)',
     'effects' => array(
       4 => array(
         'label' => 'Scale and crop',
@@ -121,7 +121,7 @@ function happywedding_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 1024,
+          'width' => 800,
           'height' => 400,
         ),
         'weight' => 1,

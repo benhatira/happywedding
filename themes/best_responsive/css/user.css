@@ -1,0 +1,200 @@
+#logo {
+  clear: both;
+  border-bottom: 2px solid #000;
+}
+#navigation #main-menu {
+  border-bottom: 1px solid #fff;
+  height: 65px;
+  background: #e6e5e4;
+}
+#navigation #main-menu > ul > li > a {
+  height: 65px;
+  color: #000;
+  font: 16px latoregular;
+  line-height: 50px;
+}
+#navigation #main-menu > ul > li a:hover {
+  color: #ffc0cb;
+}
+ul.nav.nav-login {
+  float: right;
+  height: 65px;
+}
+.nav-login {
+  border: #fff;
+}
+.nav-login li.login:before {
+  margin: 25px 0 0 0;
+}
+.panel-left {
+  width: 240px;
+  text-align: center;
+  float: left;
+  height: 500px;
+}
+.panel-left .avatar-wrapper {
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 10px 10px;
+}
+.panel-left .username {
+  font-size: 18px;
+  font-weight: 600;
+}
+.panel-left .wedding-day {
+  font-size: 12px;
+}
+.user-content-wrapper {
+  float: left;
+  width: 720px;
+  margin-top: 10px;
+}
+#main-content {
+  border-top: 1px dotted #000;
+  margin-top: 2px;
+}
+.panel-left {
+  width: 230px;
+}
+.panel-left .avatar-wrapper {
+  width: 191px;
+  height: 296px;
+  background: #2a2a2a;
+}
+.panel-left .username {
+  font: 17px latoregular;
+  color: #fff;
+  height: 47px;
+  line-height: 47px;
+}
+.panel-left .wedding-day {
+  font: 16px latolight;
+  color: #fff;
+}
+.user-content-wrapper {
+  width: 860px;
+}
+img.avatar {
+  width: 167px;
+  height: 167px;
+}
+ul.primary li {
+  display: block;
+  height: 54px;
+  float: left;
+  position: relative;
+  width: 143px;
+}
+ul.primary li a {
+  background: #2a2a2a;
+  font: 14px latoregular;
+  width: 143px;
+  height: 47px;
+  margin: 0px;
+  float: none;
+  color: #fff;
+  line-height: 48px;
+  text-align: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-right: 1px solid #373737;
+  border-left: 1px solid #373737;
+  transition: height 0.3s ease-out, background-color 0.1s ease-out;
+  border-bottom: 1px solid #8d8d8d;
+  position: absolute;
+  bottom: 0;
+}
+ul.tabs.secondary {
+  background: #e6e5e4;
+  height: 47px;
+}
+ul.tabs.secondary li a {
+  height: 47px;
+  font: 14px latoregular;
+  line-height: 47px;
+  color: #2a2a2a;
+  padding: 0px 23px;
+}
+ul.primary li a:hover,
+ul.primary li a.active {
+  height: 54px;
+  background: #ffc0cb;
+  color: #2a2a2a;
+  border: pink-border;
+}
+ul.tabs.secondary li a.active,
+ul.tabs.secondary li a:hover {
+  background: inherit;
+  color: #ffc0cb;
+}
+.tabs-wrapper {
+  border-bottom: none;
+}
+.content {
+  margin-top: 20px;
+}
+.view-content {
+  border-top: 2px solid #2a2a2a;
+}
+.views-responsive-grid {
+  border-top: 1px dotted #2a2a2a;
+  margin-top: 2px;
+  padding: 15px;
+}
+.days-away {
+  font: 16px latolight;
+  color: #ffc0cb;
+}
+td.views-field {
+  border-right: none;
+}
+td.views-field.views-field-field-vendor-photo {
+  width: 133px;
+  padding: 9px 9px 9px 19px;
+}
+td.views-field.views-field-field-vendor-photo img {
+  width: 107px;
+  height: 111px;
+  display: block;
+}
+td.views-field.views-field-subject a {
+  width: 101px;
+  height: 35px;
+  background: #000;
+  display: inline-block;
+  color: #fff;
+  line-height: 35px;
+  text-align: center;
+  margin: 5px;
+}
+td.views-field.views-field-subject a:nth-child(3) {
+  background: #ffc0cb;
+  color: #000;
+}
+td.views-field.views-field-subject a:nth-child(2) {
+  margin-left: 130px;
+}
+td.views-field.views-field-subject a:nth-child(1) {
+  display: block;
+  background: none;
+  color: #000;
+}
+td.views-field.views-field.views-field-title {
+  padding: 10px 0 50px 5px;
+}
+td.views-field.views-field.views-field-title a {
+  color: #ffc0cb;
+  font: 18px latoregular;
+  padding-bottom: 4px;
+}
+td.fivestar-user-stars {
+  height: 27px;
+  width: 104px;
+  border: 1px solid #e6e5e4;
+  margin: 5px;
+  padding: 5px 8px;
+}
+tr {
+  background-color: #fff;
+  border: 1px solid #dedede;
+}

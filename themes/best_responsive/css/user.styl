@@ -22,6 +22,7 @@ ul
       float right
       height 65px
 .nav-login
+  border white
   li
     &.login
       &:before
@@ -76,13 +77,19 @@ img
 ul
   &.primary
     li
+      display block
+      height 54px
+      float left
+      position relative
+      width 143px
       a
         background #2a2a2a
         font 14px latoregular
         width 143px
         height 47px
         margin 0px
-        margin-top 7px
+        float none
+        //margin-top 7px
         color white
         line-height 48px
         text-align center
@@ -90,9 +97,10 @@ ul
         border-top-left-radius 10px
         border-right 1px solid #373737
         border-left 1px solid #373737
-        transition margin-top 0.3s ease-out,height 0.3s ease-out,background-color 0.1s ease-out
-        vertical-align bottom
+        transition height 0.3s ease-out,background-color 0.1s ease-out//margin-top 0.3s ease-out,
         border-bottom 1px solid #8d8d8d
+        position absolute
+        bottom 0
   &.tabs
     &.secondary
       background #e6e5e4
@@ -107,7 +115,7 @@ ul
 
 ul.primary li a:hover, ul.primary li a.active
   height 54px
-  margin-top 0
+  //margin-top 0
   background pink
   color #2a2a2a
   border pink-border
@@ -156,9 +164,18 @@ td
         &:nth-child(3)
           background pink
           color black
+        &:nth-child(2)
+          margin-left 130px
         &:nth-child(1)
           display block
           background none
+          color black
+    &.views-field.views-field-title
+      padding 10px 0 50px 5px
+      a
+        color pink
+        font 18px latoregular
+        padding-bottom 4px
 
   &.fivestar-user-stars
     height 27px

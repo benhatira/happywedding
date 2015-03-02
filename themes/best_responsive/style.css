@@ -1471,3 +1471,52 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
   font-size: 16px;
 }
 
+
+.jssorb03 div, .jssorb03 div:hover, .jssorb03 .av
+{
+    background: url(images/b14.png) no-repeat;
+    overflow:hidden;
+    cursor: pointer;
+}
+.jssorb03 div { background-position: -5px -4px; }
+.jssorb03 div:hover, .jssorb03 .av:hover { background-position: -35px -4px; }
+.jssorb03 .av { background-position: -65px -4px; }
+.jssorb03 .dn, .jssorb03 .dn:hover { background-position: -95px -4px; }
+.jssora13l, .jssora13r, .jssora13ldn, .jssora13rdn {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    background: url(images/a09.png) no-repeat;
+    overflow: hidden;
+    opacity : 0.5;
+}
+
+.jssora13l,.jssora13ldn {
+    background-position: -10px -35px;
+}
+
+.jssora13r,.jssora13rdn {
+    background-position: -70px -35px;
+}
+.jssora13l:hover, .jssora13r:hover {opacity:0.8}
+.jssora13ldn, .jssora13rdn {opacity:1}
+/*
+.jssora13l:hover {
+    background-position: -130px -35px;
+}
+
+.jssora13r:hover {
+    background-position: -190px -35px;
+}
+*/
+
+/*
+
+.jssora13ldn {
+    background-position: -250px -35px;
+}
+
+.jssora13rdn {
+    background-position: -310px -35px;
+}
+*/

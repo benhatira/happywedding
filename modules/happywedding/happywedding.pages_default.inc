@@ -76,8 +76,8 @@ function happywedding_default_page_manager_handlers() {
       'delta_reversed' => FALSE,
       'formatter_settings' => array(),
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'LOCATION',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -98,8 +98,8 @@ function happywedding_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'GALLERY',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -143,8 +143,8 @@ function happywedding_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'ABOUT US',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -2168,8 +2168,8 @@ return true;',
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'VENDORS SEARCH',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -2729,7 +2729,7 @@ return true;',
     ),
   );
   $display->cache = array();
-  $display->title = 'Vendors';
+  $display->title = 'VENDORS';
   $display->uuid = 'b1aa6cbf-1b0b-4a76-902d-f1f931ca0a0f';
   $display->content = array();
   $display->panels = array();
@@ -2799,7 +2799,7 @@ return true;',
     $pane->uuid = '85e88cbd-a84e-4fe4-bc35-276c2cb3c3d2';
     $display->content['new-85e88cbd-a84e-4fe4-bc35-276c2cb3c3d2'] = $pane;
     $display->panels['middle'][2] = 'new-85e88cbd-a84e-4fe4-bc35-276c2cb3c3d2';
-  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-85e88cbd-a84e-4fe4-bc35-276c2cb3c3d2';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
