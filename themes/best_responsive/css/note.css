@@ -21,7 +21,7 @@ div#logo {
 }
 body a {
   text-decoration: none;
-  color: #000;
+  color: #2a2a2a;
 }
 td {
   vertical-align: middle;
@@ -43,6 +43,8 @@ input {
   min-height: 53px;
 }
 .nav-login {
+  font: 14px latoregular;
+  line-height: 28px;
   margin: 0;
   height: 30px;
 }
@@ -50,7 +52,7 @@ input {
   background: #cbcbcb;
 }
 .nav-login li.vendor a {
-  color: #000;
+  color: #2a2a2a;
 }
 .nav-login li {
   height: 30px;
@@ -84,6 +86,7 @@ input {
   top: 7px;
 }
 #navigation {
+  font: 16px latoregular;
   position: relative;
   height: 80px;
   top: 0;
@@ -112,6 +115,7 @@ input {
   clear: both;
   height: 57px;
   background: #2a2a2a;
+  border-bottom: 1px solid #404040;
   font-size: 16px;
   padding: 0 30px;
   line-height: 2.9em;
@@ -134,8 +138,12 @@ input {
 }
 #navigation #secondary-menu ul>li>a:hover,
 #navigation #secondary-menu ul>li>a.active-trail {
-  color: #000;
+  color: #2a2a2a;
   background: #f084b5;
+}
+.view-top-reviews tr:hover,
+.view-tips-sidebar tr:hover {
+  background: #e6e5e4;
 }
 .view-top-reviews img,
 .view-tips-sidebar img {
@@ -162,6 +170,22 @@ input {
 .view-top-reviews td.views-field-field-image,
 .view-tips-sidebar td.views-field-field-image {
   width: 70px;
+}
+.page-vendors .vendors-navigation ul.sub-menu {
+  height: auto;
+  max-height: 0;
+  transition: max-height 0.5s ease-out, opacity 0.3s ease-out, top 0.3s ease-in-out;
+  opacity: 0;
+  top: 70px;
+  box-shadow: 0px 1px 4px #888;
+}
+.page-vendors .vendors-navigation > li:hover .sub-menu {
+  visibility: visible;
+  max-height: 500px;
+  opacity: 1;
+}
+.page-home #mini-panel-vendors_navigation {
+  height: 380px;
 }
 .vendors-navigation:before {
   border-bottom: 1px solid #9f9a95;
@@ -192,7 +216,7 @@ input {
   height: 68px;
   background: #41372d;
   padding: 0px 18px;
-  font-size: 16px;
+  font: 16px latoregular;
 }
 .vendors-navigation ul.menu>li >a {
   padding: 11px 0px 12px 50px;
@@ -239,28 +263,19 @@ input {
 .vendors-navigation ul > li > a:hover {
   color: #ddd;
 }
-.vendors-navigation ul > li:hover .sub-menu {
-  visibility: visible;
-  max-height: 500px;
-  opacity: 1;
-  top: 68px;
-}
 .vendors-navigation ul.sub-menu {
+  height: 300px;
+  max-height: 500px;
   position: absolute;
-  max-height: 0;
-  transition: max-height 0.15s ease-out;
   z-index: 1;
-  min-width: 200px;
+  min-width: 160px;
   position: absolute;
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-out, opacity 0.3s ease-out, top 0.3s ease-in-out;
-  opacity: 0;
-  top: 72px;
+  top: 67px;
 /* z-index: -10; */
-  min-width: 200px;
+  min-width: 160px;
   background: #e6e5e4;
-  color: #000;
+  color: #2a2a2a;
 }
 .vendors-navigation ul.sub-menu li {
   display: block;
@@ -271,11 +286,14 @@ input {
 .vendors-navigation ul.sub-menu li a {
   transition: background 0.2s ease-out, color 0.1s ease-out;
   color: #000;
-  font-weight: 200;
+  font-weight: 100;
+  font: 16px latoregular;
   padding-left: 30px;
+  min-height: 30px;
+  line-height: 28px;
 }
 .vendors-navigation ul.sub-menu li:hover {
-  background: #ccc;
+  background: #cfcfcf;
 }
 .panel-2col-stacked .panel-col-first,
 .panel-2col .panel-col-first {
@@ -291,12 +309,12 @@ input {
   display: block;
 }
 .panel-col-first .panel-pane.pane-block .pane-title {
-  font-size: 24px;
+  font: 24px Times New Roman;
   height: 43px;
-  border-bottom: 1px dotted #000;
+  border-bottom: 1px dotted #2a2a2a;
 }
 .panel-col-first .panel-pane.pane-block .pane-content {
-  border-top: 1px solid #000;
+  border-top: 1px solid #2a2a2a;
   margin-top: 2px;
 }
 .panel-col-first .panel-pane.pane-block .pane-content > .view {
@@ -309,7 +327,8 @@ input {
   background: url("/sites/all/themes/best_responsive/images/sprites.png") center -590px no-repeat;
   height: 78px;
   line-height: 76px;
-  font-size: 36px;
+  font-size: 40px;
+  font-weight: 100;
   margin: 20px 0;
   font-family: Times New Roman;
 }
@@ -332,13 +351,17 @@ input {
 .panel-col-last .panel-pane .views-exposed-form {
   background: #e6e5e4;
   height: 40px;
-  font-size: 12px;
+  font-size: 12px latoregular;
 }
 .panel-col-last .panel-pane .view-content tr {
   padding: 6px 4px;
   height: 90px;
   border-bottom: 1px dotted #adadad;
   background: #fff;
+  cursor: pointer;
+}
+.panel-col-last .panel-pane .view-content tr:hover {
+  background: #e6e5e4;
 }
 .panel-col-last .panel-pane .view-top-reviews img,
 .panel-col-last .panel-pane .view-tips-sidebar img {
@@ -360,7 +383,7 @@ input {
 }
 .panel-col-last .panel-pane td.views-field.views-field-title p {
   color: #555;
-  font-size: 14px;
+  font: 14px Arial;
   height: 53px;
   margin: 5px 2px 0 0;
 }
@@ -404,30 +427,26 @@ input {
   margin-right: 0px;
 }
 .view-subpage-tips .more-link {
-  border-top: 1px solid #000;
+  border-top: 1px solid #2a2a2a;
   height: 30px;
   background: #f084b5;
+  font: 16px Times New Roman;
+  line-height: 30px;
   margin-right: 4px;
 }
 .view-subpage-tips .more-link a {
-  color: #000;
+  display: block;
+  color: #2a2a2a;
+}
+.view-subpage-tips .more-link a:after {
+  content: '>>';
+  margin-right: 10px;
 }
 .view-subpage-tips .views-field-field-image img {
   display: block;
 }
-.view-subpage-tips .shadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.7);
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear 0.3s, opacity 0.3s ease-in-out;
-}
 .view-subpage-tips .views-column:hover .shadow,
-.view-subpage-tips .views-column:hover .views-field-ops {
+.view-subpage-tips .views-column:hover .views-field-nothing {
   visibility: visible;
   opacity: 1;
   transition-delay: 0s;
@@ -440,29 +459,48 @@ input {
 .view-subpage-tips .views-column:hover .views-field-title a {
   color: #f084b5;
 }
-.view-subpage-tips .views-field-ops {
-  width: 95px;
-  display: inline-block;
-  height: 38px;
-  font-size: 13px;
-  color: #000;
-  background: #ececec;
-  position: absolute;
-  right: 0;
-  z-index: 5;
-  left: 0;
-  margin: auto;
-  top: 0;
-  bottom: 0;
+.view-subpage-tips .views-field.views-field-nothing {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 0.3s, opacity 0.3s ease-in-out;
+  font: 14px latoregular;
+  line-height: 28px;
+  position: absolute;
+  line-height: 25px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
 }
-.view-subpage-tips .views-field-ops a {
-  color: #f00;
-  display: block;
+.view-subpage-tips .views-field.views-field-nothing .shadow {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  height: 38px;
   text-align: center;
-  padding: 5px;
+}
+.view-subpage-tips .views-field.views-field-nothing .shadow > span {
+  width: 95px;
+  margin-right: 2px;
+  display: inline-block;
+  height: 38px;
+  background: #f084b5;
+  color: #2a2a2a;
+}
+.view-subpage-tips .views-field.views-field-nothing .shadow > span.flag-wrapper.flag-bookmark {
+  background: #ececec;
+}
+.view-subpage-tips .views-field.views-field-nothing .shadow > span.flag-wrapper a {
+  width: 90px;
+  color: #f00;
+}
+.view-subpage-tips .views-field.views-field-nothing .shadow a {
+  height: 100%;
+  width: auto;
+  padding: 6px 0px;
+  display: inline-block;
 }
 .view-subpage-tips .views-field-title,
 .view-subpage-tips .views-field-title-field,
@@ -477,6 +515,8 @@ input {
   background-color: rgba(0,0,0,0.7);
   z-index: 1;
   font-weight: 700;
+  font: 14px latoregular;
+  line-height: 28px;
   transition: background-color ease-in-out 0.3s;
 }
 .view-subpage-tips .views-field-title a,
@@ -533,11 +573,15 @@ input {
   transition-delay: 0s;
 }
 .view-vendors-block .views-field-title {
-  font-size: 18px;
+  font: 16px latoregular;
   margin-bottom: 7px;
+  margin-top: 8px;
+  height: 23px;
 }
 .view-vendors-block .views-field-province {
-  font-size: 11px;
+  font: 14px latoregular;
+  line-height: 28px;
+  line-height: 23px;
   height: 25px;
   margin-right: 5px;
   float: left;
@@ -548,7 +592,9 @@ input {
   display: block;
 }
 .view-vendors-block .views-field-field-vendor-category {
-  font-size: 11px;
+  font: 14px latoregular;
+  line-height: 28px;
+  line-height: 23px;
   height: 25px;
 }
 .view-vendors-block .views-field-field-vendor-category li {
@@ -584,7 +630,10 @@ input {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 0.3s, opacity 0.3s ease-in-out;
+  font: 14px latoregular;
+  line-height: 28px;
   position: absolute;
+  line-height: 25px;
   bottom: 9px;
   width: 231px;
   height: 146px;
@@ -603,14 +652,14 @@ input {
   width: 95px;
   display: inline-block;
   height: 38px;
-  font-size: 13px;
   background: #f084b5;
-  color: #000;
+  color: #2a2a2a;
 }
 .view-vendors-block .views-field.views-field-nothing .shadow > span.flag-wrapper.flag-bookmark {
   background: #ececec;
 }
 .view-vendors-block .views-field.views-field-nothing .shadow > span.flag-wrapper a {
+  width: 90px;
   color: #f00;
 }
 .view-vendors-block .views-field.views-field-nothing .shadow a {
@@ -994,6 +1043,31 @@ div#mini-panel-register_description strong {
 .panel-pane.pane-happywedding-user-register-form #edit-account {
   clear: both;
 }
+.page-user #logo {
+  clear: both;
+  border-bottom: 2px solid #2a2a2a;
+}
+.page-user #navigation #main-menu {
+  border-bottom: 1px solid #fff;
+  height: 65px;
+  background: #e6e5e4;
+}
+.page-user #navigation #main-menu > ul > li > a {
+  height: 65px;
+  color: #2a2a2a;
+  font: 16px latoregular;
+  line-height: 50px;
+}
+.page-user #navigation #main-menu > ul > li a:hover {
+  color: #f084b5;
+}
+.page-user ul.nav.nav-login {
+  float: right;
+  height: 65px;
+}
+.page-user .nav-login li.login:before {
+  margin: 25px 0 0 0;
+}
 .page-user .panel-left {
   width: 240px;
   text-align: center;
@@ -1016,6 +1090,136 @@ div#mini-panel-register_description strong {
   float: left;
   width: 720px;
   margin-top: 10px;
+}
+.page-user #main-content {
+  border-top: 1px dotted #2a2a2a;
+  margin-top: 2px;
+}
+.page-user .panel-left {
+  width: 230px;
+}
+.page-user .panel-left .avatar-wrapper {
+  width: 191px;
+  height: 296px;
+  background: #2a2a2a;
+}
+.page-user .panel-left .username {
+  font: 17px latoregular;
+  color: #fff;
+  height: 47px;
+  line-height: 47px;
+}
+.page-user .panel-left .wedding-day {
+  font: 16px latolight;
+  color: #fff;
+}
+.page-user .user-content-wrapper {
+  width: 860px;
+}
+.page-user img.avatar {
+  width: 167px;
+  height: 167px;
+}
+.page-user ul.primary li a {
+  background: #2a2a2a;
+  font: 14px latoregular;
+  width: 143px;
+  height: 47px;
+  margin: 0px;
+  margin-top: 7px;
+  color: #fff;
+  line-height: 48px;
+  text-align: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-right: 1px solid #373737;
+  border-left: 1px solid #373737;
+  transition: margin-top 0.3s ease-out, height 0.3s ease-out, background-color 0.1s ease-out;
+  vertical-align: bottom;
+  border-bottom: 1px solid #8d8d8d;
+}
+.page-user ul.tabs.secondary {
+  background: #e6e5e4;
+  height: 47px;
+}
+.page-user ul.tabs.secondary li a {
+  height: 47px;
+  font: 14px latoregular;
+  line-height: 47px;
+  color: #2a2a2a;
+  padding: 0px 23px;
+}
+.page-user ul.primary li a:hover,
+.page-user ul.primary li a.active {
+  height: 54px;
+  margin-top: 0;
+  background: #f084b5;
+  color: #2a2a2a;
+  border: #f074a0;
+}
+.page-user ul.tabs.secondary li a.active,
+.page-user ul.tabs.secondary li a:hover {
+  background: inherit;
+  color: #f084b5;
+}
+.page-user .tabs-wrapper {
+  border-bottom: none;
+}
+.page-user .content {
+  margin-top: 20px;
+}
+.page-user .view-content {
+  border-top: 2px solid #2a2a2a;
+}
+.page-user .views-responsive-grid {
+  border-top: 1px dotted #2a2a2a;
+  margin-top: 2px;
+  padding: 15px;
+}
+.page-user .days-away {
+  font: 16px latolight;
+  color: #f084b5;
+}
+.page-user td.views-field {
+  border-right: none;
+}
+.page-user td.views-field.views-field-field-vendor-photo {
+  width: 133px;
+  padding: 9px 9px 9px 19px;
+}
+.page-user td.views-field.views-field-field-vendor-photo img {
+  width: 107px;
+  height: 111px;
+  display: block;
+}
+.page-user td.views-field.views-field-subject a {
+  width: 101px;
+  height: 35px;
+  background: #2a2a2a;
+  display: inline-block;
+  color: #fff;
+  line-height: 35px;
+  text-align: center;
+  margin: 5px;
+}
+.page-user td.views-field.views-field-subject a:nth-child(3) {
+  background: #f084b5;
+  color: #2a2a2a;
+}
+.page-user td.views-field.views-field-subject a:nth-child(1) {
+  display: block;
+  background: none;
+}
+.page-user td.fivestar-user-stars {
+  height: 27px;
+  width: 104px;
+  border: 1px solid #e6e5e4;
+  margin: 5px;
+  padding: 5px 8px;
+}
+.page-user tr {
+  background-color: #fff;
+  border: 1px solid #dedede;
 }
 footer {
   border-top: 1px solid #b3b3b3;

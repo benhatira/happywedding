@@ -65,7 +65,7 @@ function best_responsive_preprocess_page(&$vars) {
   if ($vars['logged_in']) {
     $user = user_load($vars['user']->uid);
     $vars['user_data'] = array( 'name' => $user->name);
-    $vars['user_data']['wedding_days_away'] = t('Your wedding is') . ' 233 ' . ('days away.');
+    $vars['user_data']['wedding_days_away'] = t('Your wedding is') . '<span class="days-away"> 233 </span>' . ('days away.');
     if( !empty($user->picture->uri)) {
     $vars['user_data']['avatar'] = theme_image_style(
       array(

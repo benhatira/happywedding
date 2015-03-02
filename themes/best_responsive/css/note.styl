@@ -1,56 +1,15 @@
-div#logo {
-    height: 137px;
-    background: white;
-    padding: 20px;
-    box-sizing: border-box;
-}
+@import 'color.styl'
+@import 'mixin.styl'
 
-#logo img {
-    margin: auto;
-}
+div#logo 
+    height 137px
+    background white
+    padding 20px
+    box-sizing border-box
 
-pink = #f084b5
-pink-hover = #ff54a0
+#logo img
+    margin auto
 
-link-hover()
-  transition background 0.2s ease-out,color 0.1s ease-out
-hide-for-hover()
-  visibility hidden
-  opacity 0
-  transition visibility 0s linear 0.3s,opacity 0.3s ease-in-out
-show-for-hover()
-  visibility visible
-  opacity 1
-  transition-delay 0s
-hilight-title()
-  text-align center
-  background url("/sites/all/themes/best_responsive/images/sprites.png") center -590px no-repeat
-  height 78px
-  line-height 76px
-  font-size 36px
-  margin 20px 0
-  font-family Times New Roman
-flag-button()
-  width 95px
-  display inline-block
-  height 38px
-  font-size 13px
-  color black
-  background #ececec
-  position absolute
-  right 0
-  z-index 5
-  left 0
-  margin auto
-  top 0
-  bottom 0
-  a
-    color red
-    display block
-    text-align center
-    padding 5px
-
-  
 .webmaster-menu
   background-color #ab0070
   font-weight 700
@@ -86,6 +45,7 @@ body
   border-top 1px solid #a0a2ac
   min-height 53px
 .nav-login
+  font-normal()
   margin 0
   height 30px
   li.vendor
@@ -120,6 +80,7 @@ body
   position absolute
   top 7px
 #navigation
+  font 16px latoregular
   position relative
   height 80px
   top 0
@@ -145,6 +106,7 @@ body
     clear both
     height 57px
     background #2a2a2a
+    border-bottom 1px solid #404040
     font-size 16px
     padding 0 30px
     line-height 2.9em
@@ -169,6 +131,8 @@ body
 
   
 .view-top-reviews, .view-tips-sidebar
+  tr:hover
+    background grey
   img
     display block
   td
@@ -181,6 +145,25 @@ body
 
   td.views-field.views-field-picture,td.views-field-field-image
     width 70px
+
+.page-vendors .vendors-navigation
+  ul.sub-menu
+    height auto
+    max-height 0
+    transition max-height 0.5s ease-out,opacity 0.3s ease-out,top 0.3s ease-in-out
+    opacity 0
+    top 70px
+    box-shadow 0px 1px 4px #888
+  > li
+    &:hover
+      .sub-menu
+        visibility visible
+        max-height 500px
+        opacity 1
+.page-home #mini-panel-vendors_navigation
+  height 380px
+  
+  
 
 .vendors-navigation:before
   //border-top 1px solid #82807d
@@ -212,7 +195,7 @@ body
   height  68px
   background #41372d
   padding 0px 18px
-  font-size 16px
+  font 16px latoregular
   ul.menu
     &>li
       >a
@@ -249,27 +232,18 @@ body
         font-weight 700
         &:hover
           color #ddd
-      &:hover
-        .sub-menu
-          visibility visible
-          max-height 500px
-          opacity 1
-          top 68px
     &.sub-menu
+      height 300px
+      max-height 500px
       position absolute
-      max-height 0
-      transition max-height 0.15s ease-out
       z-index 1
-      min-width 200px
+      min-width 160px
       position absolute
-      max-height 0
       overflow hidden
-      transition max-height 0.5s ease-out,opacity 0.3s ease-out,top 0.3s ease-in-out
-      opacity 0
-      top 72px
+      top 67px
       /* z-index: -10; */
-      min-width: 200px;
-      background #e6e5e4
+      min-width 160px
+      background grey
       color black
       li
         display block
@@ -279,10 +253,13 @@ body
         a
           link-hover()
           color #000
-          font-weight 200
+          font-weight 100
+          font 16px latoregular
           padding-left 30px
+          min-height 30px
+          line-height 28px
       li:hover
-        background #cccccc
+        background grey-hover
 
 .panel-2col-stacked, .panel-2col
   .panel-col-first
@@ -295,7 +272,7 @@ body
 .panel-col-first 
   .panel-pane.pane-block
     .pane-title
-      font-size 24px
+      font 24px Times New Roman
       height 43px
       border-bottom 1px dotted black
 
@@ -327,13 +304,16 @@ body
   .views-exposed-form
     background #e6e5e4
     height 40px
-    font-size 12px
+    font-size 12px latoregular
   .view-content
     tr
       padding 6px 4px
       height 90px
       border-bottom 1px dotted #adadad
       background white
+      cursor pointer
+    tr:hover
+      background grey
   .view-top-reviews img, .view-tips-sidebar img
     width 91px
     height 76px
@@ -349,7 +329,7 @@ body
         line-height 1em
       p
         color #555
-        font-size 14px
+        font 14px Arial
         height 53px
         margin 5px 2px 0 0
     &.views-field-subject
@@ -394,32 +374,73 @@ body
     border-top 1px solid black
     height 30px
     background pink
+    font 16px Times New Roman
+    line-height 30px
     margin-right 4px
     a
+      display block
       color black
+    a:after
+      content '>>'
+      margin-right 10px
   .views-field-field-image
     img
       //width 250px
       //height 280px
       display block
-  .shadow
-    position absolute
-    top 0
-    left 0
-    right 0
-    bottom 0
-    background rgba(0,0,0,0.7)
-    hide-for-hover()
+  //  .shadow
+  //    position absolute
+  //    top 0
+  //    left 0
+  //    right 0
+  //    bottom 0
+  //    background rgba(0,0,0,0.7)
+  //    hide-for-hover()
   .views-column:hover
-    .shadow, .views-field-ops
+    .shadow, .views-field-nothing
       show-for-hover()
     .views-field-title-field, .views-field-title
       background-color transparent//rgba(220,220,220,1)
       a
         color pink
-  .views-field-ops
-    flag-button()
+    //  .views-field-ops
+    //    flag-button()
+    //    hide-for-hover()
+  .views-field.views-field-nothing
     hide-for-hover()
+    font-normal()
+    position absolute
+    line-height 25px
+    top 0
+    width 100%
+    height 100%
+    background rgba(0,0,0,.75)
+    .shadow
+      position absolute
+      width 100%
+      bottom 0
+      top 0
+      margin auto
+      height 38px
+      text-align center
+      & > span
+        width 95px
+        margin-right 2px
+        display inline-block
+        height 38px
+        background pink
+        color black
+        &.flag-wrapper
+          &.flag-bookmark
+            background #ececec
+          a
+            width 90px
+            color red
+      a
+        height 100%
+        width auto
+        padding 6px 0px
+        display inline-block
   .views-field-title, .views-field-title-field, .views-field-title-field-et
     display block
     position absolute
@@ -431,6 +452,7 @@ body
     background-color rgba(0,0,0,0.7)
     z-index 1
     font-weight 700
+    font-normal()
     transition background-color ease-in-out 0.3s
     a
       color white
@@ -476,11 +498,14 @@ body
   .views-column:hover .views-field-nothing
     show-for-hover()
   .views-field-title
-    font-size 18px
+    font 16px latoregular
     margin-bottom 7px
+    margin-top: 8px
+    height 23px
     //font-weight 700
   .views-field-province
-    font-size 11px
+    font-normal()
+    line-height 23px
     height 25px
     margin-right 5px
     float left
@@ -489,7 +514,8 @@ body
       height 25px
       display block
   .views-field-field-vendor-category
-    font-size 11px
+    font-normal()
+    line-height 23px
     height 25px
     li
       list-style-type none
@@ -517,7 +543,9 @@ body
     font-size 10px
   .views-field.views-field-nothing
     hide-for-hover()
+    font-normal()
     position absolute
+    line-height 25px
     bottom 9px
     width 231px
     height 146px
@@ -534,13 +562,13 @@ body
         width 95px
         display inline-block
         height 38px
-        font-size 13px
         background pink
         color black
         &.flag-wrapper
           &.flag-bookmark
             background #ececec
           a
+            width 90px
             color red
       a
         height 100%
@@ -908,28 +936,7 @@ div#mini-panel-register_description
     //  width 48%
 
 .page-user
-  .panel-left
-    width 240px
-    text-align center
-    float left
-    height 500px
-    .avatar-wrapper
-      margin 10px
-      border 1px solid #ccc
-      padding 10px 10px
-
-    .username
-      font-size 18px
-      font-weight 600
-
-    .wedding-day
-      font-size 12px
-  .user-content-wrapper
-    float left
-    width 720px
-    margin-top 10px
-
-
+  @import 'user.styl'
     
 footer    
   border-top 1px solid #b3b3b3

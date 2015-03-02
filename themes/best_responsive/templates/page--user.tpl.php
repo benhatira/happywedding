@@ -129,7 +129,18 @@
           ?>
         </div>
       </nav>
+      <div id="logo">
+        <?php if ($logo): ?><div id="site-logo"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        </a></div><?php endif; ?>
+<!--
+        <h1 id="site-name">
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><span><?php print $site_name; ?></span></a>
+        </h1>
+-->
+      </div>
     </header>
+    
   </div>
 
   <div id="main-content" class="clearfix">
