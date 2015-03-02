@@ -152,8 +152,8 @@ function _happywedding_render_vendors_navigation(){
   if($catid=='') $catid = 1;
   //echo "catid = [" . $catid . "]";
   $labels = $field['settings']['allowed_values'];
-  $output =  "<div class='search-vendors-title'>Current vendors  : $labels[$catid]</div>";
-  
+  //$output =  "<div class='search-vendors-title'>Current vendors  : $labels[$catid]</div>";
+  $output = "";
   $output .= "<div class='vendors-navigation'><ul class='menu'>";
   //dpm($labels);exit;
   foreach ($labels as $id => $label) {

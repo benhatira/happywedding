@@ -1,5 +1,6 @@
 jQuery(document).ready(function($){
   $(window).load(function() {
+    if($("#single-post-slider .slide").length>0)
     $("#single-post-slider").flexslider({
       animation: 'slide',
       slideshow: true,

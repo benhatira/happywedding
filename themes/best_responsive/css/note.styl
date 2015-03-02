@@ -10,7 +10,10 @@ div#logo {
 }
 
 pink = #f084b5
+pink-hover = #ff54a0
 
+link-hover()
+  transition background 0.2s ease-out,color 0.1s ease-out
 hide-for-hover()
   visibility hidden
   opacity 0
@@ -21,11 +24,12 @@ show-for-hover()
   transition-delay 0s
 hilight-title()
   text-align center
-  background url(/sites/all/themes/best_responsive/images/sprites.png) 0 -430px;
-  height 70px
-  line-height 70px
-  font-size 26px
+  background url("/sites/all/themes/best_responsive/images/sprites.png") center -590px no-repeat
+  height 78px
+  line-height 76px
+  font-size 36px
   margin 20px 0
+  font-family Times New Roman
 flag-button()
   width 95px
   display inline-block
@@ -80,6 +84,7 @@ body
   width 1140px
 #home-slider
   border-top 1px solid #a0a2ac
+  min-height 53px
 .nav-login
   margin 0
   height 30px
@@ -128,6 +133,7 @@ body
     & > ul
       & > li
         & > a
+          link-hover()
           line-height 32px
           padding 7px 20px
           font-size 16px
@@ -149,6 +155,7 @@ body
         float left
         height 57px
         & > a
+          link-hover()
           color white
           padding 5px 28px 5px 28px
           display block
@@ -176,15 +183,19 @@ body
     width 70px
 
 .vendors-navigation:before
-    content ''
-    position absolute
-    width 50px
-    background #41372d
-    height 68px
-    left -23px
-    top 15px
-    z-index 0
+  //border-top 1px solid #82807d
+  border-bottom 1px solid #9f9a95
+  content ''
+  position absolute
+  width 50px
+  background #41372d
+  height 68px
+  left -23px
+  top 15px
+  z-index 0
 .vendors-navigation:after
+  //border-top 1px solid #82807d
+  border-bottom 1px solid #9f9a95
   content ''
   position absolute
   width 50px
@@ -195,6 +206,8 @@ body
   z-index 0
 
 .vendors-navigation
+  border-top 1px solid #82807d
+  border-bottom 1px solid #9f9a95
   position relative
   height  68px
   background #41372d
@@ -203,22 +216,22 @@ body
   ul.menu
     &>li
       >a
-        padding 11px 0px 12px 47px
+        padding 11px 0px 12px 50px
         background url(/sites/all/themes/best_responsive/images/sprites.png)
       &:nth-child(1)>a
-        background-position 0 -109px
+        background-position -12px -105px
       &:nth-child(2)>a
-        background-position 0 -158px
+        background-position -11px -175px
       &:nth-child(3)>a
-        background-position 0 -204px
+        background-position -11px -244px
       &:nth-child(4)>a
-        background-position 0 -250px
+        background-position -11px -310px
       &:nth-child(5)>a
-        background-position 0 -294px
+        background-position -11px -379px
       &:nth-child(6)>a
-        background-position 0 -337px
+        background-position -11px -446px
       &:nth-child(7)>a
-        background-position 0 -376px
+        background-position -11px -515px
   ul
     margin 0px
     & > li
@@ -229,12 +242,13 @@ body
       width 14%
       position relative
       & > a
+        link-hover()
         display block
         //padding 3px 10px
         color #fff
         font-weight 700
         &:hover
-          color #fff
+          color #ddd
       &:hover
         .sub-menu
           visibility visible
@@ -263,9 +277,12 @@ body
         min-height 30px
         height auto
         a
-          color #555
-          font-weight 100
+          link-hover()
+          color #000
+          font-weight 200
           padding-left 30px
+      li:hover
+        background #cccccc
 
 .panel-2col-stacked, .panel-2col
   .panel-col-first
@@ -288,9 +305,9 @@ body
       & > .view
         border-top 1px solid #ebebeb
         padding-top 29px
-  & .inside > .panel-pane:nth-child(1)
-    .pane-title
-      hilight-title()
+  //  & .inside > .panel-pane:nth-child(1)
+  //    .pane-title
+  //      hilight-title()
 .pane-views-gallery-block, .pane-vendors-navigation
   .pane-title
     hilight-title()
@@ -304,7 +321,7 @@ body
   .pane-title
     font 28px "Times New Roman"
     text-align center
-    background url(/sites/all/themes/best_responsive/images/sprites.png) 0 -430px;
+    background url(/sites/all/themes/best_responsive/images/sprites.png) center -605px no-repeat;
     height 78px
     line-height 50px
   .views-exposed-form
@@ -792,7 +809,14 @@ body
     padding 10px
     margin-right 10px
     height 330px
-
+  .panel-pane
+    border none
+  .panel-pane .pane-title
+    font-size 20px
+    background none
+    height 30px
+    line-height 30px
+    margin 0
   .panel-pane.pane-block
     &.pane-fboauth-login
       text-align center
@@ -907,8 +931,8 @@ div#mini-panel-register_description
 
 
     
-    
-
+footer    
+  border-top 1px solid #b3b3b3
 .footer-block
   padding 30px 40px 0
   .description
@@ -928,11 +952,14 @@ div#mini-panel-register_description
       text-align left
       margin-left 40%
   .social
+    link-hover()
     width 38px
     height 38px
     background pink
     border-radius 40px
     background pink url(/sites/all/themes/best_responsive/images/sprites.png)
+  .social:hover
+    background-color pink-hover
   .facebook
     background-position 0 -66px
   .twitter
