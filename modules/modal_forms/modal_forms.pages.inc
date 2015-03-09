@@ -201,6 +201,68 @@ function modal_forms_comment_reply($js = NULL, $node, $pid = NULL) {
   print ajax_render($output);
 }
 
+
+/**
+ * A modal node add inquiry callback.
+ */
+function modal_forms_node_add_inquiry($js = NULL) {
+  global $user;
+  module_load_include('inc', 'node', 'node.pages');
+
+
+  ctools_include('modal');
+  ctools_include('ajax');
+  
+  
+    
+  $node = (object) array(
+    'uid' => $user->uid,
+    'name' => (isset($user->name) ? $user->name : ''),
+    'type' => 'inquiry',
+    'language' => LANGUAGE_NONE,
+  );
+      
+  node_object_prepare($node);
+  $form_state = array(
+    'build_info' => array(
+      'args' => array(
+        $node,
+      ),
+    ),
+    //'title' => t('Review'),
+    'ajax' => TRUE,
+    're_render' => FALSE,
+    'no_redirect' => TRUE,
+  );
+  
+  $form = drupal_retrieve_form($node->type . '_node_form', $form_state);
+  drupal_prepare_form($node->type . '_node_form', $form, $form_state);
+  
+  $output = drupal_build_form($node->type . '_node_form', $form_state);
+  
+  if (!$form_state['executed'] || $form_state['rebuild']) {
+    $output = ctools_modal_form_render($form_state, $output);
+  }
+  else {
+    // We'll just overwrite the form output if it was successful.
+    $output = array();
+    // @todo: Uncomment once http://drupal.org/node/1587916 is fixed.
+    //if (is_array($form_state['redirect'])) {
+    //  list($path, $options) = $form_state['redirect'];
+    //  $output[] = ctools_ajax_command_redirect($path, 0, $options);
+    //}
+    if (isset($_GET['destination'])) {
+      $output[] = ctools_ajax_command_redirect($_GET['destination']);
+    }
+    else {
+      $output[] = ctools_ajax_command_reload();
+    }
+  }
+
+  print ajax_render($output);
+}
+
+
 /**
  * Modal display of the node's webform.
  *

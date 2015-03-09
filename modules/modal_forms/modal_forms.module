@@ -68,6 +68,14 @@ function modal_forms_menu() {
     'file' => 'modal_forms.pages.inc',
     'type' => MENU_CALLBACK,
   );
+  $items['modal_forms/%ctools_js/node/add/inquiry'] = array(
+    'title' => 'Inquiry',
+    'page callback' => 'modal_forms_node_add_inquiry',
+    'page arguments' => array(1),
+    'access arguments' => array('create inquiry content'),
+    'file' => 'modal_forms.pages.inc',
+    'type' => MENU_CALLBACK,
+  );
   $items['modal_forms/%ctools_js/webform/%node'] = array(
     'title' => 'Webform',
     'page callback' => 'modal_forms_view_webform',
@@ -266,6 +274,7 @@ function _modal_forms_doheader() {
   if (user_access('post comments') && variable_get('modal_forms_comment', 0)) {
     drupal_add_js($path . '/js/modal_forms_comment.js', array('weight' => -20));
   }
+  drupal_add_js($path . '/js/modal_forms_node_add.js', array('weight' => -20));
 
   $already_added = TRUE;
 }

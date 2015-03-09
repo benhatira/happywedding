@@ -69,9 +69,9 @@ function happywedding_bo_vendor_dashboard(){
   //$view->set_items_per_page(4);
   //$view->pre_execute();
   $view->execute();
-  $output = "<div class='register-date'>Registered Date " . date('d/m/Y',$user->created) . '<br></div>';
-  $output .= "<div class='last-access-date'>Last access " . _humanTiming($user->access) . ' ago<br></div>';
-  $output .= '<div class="new-reviews"><a href="/bo/vendor/'.$vendor->nid.'/reviews">' . $view->total_rows . ' New Reviews</a></div>';
+  $output = "<div class='register-date'>".t("Registered Date")." " . date('d/m/Y',$user->created) . '<br></div>';
+  $output .= "<div class='last-access-date'>".t("Last access")." " . _humanTiming($user->access) . ' ago<br></div>';
+  $output .= '<div class="new-reviews"><a href="/bo/vendor/'.$vendor->nid.'/reviews">' . $view->total_rows . ' '.t("New Reviews").'</a></div>';
   
   //********* current plan
   $field = field_info_field('field_vendor_plan');
@@ -89,16 +89,19 @@ function happywedding_bo_vendor_dashboard(){
   };
   $terms = taxonomy_term_load_multiple($tids, array() );
   //dpm($terms);
-  $output .= '<div class="field-category">Category : ';
+  $output .= '<div class="field-category">'.t("Category").' : ';
   foreach( $terms as $key => $term){
     //dpm($term);
+    if (module_exists('i18n_taxonomy')) { //To not break your site if module is not installed
+      $term = i18n_taxonomy_localize_terms($term); // The important part!
+    }
     if(!_get_tag_parent($term->tid))
     $output .= '<span>' . $term->name .' </span>';
   };
   $output .= '</div>';
   
   //************ location
-  $output .= '<div class="field-location">Location : ';
+  $output .= '<div class="field-location">'.t("Location").' : ';
   if($vendor->field_location[LANGUAGE_NONE]) {
     $output .= '<span>' . $vendor->field_location[LANGUAGE_NONE][0]["province_name"] .' </span>';
   }
@@ -112,7 +115,7 @@ function happywedding_bo_vendor_dashboard(){
     ->execute()
     ->fetchAssoc();
   
-  $output .= '<div class="page-views">Page views : ';
+  $output .= '<div class="page-views">'.t("Page views").' : ';
   $output .= '<span>' . $counter['totalcount'] .' </span>';
   $output .= '</div>';
   
@@ -121,7 +124,7 @@ function happywedding_bo_vendor_dashboard(){
   //$view->set_display('comment_is_new');
   $view->set_arguments(array($vendor->nid));
   $view->execute();
-  $output .= "<div class='total-save'>Saves : " . $view->total_rows . '</div>';
+  $output .= "<div class='total-save'>".t("Saves")." : " . $view->total_rows . '</div>';
   return $output;
 }
 
@@ -143,6 +146,9 @@ function _get_tag_parent($tid){
   if(count($parents)>0){
     foreach($parents as $key => $parent) {
       $term = $parent;
+      if (module_exists('i18n_taxonomy')) { //To not break your site if module is not installed
+        $term = i18n_taxonomy_localize_terms($term); // The important part!
+      }
     }
   }
   return $term;
@@ -172,6 +178,9 @@ function happywedding_bo_vendor_categories(){
   
   foreach($vendor->field_vendor_tags["und"] as $key => $tag) {
     $term = taxonomy_term_load($tag["tid"]);
+    if (module_exists('i18n_taxonomy')) { //To not break your site if module is not installed
+      $term = i18n_taxonomy_localize_terms($term); // The important part!
+    }
     $parent =  _get_tag_parent($tag["tid"]);
     if($parent) {
       
@@ -206,6 +215,9 @@ function happywedding_bo_vendor_categories(){
   $output .= '<div class="views-exposed-widget"><label>Sub-category</label><select class="subcategory-select" name="subcategory-add">';
   foreach($children as $key => $tag) {
     $term = taxonomy_term_load($tag->tid);
+    if (module_exists('i18n_taxonomy')) { //To not break your site if module is not installed
+      $term = i18n_taxonomy_localize_terms($term); // The important part!
+    }
     $name = $term->name;
     $output .= '<option value="'.$tag->tid.'">'.$name.'</option>'  ;
   }

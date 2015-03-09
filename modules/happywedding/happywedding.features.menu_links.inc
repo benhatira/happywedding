@@ -14,7 +14,7 @@ function happywedding_menu_default_menu_links() {
   $menu_links['features_tips:admin/tips'] = array(
     'menu_name' => 'features',
     'link_path' => 'admin/tips',
-    'router_path' => 'admin/tips',
+    'router_path' => 'admin',
     'link_title' => 'Tips',
     'options' => array(
       'attributes' => array(
@@ -36,7 +36,7 @@ function happywedding_menu_default_menu_links() {
   $menu_links['features_vendors:admin/vendors'] = array(
     'menu_name' => 'features',
     'link_path' => 'admin/vendors',
-    'router_path' => 'admin/vendors',
+    'router_path' => 'admin',
     'link_title' => 'Vendors',
     'options' => array(
       'attributes' => array(

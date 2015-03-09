@@ -1,0 +1,130 @@
+.page-vendors .vendors-navigation
+  ul.sub-menu
+    height auto
+    max-height 0
+    transition max-height 0.5s ease-out,opacity 0.3s ease-out,top 0.3s ease-in-out
+    opacity 0
+    top 70px
+    box-shadow 0px 1px 4px #888
+  > li
+    &:hover
+      .sub-menu
+        visibility visible
+        max-height 500px
+        opacity 1
+.page-home #mini-panel-vendors_navigation
+  height 470px
+  .vendors-navigation
+    border-bottom none
+    ul.sub-menu
+      border-top 1px solid #9f9a95
+#mini-panel-vendors_navigation
+  position relative
+  
+.vendors-navigation-bg
+  position absolute
+  width 100%
+.vendors-navigation-bg 
+  .shadow
+    border-top 1px solid #82807d
+    border-bottom 1px solid #9f9a95
+    content ''
+    position absolute
+    width 40px
+    height 68px
+    background #41372d
+    top 15px
+    z-index 0
+  .left:after
+    position absolute
+    content ''
+    width 17px
+    height 17px
+    background url(../images/sprites.png) -118px -40px
+    bottom 0
+    right 0
+  .right:after
+    position absolute
+    content ''
+    width 15px
+    height 17px
+    background url(../images/sprites.png) -132px -40px
+    bottom 0
+    left 0
+  .left
+    left -23px
+  .right
+    right -25px
+
+.vendors-navigation
+  border-top 1px solid #82807d
+  border-bottom 1px solid #9f9a95
+  position relative
+  height  68px
+  background #41372d
+  padding 0px 17px
+  font 16px latoregular
+  ul.menu
+    &>li
+      >a
+        padding 11px 0px 12px 50px
+        background url(../images/sprites.png)
+      &:nth-child(1)>a
+        background-position -12px -105px
+      &:nth-child(2)>a
+        background-position -11px -175px
+      &:nth-child(3)>a
+        background-position -11px -244px
+      &:nth-child(4)>a
+        background-position -11px -310px
+      &:nth-child(5)>a
+        background-position -11px -379px
+      &:nth-child(6)>a
+        background-position -11px -446px
+      &:nth-child(7)>a
+        background-position -11px -515px
+  ul
+    margin 0px
+    & > li
+      list-style none
+      display inline-block
+      height 45px
+      line-height 45px
+      width 150px
+      position relative
+      & > a
+        link-hover()
+        display block
+        //padding 3px 10px
+        color #fff
+        font-weight 700
+        &:hover
+          color #ddd
+    &.sub-menu
+      height 370px
+      max-height 500px
+      position absolute
+      z-index 1
+      min-width 160px
+      position absolute
+      overflow hidden
+      top 67px
+      /* z-index: -10; */
+      min-width 160px
+      background grey
+      color black
+      li
+        display block
+        width auto
+        min-height 30px
+        height auto
+        a
+          link-hover()
+          color black
+          font-weight 100
+          font 16px latoregular
+          padding-left 30px
+          min-height 30px
+          line-height 28px
+      li:hover
+        background grey-hover

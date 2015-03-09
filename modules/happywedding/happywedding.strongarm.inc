@@ -1451,14 +1451,42 @@ function happywedding_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_negotiation_language';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    'locale-session' => array(
+      'callbacks' => array(
+        'language' => 'locale_language_from_session',
+        'switcher' => 'locale_language_switcher_session',
+        'url_rewrite' => 'locale_language_url_rewrite_session',
+      ),
+      'file' => 'includes/locale.inc',
+    ),
+    'language-default' => array(
+      'callbacks' => array(
+        'language' => 'language_from_default',
+      ),
+    ),
+  );
   $export['language_negotiation_language'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_negotiation_language_content';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    'locale-session' => array(
+      'callbacks' => array(
+        'language' => 'locale_language_from_session',
+        'switcher' => 'locale_language_switcher_session',
+        'url_rewrite' => 'locale_language_url_rewrite_session',
+      ),
+      'file' => 'includes/locale.inc',
+    ),
+    'language-default' => array(
+      'callbacks' => array(
+        'language' => 'language_from_default',
+      ),
+    ),
+  );
   $export['language_negotiation_language_content'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1679,6 +1707,27 @@ function happywedding_strongarm() {
   $strongarm->name = 'modal_forms_popup_large_width';
   $strongarm->value = '0.8';
   $export['modal_forms_popup_large_width'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'modal_forms_popup_medium_height';
+  $strongarm->value = '650';
+  $export['modal_forms_popup_medium_height'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'modal_forms_popup_medium_type';
+  $strongarm->value = 'fixed';
+  $export['modal_forms_popup_medium_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'modal_forms_popup_medium_width';
+  $strongarm->value = '600';
+  $export['modal_forms_popup_medium_width'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1982,6 +2031,12 @@ function happywedding_strongarm() {
       'tabtamer_original_path' => 'node/%/report',
       'tabtamer_title' => '',
     ),
+    'node/%/categories' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%/categories',
+      'tabtamer_title' => '',
+    ),
     'node/%/view' => array(
       'weight' => '-10',
       'action' => 'enabled',
@@ -2022,12 +2077,6 @@ function happywedding_strongarm() {
       'weight' => '2',
       'action' => 'enabled',
       'tabtamer_original_path' => 'node/%node/translate',
-      'tabtamer_title' => '',
-    ),
-    'node/%/products' => array(
-      'weight' => '0',
-      'action' => 'enabled',
-      'tabtamer_original_path' => 'node/%/products',
       'tabtamer_title' => '',
     ),
     'node/%/photos' => array(
@@ -2156,6 +2205,12 @@ function happywedding_strongarm() {
       'tabtamer_original_path' => 'node/%webform_menu/submission/%webform_menu_submission/devel/token',
       'tabtamer_title' => '',
     ),
+    'node/%/categories/products' => array(
+      'weight' => '0',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'node/%/categories/products',
+      'tabtamer_title' => '',
+    ),
     'node/%/devel/load' => array(
       'weight' => '0',
       'action' => 'enabled',
@@ -2265,25 +2320,25 @@ function happywedding_strongarm() {
       'tabtamer_title' => '',
     ),
     'user/%/imce' => array(
-      'weight' => '-94',
+      'weight' => '-93',
       'action' => 'enabled',
       'tabtamer_original_path' => 'user/%user/imce',
       'tabtamer_title' => '',
     ),
     'user/%/shortcuts' => array(
-      'weight' => '-96',
+      'weight' => '-95',
       'action' => 'enabled',
       'tabtamer_original_path' => 'user/%user/shortcuts',
       'tabtamer_title' => '',
     ),
     'user/%/track/navigation' => array(
-      'weight' => '-95',
+      'weight' => '-94',
       'action' => 'enabled',
       'tabtamer_original_path' => 'user/%user/track/navigation',
       'tabtamer_title' => '',
     ),
     'user/%/devel' => array(
-      'weight' => '-93',
+      'weight' => '-92',
       'action' => 'enabled',
       'tabtamer_original_path' => 'user/%user/devel',
       'tabtamer_title' => '',
@@ -2295,7 +2350,7 @@ function happywedding_strongarm() {
       'tabtamer_title' => '',
     ),
     'user/%/edit' => array(
-      'weight' => '-97',
+      'weight' => '-96',
       'action' => 'enabled',
       'tabtamer_original_path' => 'user/%user/edit',
       'tabtamer_title' => 'SETTINGS',
@@ -2310,6 +2365,12 @@ function happywedding_strongarm() {
       'weight' => '-98',
       'action' => 'enabled',
       'tabtamer_original_path' => 'user/%/reviews',
+      'tabtamer_title' => '',
+    ),
+    'user/%/inquiries' => array(
+      'weight' => '-97',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'user/%/inquiries',
       'tabtamer_title' => '',
     ),
     'user/%/devel/load' => array(
@@ -2406,6 +2467,12 @@ function happywedding_strongarm() {
       'weight' => '100',
       'action' => 'enabled',
       'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/devel',
+      'tabtamer_title' => '',
+    ),
+    'taxonomy/term/%/translate' => array(
+      'weight' => '10',
+      'action' => 'enabled',
+      'tabtamer_original_path' => 'taxonomy/term/%taxonomy_term/translate',
       'tabtamer_title' => '',
     ),
     'taxonomy/term/%/devel/load' => array(

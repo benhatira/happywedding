@@ -63,7 +63,7 @@ body
     a
       color black
   li
-    height 30px
+    height 28px
     padding 8px 20px
     display block
     list-style none
@@ -81,14 +81,44 @@ body
         margin-right 10px
         float left
         background url('/sites/all/themes/best_responsive/images/sprites.png') -34px -8px
+  li.lang
+    padding 2px 0px
+    text-align center
+    line-height 27px
+    color white
+    width 80px
+    ul
+      max-height 0px
+      overflow hidden
+      transition max-height 0.2s ease-out
+      li
+        padding 0px
+    &:hover
+      ul
+        max-height 70px
+        background black
+        width 100%
+        margin 0
+        li
+          height 30px
+          border 1px solid
+    a
+      color white
+      display block
+      height 100%
+      width 100%
+      padding 6px
 
 .fleft
   float left
 .fright
   float right
-.page-home #main-menu
-  position absolute
-  top 7px
+.page-home
+  #main-menu
+    position absolute
+    top 7px
+  #navigation form#search-block-form
+   top 14px
 #navigation
   font 16px latoregular
   position relative
@@ -133,7 +163,33 @@ body
           display block
           height 57px
           font-size 16px
+  form#search-block-form
+    position absolute
+    right 28px
+    z-index 2
+    top 7px
+    height 28px
+    input
+      &.form-text
+        width 253px
+        height 26px
+        background transparent
+        border 1px solid white
+        color white
+        font 14px latoregular
+        padding 5px 10px
+    &:after
+      content ''
+      width 23px
+      height 26px
+      background url('../images/sprites.png') -23px -34px
+      position absolute
+      right 0
+      top 2px
+    input.form-submit, #search-form input.form-submit
+      display none
 
+          
 #navigation #secondary-menu ul>li>a:hover, #navigation #secondary-menu ul>li>a.active-trail
   color black
   background pink
@@ -156,120 +212,8 @@ body
   td.views-field.views-field-picture,td.views-field-field-image
     width 70px
 
-.page-vendors .vendors-navigation
-  ul.sub-menu
-    height auto
-    max-height 0
-    transition max-height 0.5s ease-out,opacity 0.3s ease-out,top 0.3s ease-in-out
-    opacity 0
-    top 70px
-    box-shadow 0px 1px 4px #888
-  > li
-    &:hover
-      .sub-menu
-        visibility visible
-        max-height 500px
-        opacity 1
-.page-home #mini-panel-vendors_navigation
-  height 470px
-  
-  
+@import 'vendors-navigation.styl'
 
-.vendors-navigation:before
-  //border-top 1px solid #82807d
-  border-bottom 1px solid #9f9a95
-  content ''
-  position absolute
-  width 50px
-  background #41372d
-  height 68px
-  left -23px
-  top 15px
-  z-index 0
-.vendors-navigation:after
-  //border-top 1px solid #82807d
-  border-bottom 1px solid #9f9a95
-  content ''
-  position absolute
-  width 50px
-  background #41372d
-  height 68px
-  right -23px
-  top 15px
-  z-index 0
-
-.vendors-navigation
-  border-top 1px solid #82807d
-  border-bottom 1px solid #9f9a95
-  position relative
-  height  68px
-  background #41372d
-  padding 0px 18px
-  font 16px latoregular
-  ul.menu
-    &>li
-      >a
-        padding 11px 0px 12px 50px
-        background url(/sites/all/themes/best_responsive/images/sprites.png)
-      &:nth-child(1)>a
-        background-position -12px -105px
-      &:nth-child(2)>a
-        background-position -11px -175px
-      &:nth-child(3)>a
-        background-position -11px -244px
-      &:nth-child(4)>a
-        background-position -11px -310px
-      &:nth-child(5)>a
-        background-position -11px -379px
-      &:nth-child(6)>a
-        background-position -11px -446px
-      &:nth-child(7)>a
-        background-position -11px -515px
-  ul
-    margin 0px
-    & > li
-      list-style none
-      display inline-block
-      height 45px
-      line-height 45px
-      width 14%
-      position relative
-      & > a
-        link-hover()
-        display block
-        //padding 3px 10px
-        color #fff
-        font-weight 700
-        &:hover
-          color #ddd
-    &.sub-menu
-      height 370px
-      max-height 500px
-      position absolute
-      z-index 1
-      min-width 160px
-      position absolute
-      overflow hidden
-      top 67px
-      /* z-index: -10; */
-      min-width 160px
-      background grey
-      color black
-      li
-        display block
-        width auto
-        min-height 30px
-        height auto
-        a
-          link-hover()
-          color black
-          font-weight 100
-          font 16px latoregular
-          padding-left 30px
-          min-height 30px
-          line-height 28px
-      li:hover
-        background grey-hover
 
 .panel-2col-stacked, .panel-2col
   .panel-col-first
@@ -279,7 +223,54 @@ body
     margin-left 10px
     img
       display block
+//normal pager style
+.view > .item-list
+  position relative
+  li.pager-current
+    display none
+  li
+    background none
+    a
+      display inline-block
+      position relative
+      background none
+      width 142px
+      border-radius 0
+      font 16px latoregular
+      padding 3px
+      color white
+  .pager-next
+    a
+      background pink
+  .pager-previous
+    a
+      background black
 .panel-col-first 
+  .panel-pane
+    .view.top-right-pager >.item-list
+      position absolute
+      top 0
+      right 0
+      li.pager-current
+          display none
+      .pager
+        li
+          background none
+          margin 0px
+          padding 0
+          a:hover
+            background pink
+          a
+            background grey
+            width 26px
+            height 26px
+            border-radius 26px
+            display inline-block
+            padding 5px
+            font 26px latolight
+            line-height 12px
+            color black
+  
   .panel-pane.pane-block
     .pane-title
       font 24px Times New Roman
@@ -292,6 +283,8 @@ body
       & > .view
         border-top 1px solid #ebebeb
         padding-top 29px
+
+    
   .pane-search-vendors
     .pane-title
       font 24px Times New Roman
@@ -313,6 +306,7 @@ body
   margin-bottom 30px
 
 .panel-col-last .panel-pane
+  position relative
   border 1px solid #adadad
   table
     margin-bottom 0px
@@ -322,10 +316,65 @@ body
     background url(/sites/all/themes/best_responsive/images/sprites.png) center -605px no-repeat;
     height 78px
     line-height 50px
+  .view-filters
+    background #e6e5e4
+    overflow hidden
+    position relative
+
   .views-exposed-form
     background #e6e5e4
     height 40px
     font-size 12px latoregular
+    width 180px
+    margin 0px auto
+    //    &:before
+    //      content '<'
+    //      position absolute
+    //      font 36px latolight
+    //      left 10px
+    //      top 0
+    //      height 42px
+    //      line-height 42px
+    //      cursor pointer
+    //    &:after
+    //      content '>'
+    //      position absolute
+    //      font 36px latolight
+    //      right 10px
+    //      top 0
+    //      height 42px
+    //      line-height 42px
+    //      cursor pointer
+    .views-exposed-widget
+      padding 4px
+    .views-exposed-widgets
+      position relative
+      transition left 0.4s ease-in-out
+      left 0px
+    .views-exposed-widgets[page='1']
+      left -180px
+    .views-exposed-widgets[page='2']
+      left -360px
+    .form-type-bef-link
+      width 60px
+      a
+        padding 0px 5px
+        font 12px latoregular
+  .view-header
+    position absolute
+    z-index 2
+    width 100%
+    .cat-nav
+      position absolute
+      font 36px latolight
+      top 0
+      height 42px
+      line-height 42px
+      cursor pointer
+    .cat-nav.left
+      left 10px
+    .cat-nav.right
+      right 10px
   .view-content
     tr
       padding 6px 4px
@@ -420,6 +469,8 @@ body
   .views-column:hover
     .shadow, .views-field-nothing
       show-for-hover()
+    .views-field-nothing .shadow
+      top 0
     .views-field-title-field, .views-field-title
       background-color transparent//rgba(220,220,220,1)
       a
@@ -440,7 +491,8 @@ body
       position absolute
       width 100%
       bottom 0
-      top 0
+      top 30px
+      top-for-hover()
       margin auto
       height 38px
       text-align center
@@ -480,9 +532,11 @@ body
       color white
       transition color ease-out 0.3s
 .view-gallery
-  .views-column
-    position relative
-    height auto
+  .views-responsive-grid
+    .views-column
+      position relative
+      height 170px
+      width 170px
   &.bookmarks
     .views-field-ops
       position absolute
@@ -517,8 +571,11 @@ body
   .views-column
     border 1px solid #e7e6e5
     padding 9px
-  .views-column:hover .views-field-nothing
-    show-for-hover()
+  .views-column:hover
+    .views-field-nothing
+      show-for-hover()
+      .shadow
+        top 0
   .views-field-title
     font 16px latoregular
     margin-bottom 7px
@@ -576,7 +633,8 @@ body
       position absolute
       width 100%
       bottom 0
-      top 0
+      top 30px
+      top-for-hover()
       margin auto
       height 38px
       text-align center

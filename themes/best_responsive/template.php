@@ -28,6 +28,7 @@ $breadcrumb[] = drupal_get_title();
  * Override or insert variables into the page template.
  */
 function best_responsive_preprocess_page(&$vars) {
+
   if (isset($vars['main_menu'])) {
     $vars['main_menu'] = theme('links__system_main_menu', array(
       'links' => $vars['main_menu'],
@@ -62,10 +63,21 @@ function best_responsive_preprocess_page(&$vars) {
   }
  // $vars['user_data'] = array();
   
+
+  
   if ($vars['logged_in']) {
     $user = user_load($vars['user']->uid);
     $vars['user_data'] = array( 'name' => $user->name);
-    $vars['user_data']['wedding_days_away'] = t('Your wedding is') . '<span class="days-away"> 233 </span>' . ('days away.');
+    if(isset($user->field_wedding_date[LANGUAGE_NONE])) {
+      $wedding_date = $user->field_wedding_date[LANGUAGE_NONE][0]['value'];//2015-03-17 00:00:00
+      $fieldDate = new DateObject($user->field_wedding_date[LANGUAGE_NONE][0]['value'], date_default_timezone(), 'Y-m-d H:i:s');
+      $nowDate = date_now();
+      $diff = $fieldDate->difference($nowDate, 'days');
+    } else {
+      $diff = 0;
+    }
+
+    $vars['user_data']['wedding_days_away'] = t('Your wedding is') . '<span class="days-away"> '. $diff .' </span>' . ('days away.');
     if( !empty($user->picture->uri)) {
     $vars['user_data']['avatar'] = theme_image_style(
       array(
@@ -167,26 +179,39 @@ if (drupal_is_front_page()) {
   drupal_add_js(drupal_get_path('theme', 'best_responsive') . '/js/slide.js');
 }
 
+
+
 function best_responsive_login_menu($logged_in){
-  global $user;
+  global $user;  
+  global $language; 
+  $path =current_path();
+  if($language->language =='en') { $class['en'] = 'session-active'; $current = 'ENG';}
+  else { $class['th'] = 'session-active';$current = 'ไทย';}
+  $lang = $current. '<ul class="language-switcher-locale-session">';
+  $class = array('en' => '', 'th' => '');
+
+  $lang .= '<li class="en first active"><a href="/?language=en" class="language-link '.$class['en'].' active" lang="en">ENG</a></li>';
+  $lang .= '<li class="th last active"><a href="/?language=th" class="language-link '.$class['th'].' active" lang="th">ไทย</a></li>';
+  $lang .= '</ul>';
   $output = "<ul class='nav nav-login'>";
   if($logged_in) {
     $output .= "<li class='login fleft'><a href='/user'>". t("MY PAGE"). "</a></li>";
     $output .= "<li class='logout fleft'><a href='/user/logout'>". t("LOGOUT"). "</a></li>";
+    $output .= "<li class='vendor fleft'><a href='/bo/vendor'>". t("FOR VENDORS"). "</a></li>";
   } else {
     $output .= "<li class='login fleft'><a href='/login'>". t("LOGIN / REGISTER"). "</a></li>";
     $output .= "<li class='vendor fleft'><a href='/bo/vendor'>". t("FOR VENDORS"). "</a></li>";
-    $output .= "<li class='vendor fright'><a href='/bo/vendor'>". t("ENG"). "</a></li>";
+    
     //Social icon
-    $output .= "<li class='vendor fright'>";
-    $output .= "<span class='facebook icon'></span>";
-    $output .= "<span class='twitter icon'></span>";
-    $output .= "<span class='instagram icon'></span>";
-    $output .= "<span class='mail icon'></span>";
-    $output .= "</li>";
+//    $output .= "<li class='vendor fright'>";
+//    $output .= "<span class='facebook icon'></span>";
+//    $output .= "<span class='twitter icon'></span>";
+//    $output .= "<span class='instagram icon'></span>";
+//    $output .= "<span class='mail icon'></span>";
+//    $output .= "</li>";
   }
-    //$output           <li>t("L_SWITCHER")</li>
-          
+  //$output           <li>t("L_SWITCHER")</li>
+  $output .= "<li class=' lang fright'>". $lang. "</li>";
   $output .= "</ul>";
   return $output;
 

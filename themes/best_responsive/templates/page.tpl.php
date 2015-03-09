@@ -119,6 +119,11 @@
           ?>
         </div>
         
+        <?php
+        $block = module_invoke('search', 'block_view');
+        print render($block['content']);
+        ?>
+        
         <?php if ($is_front): ?>
         <?php if ($site_slogan): ?><h2 id="site-slogan"><?php print $site_slogan; ?></h2><?php endif; ?>
         <?php if (theme_get_setting('slideshow_display','best_responsive')): ?>

@@ -141,6 +141,67 @@ ul.tabs.secondary li a:hover {
   margin-top: 2px;
   padding: 15px;
 }
+.view-gallery.views-responsive-grid .views-column {
+  height: 170px;
+  width: 170px;
+}
+.view-gallery.views-responsive-grid .views-column:hover .views-field-nothing .shadow {
+  top: 0;
+}
+.view-gallery.views-responsive-grid .views-column {
+  width: 285px;
+  height: 352px;
+  margin: 0;
+  padding: 28px 32px;
+  border: none;
+  background: url("../images/photo-frame.png");
+}
+.view-gallery.views-responsive-grid .views-column img {
+  width: 220px;
+  height: 290px;
+}
+.view-gallery.views-responsive-grid .views-column .views-field-nothing {
+  position: absolute;
+  line-height: 25px;
+  background: rgba(0,0,0,0.75);
+  top: 27px;
+  bottom: 34px;
+  height: auto;
+  width: auto;
+  left: 32px;
+  right: 33px;
+}
+.view-gallery.views-responsive-grid .views-column .views-field-nothing .shadow {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  top: 30px;
+  margin: auto;
+  height: 38px;
+  text-align: center;
+}
+.view-gallery.views-responsive-grid .views-column .views-field-nothing .shadow > span {
+  width: 95px;
+  margin-right: 2px;
+  display: inline-block;
+  height: 38px;
+  background: #ffc0cb;
+  color: #000;
+}
+.view-gallery.views-responsive-grid .views-column .views-field-nothing .shadow > span.flag-wrapper.flag-bookmark {
+  background: #ececec;
+}
+.view-gallery.views-responsive-grid .views-column .views-field-nothing .shadow > span.flag-wrapper a {
+  width: 90px;
+  color: #f00;
+}
+.view-gallery.views-responsive-grid .views-column .views-field-nothing .shadow a {
+  height: 100%;
+  width: auto;
+  padding: 6px 0px;
+  display: inline-block;
+  min-width: 90px;
+}
 .days-away {
   font: 16px latolight;
   color: #ffc0cb;
@@ -178,6 +239,8 @@ td.views-field.views-field-subject a:nth-child(1) {
   display: block;
   background: none;
   color: #000;
+  width: 100%;
+  text-align: left;
 }
 td.views-field.views-field.views-field-title {
   padding: 10px 0 50px 5px;

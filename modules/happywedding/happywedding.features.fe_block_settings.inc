@@ -154,8 +154,8 @@ function happywedding_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'backoffice' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'backoffice',
         'weight' => 0,
       ),
@@ -166,8 +166,8 @@ function happywedding_default_fe_block_settings() {
         'weight' => 0,
       ),
       'best_responsive' => array(
-        'region' => 'footer_first',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'best_responsive',
         'weight' => 0,
       ),
@@ -178,8 +178,8 @@ function happywedding_default_fe_block_settings() {
         'weight' => 0,
       ),
       'seven' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'seven',
         'weight' => 10,
       ),

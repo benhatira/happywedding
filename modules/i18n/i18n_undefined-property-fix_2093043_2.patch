@@ -1,0 +1,17 @@
+diff --git a/sites/all/modules/contrib/i18n/i18n_taxonomy/i18n_taxonomy.module b/sites/all/modules/contrib/i18n/i18n_taxonomy/i18n_taxonomy.module
+index 0a051b2..f3063ba 100644
+--- a/sites/all/modules/contrib/i18n/i18n_taxonomy/i18n_taxonomy.module
++++ b/sites/all/modules/contrib/i18n/i18n_taxonomy/i18n_taxonomy.module
+@@ -468,8 +468,10 @@ function i18n_taxonomy_theme() {
+  * Get localized term name unfiltered.
+  */
+ function i18n_taxonomy_term_name($term, $langcode = NULL) {
+-  $key = i18n_object_info('taxonomy_term', 'key');
+-  return i18n_taxonomy_vocabulary_mode($term->vid, I18N_MODE_LOCALIZE) ? i18n_string(array('taxonomy', 'term', $term->{$key}, 'name'), $term->name, array('langcode' => $langcode, 'sanitize' => FALSE)) : $term->name;
++  if ($term && isset($term->vid)) {
++    $key = i18n_object_info('taxonomy_term', 'key');
++    return i18n_taxonomy_vocabulary_mode($term->vid, I18N_MODE_LOCALIZE) ? i18n_string(array('taxonomy', 'term', $term->{$key}, 'name'), $term->name, array('langcode' => $langcode, 'sanitize' => FALSE)) : $term->name;
++  }
+ }
+ 
+ 

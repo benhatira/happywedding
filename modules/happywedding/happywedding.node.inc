@@ -144,12 +144,15 @@ function _happywedding_get_terms_from_category_label($label){
     //dpm($value);
     if($value->weight>$weight) {
       $parent = $value;
+      if (module_exists('i18n_taxonomy')) { //To not break your site if module is not installed
+        $parent = i18n_taxonomy_localize_terms($parent); // The important part!
+      }
       $weight = $parent->weight;
     }
 //    /break;
   }
   $term_list = taxonomy_get_children($parent->tid, $parent->vid );
-  return array( "tid" => $parent->tid , "children" => $term_list);
+  return array( "tid" => $parent->tid , "children" => $term_list, "parent" => $parent);
 }
 
 function _happywedding_render_vendors_navigation(){
@@ -159,16 +162,20 @@ function _happywedding_render_vendors_navigation(){
   //echo "catid = [" . $catid . "]";
   $labels = $field['settings']['allowed_values'];
   //$output =  "<div class='search-vendors-title'>Current vendors  : $labels[$catid]</div>";
-  $output = "";
+  $output = "<div class='vendors-navigation-bg'><div class='shadow left'></div><div class='shadow right'></div></div>";
   $output .= "<div class='vendors-navigation'><ul class='menu'>";
   //dpm($labels);exit;
   foreach ($labels as $id => $label) {
-    $output .= "<li class='leaf'><a href='/vendors/$id'>".$label."</a>";
+    
     $cat_term = _happywedding_get_terms_from_category_label($label);
+    $output .= "<li class='leaf'><a href='/vendors/$id'>".$cat_term["parent"]->name."</a>";
     $term_list = $cat_term["children"];
     //dpm($term_list);
     $output .= "<ul class='sub-menu'>";
     foreach ($term_list as $tid => $term) {
+      if (module_exists('i18n_taxonomy')) { //To not break your site if module is not installed
+        $term = i18n_taxonomy_localize_terms($term); // The important part!
+      }
       $output .= "<li class='leaf'><a href='/vendors/$id?term-id=".$tid."'>".$term->name."</a></li>";
     }
     $output .= "</ul></li>";
@@ -245,6 +252,9 @@ function happywedding_get_terms_json_form_vocab($name){
   $cur_d0_index = 0;
   $cur_d1_index = 0;
   foreach($tree as $key => $term) {
+    if (module_exists('i18n_taxonomy')) { //To not break your site if module is not installed
+      $term = i18n_taxonomy_localize_terms($term); // The important part!
+    }
     if($term->depth == 0) {
       $terms[] = array(
         "tid" => $term->tid,
