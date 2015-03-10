@@ -1,5 +1,50 @@
 jQuery(document).ready(function($){
+  //$('.flip').jcoverflip({current: 3});
+  var $obj = $('.flip');
+  var width = 0;
+  var current = 2;
+  
+  $obj.reload = function(){
+    $obj.find('li').each(function(i,item){
+      var $item = $(item);
+      width = $item.width();
+      
+      console.log(width);
+      var diff = i- current;
+      if(diff<-2) {
+        $item.attr('page','others');
+        $item.css('left',0);
+      } else if(diff<-1) {
+        $item.attr('page','left-2');
+        $item.css('left',0);
+      } else if(diff < 0) {
+        $item.attr('page','left-1');
+        $item.css('left', width);
+      } else if(diff == 0) {
+        $item.attr('page','current');
+        $item.css('left', width*2);
+      } else if(diff<=1){
+        $item.attr('page','right-1');
+        $item.css('left', width*3);
+      } else if(diff<=2){
+        $item.attr('page','right-2');
+        $item.css('left', width*4);
+      } else {
+        $item.attr('page','others');
+        $item.css('left', width*4);
+      }
+    }); 
+  };
+  
+  $obj.on('click', 'li', function(){
+    current = $(this).index();
+    $obj.reload();
+  });
+
+  $obj.reload();
+  
   $(window).load(function() {
+    
 //    if($("#single-post-slider .slide").length>0)
 //    $("#single-post-slider").flexslider({
 //      animation: 'slide',
@@ -50,6 +95,8 @@ jQuery(document).ready(function($){
 
     var jssor_slider1 = new $JssorSlider$("single-post-slider", options);
 
+    
+    
     //responsive code begin
     //you can remove responsive code if you don't want the slider scales while window resizes
 //            function ScaleSlider() {

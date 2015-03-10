@@ -176,6 +176,8 @@ if (drupal_is_front_page()) {
   //drupal_add_js(drupal_get_path('theme', 'best_responsive') . '/js/flexslider-min.js');
   drupal_add_js(drupal_get_path('theme', 'best_responsive') . '/js/jssor.js');
   drupal_add_js(drupal_get_path('theme', 'best_responsive') . '/js/jssor.slider.js');
+  drupal_add_js(drupal_get_path('theme', 'best_responsive') . '/js/jquery-ui.js');
+  drupal_add_js(drupal_get_path('theme', 'best_responsive') . '/js/jquery.jcoverflip.js');
   drupal_add_js(drupal_get_path('theme', 'best_responsive') . '/js/slide.js');
 }
 

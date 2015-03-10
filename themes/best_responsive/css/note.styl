@@ -163,6 +163,11 @@ body
           display block
           height 57px
           font-size 16px
+      li.last
+        background pink
+        float right
+      li.last>a:hover
+        background pink-hover
   form#search-block-form
     position absolute
     right 28px
@@ -450,6 +455,9 @@ body
     a
       display block
       color black
+      border 1px solid pink-soft
+      border-top none
+      background pink
     a:after
       content '>>'
       margin-right 10px
@@ -684,7 +692,7 @@ body
     text-align center
   .pane-content
     padding 50px 73px
-    background #eee
+    background grey
     .views-columns-5
       .views-column
         width 172px
@@ -1076,6 +1084,59 @@ footer
   font-size 11px
   color white
   margin-top 10px
+
+  
+.pane-views-gallery-block
+  ul.flip
+    height 310px
+    margin 0px 10px
+    padding 0px
+    position relative
+    li:hover
+      box-shadow 0px 0px 7px 1px #000
+      background rgba(240,240,240,1)
+    li
+      margin-top 58px
+      list-style-type none
+      display inline-block
+      width 181px
+      height 181px
+      position absolute
+      transition left 0.6s,transform 0.6s, opacity 0.2s,box-shadow 0.4s,background 0.4s
+      box-sizing content-box
+      border-radius 4px
+      box-shadow 0px 0px 5px 1px #222
+      padding 4px
+      background rgba(200, 200, 200, 0.5)
+      cursor pointer
+      div
+        display inline
+      img
+        display inline-block
+        width 180px
+        height 181px
+        transition 
+        opacity 0
+    li[page='current']
+      z-index 3
+      opacity 1
+      transform scale(1.4)
+    li[page='left-1'],li[page='right-1']
+      z-index 2
+      opacity 1
+      transform scale(1.2)
+    li[page='left-2'],li[page='right-2']
+      z-index 1
+      opacity 1
+      transform scale(1.0)
+    li[page='others']
+      z-index 0
+      opacity 0
+      transform scale(0.8)
+        
+
+  .item-list
+    overflow hidden
 
 
 

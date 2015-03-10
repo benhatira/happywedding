@@ -1520,3 +1520,6 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
     background-position: -310px -35px;
 }
 */
+.ui-jcoverflip {position: relative;}
+.ui-jcoverflip--item {position: absolute; display: block;}
+

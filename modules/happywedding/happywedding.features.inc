@@ -106,6 +106,29 @@ function happywedding_flag_default_flags() {
 function happywedding_image_default_styles() {
   $styles = array();
 
+  // Exported image style: front_gallery.
+  $styles['front_gallery'] = array(
+    'name' => 'front_gallery',
+    'label' => 'front gallery (260x245)',
+    'effects' => array(
+      8 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 260,
+          'height' => 245,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: front_slideshow.
   $styles['front_slideshow'] = array(
     'name' => 'front_slideshow',

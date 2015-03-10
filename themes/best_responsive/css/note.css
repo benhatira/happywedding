@@ -180,6 +180,13 @@ input {
   height: 57px;
   font-size: 16px;
 }
+#navigation #secondary-menu ul li.last {
+  background: #f084b5;
+  float: right;
+}
+#navigation #secondary-menu ul li.last>a:hover {
+  background: #ff54a0;
+}
 #navigation form#search-block-form {
   position: absolute;
   right: 28px;
@@ -649,6 +656,9 @@ input {
 .view-subpage-tips .more-link a {
   display: block;
   color: #2a2a2a;
+  border: 1px solid #f0b4d5;
+  border-top: none;
+  background: #f084b5;
 }
 .view-subpage-tips .more-link a:after {
   content: '>>';
@@ -909,7 +919,7 @@ input {
 }
 .pane-views-gallery-block .pane-content {
   padding: 50px 73px;
-  background: #eee;
+  background: #e6e5e4;
 }
 .pane-views-gallery-block .pane-content .views-columns-5 .views-column {
   width: 172px;
@@ -1612,4 +1622,64 @@ footer {
   font-size: 11px;
   color: #fff;
   margin-top: 10px;
+}
+.pane-views-gallery-block ul.flip {
+  height: 310px;
+  margin: 0px 10px;
+  padding: 0px;
+  position: relative;
+}
+.pane-views-gallery-block ul.flip li:hover {
+  box-shadow: 0px 0px 7px 1px #000;
+  background: #f0f0f0;
+}
+.pane-views-gallery-block ul.flip li {
+  margin-top: 58px;
+  list-style-type: none;
+  display: inline-block;
+  width: 181px;
+  height: 181px;
+  position: absolute;
+  transition: left 0.6s, transform 0.6s, opacity 0.2s, box-shadow 0.4s, background 0.4s;
+  box-sizing: content-box;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px 1px #222;
+  padding: 4px;
+  background: rgba(200,200,200,0.5);
+  cursor: pointer;
+}
+.pane-views-gallery-block ul.flip li div {
+  display: inline;
+}
+.pane-views-gallery-block ul.flip li img {
+  display: inline-block;
+  width: 180px;
+  height: 181px;
+transition
+  opacity: 0;
+}
+.pane-views-gallery-block ul.flip li[page='current'] {
+  z-index: 3;
+  opacity: 1;
+  transform: scale(1.4);
+}
+.pane-views-gallery-block ul.flip li[page='left-1'],
+.pane-views-gallery-block ul.flip li[page='right-1'] {
+  z-index: 2;
+  opacity: 1;
+  transform: scale(1.2);
+}
+.pane-views-gallery-block ul.flip li[page='left-2'],
+.pane-views-gallery-block ul.flip li[page='right-2'] {
+  z-index: 1;
+  opacity: 1;
+  transform: scale(1);
+}
+.pane-views-gallery-block ul.flip li[page='others'] {
+  z-index: 0;
+  opacity: 0;
+  transform: scale(0.8);
+}
+.pane-views-gallery-block .item-list {
+  overflow: hidden;
 }
